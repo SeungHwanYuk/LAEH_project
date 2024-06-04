@@ -1,6 +1,6 @@
 package LAEH.LAEH_project.model;
 
-
+import jakarta.persistence.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -24,13 +24,16 @@ import java.util.Collections;
 @Getter
 @Setter
 @Table(name = "사용자")
-public class User { // UserDetails 상속 (세큐리티)
+public class User implements UserDetails { // UserDetails 상속 (세큐리티)
 
     @Id
     @Column(name = "사용자아이디", length = 100)
     private String userId;
-//    @Column(name = "권한명")
-//    private Authority authority;
+
+    @ManyToOne
+    @JoinColumn(name = "권한명")
+    private Authority authority;
+
     @Column(name = "비밀번호")
     private String password;
     @Column(name = "이메일")
@@ -45,11 +48,43 @@ public class User { // UserDetails 상속 (세큐리티)
     private String lectureCategory;
     @Column(name = "계정생성날짜")
     private LocalDateTime createdAt;
-    
 
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return Collections.singletonList(
-//                new SimpleGrantedAuthority(authority.getAuthorityName()));
-//    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singletonList(
+                new SimpleGrantedAuthority(authority.getAuthorityName()));
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return userId;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return UserDetails.super.isAccountNonExpired();
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return UserDetails.super.isAccountNonLocked();
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return UserDetails.super.isCredentialsNonExpired();
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return UserDetails.super.isEnabled();
+    }
+
+
 }

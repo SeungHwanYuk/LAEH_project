@@ -3,6 +3,7 @@ package LAEH.LAEH_project.config;
 
 import LAEH.LAEH_project.exception.MyAccessDeniedHandler;
 import LAEH.LAEH_project.exception.MyAuthenticationEntryPoint;
+import LAEH.LAEH_project.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +23,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-//    @Autowired
-//    private UserDetailService userDetailService;
+    @Autowired
+    private UserDetailService userDetailService;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -46,15 +47,15 @@ public class SecurityConfig {
                 .build();
     }
 
-//    @Bean
-//    public AuthenticationManager authenticationManager(HttpSecurity http,
-//                                                       BCryptPasswordEncoder bCryptPasswordEncoder,
-//                                                       UserDetailService userDetailService) throws Exception {
-//        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-//        authProvider.setUserDetailsService(userDetailService);
-//        authProvider.setPasswordEncoder(bCryptPasswordEncoder);
-//        return new ProviderManager(authProvider);
-//    }
+    @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http,
+                                                       BCryptPasswordEncoder bCryptPasswordEncoder,
+                                                       UserDetailService userDetailService) throws Exception {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailService);
+        authProvider.setPasswordEncoder(bCryptPasswordEncoder);
+        return new ProviderManager(authProvider);
+    }
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
