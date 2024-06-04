@@ -20,4 +20,5 @@ public class Authority {
     @Id
     @Column(name = "권한명", length = 50)
     private String authorityName;
+
 }
