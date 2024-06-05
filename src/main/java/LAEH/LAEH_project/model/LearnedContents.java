@@ -15,6 +15,10 @@ import lombok.Setter;
 @Table(name = "진도율")
 public class LearnedContents {
 
+    @Id
+    @Column(name = "진도율고유번호")
+    private int LearnedContentsId;
+
     @OneToOne
     @JoinColumn(name = "구독번호")
     private Subscribe subscribeId;
