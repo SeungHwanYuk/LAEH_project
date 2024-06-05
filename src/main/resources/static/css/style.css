@@ -69,6 +69,10 @@ a {
   font-size: 22px;
 }
 
+.teacherDetail {
+  display: flex;
+}
+
 .teacherDetail > img {
   width: 400px;
 }
