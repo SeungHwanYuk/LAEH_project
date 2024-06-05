@@ -1,0 +1,61 @@
+* {
+  text-decoration: none;
+  list-style: none;
+}
+
+.Wrapper {
+}
+
+.header {
+  margin: 20px 0;
+}
+
+.mainSlide {
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.mainSlide > img {
+  max-height: initial;
+  margin-top: -15%;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.navMenu {
+}
+
+.navTitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.login {
+  border: 1px solid #000;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 32px;
+  padding: 12px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.login:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.join {
+  text-decoration: underline;
+  cursor: pointer;
+  height: 32px;
+  padding: 12px;
+  line-height: 32px;
+  margin: 0 40px;
+}
