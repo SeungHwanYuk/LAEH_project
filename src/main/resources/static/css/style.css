@@ -71,6 +71,7 @@
   margin: 0;
   width: 104px;
   text-align: center;
+  font-size: 16px;
 }
 
 .login:hover {
