@@ -13,16 +13,20 @@ import java.time.LocalDate;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "강사리뷰")
-public class ReviewTeacher {
+@Table(name = "영상리뷰")
+public class ReviewContents {
 
     @Id
-    @Column(name = "강사리뷰번호")
-    private String teacherReviewId;
+    @Column(name = "영상리뷰번호")
+    private String ContentsReviewId;
 
     @ManyToOne
     @JoinColumn(name = "사용자아이디")
     private User userId;
+
+    @ManyToOne
+    @JoinColumn(name = "영상번호")
+    private Contents contentsId;
 
     @Column(name = "리뷰내용")
     private String reviewText;
