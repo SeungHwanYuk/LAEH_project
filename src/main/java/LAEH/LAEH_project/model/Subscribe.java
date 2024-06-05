@@ -29,12 +29,8 @@ public class Subscribe {
     @JoinColumn(name = "사용자아이디")
     private User userId;
 
-    @Column(name = "구독시작일된다고")
+    @Column(name = "구독시작일")
     private LocalDate subscribeStartDate;
-
-
-
-
 
 
 
