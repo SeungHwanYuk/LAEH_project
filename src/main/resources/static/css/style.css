@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+a {
+  background: none;
+}
+
 .Wrapper {
 }
 
@@ -42,6 +46,33 @@
   object-fit: contain;
 }
 
+.teacehrTitle {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.teacherWrap {
+  display: flex;
+}
+
+.teacehrTitle > p,
+.teacehrTitle,
+.teacherDesc,
+.teamProjectDesc > p {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.teacehrTitle {
+  font-size: 22px;
+}
+
+.teacherDetail > img {
+  width: 400px;
+}
+
 .navMenu {
   margin: 0;
 }
@@ -74,6 +105,10 @@
   font-size: 16px;
 }
 
+.login:hover > a {
+  color: #1f2937;
+}
+
 .login:hover {
   background-color: #fff;
   color: #1f2937;
@@ -91,6 +126,5 @@
 }
 
 .join:hover {
-  /* color: #181818; */
   font-weight: bold;
 }
