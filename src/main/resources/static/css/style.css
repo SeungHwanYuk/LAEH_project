@@ -1,7 +1,8 @@
 * {
   text-decoration: none;
   list-style: none;
-  background-color: #1f2937;
+  /* background-color: #1f2937; */
+  background-color: #252525;
   color: #fff;
   margin: 0 auto;
   box-sizing: border-box;
@@ -14,6 +15,10 @@ a {
 .Wrapper {
 }
 
+.bold {
+  font-weight: 900;
+}
+
 .header {
   margin: 20px 0;
   align-items: center;
@@ -21,7 +26,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 44px;
 }
 
 .mainSlide {
@@ -31,6 +36,7 @@ a {
   flex-wrap: nowrap;
   width: 100%;
   position: relative;
+  margin-bottom: 60px;
 }
 
 .mainSlide > img {
@@ -46,7 +52,51 @@ a {
   object-fit: contain;
 }
 
-.teacehrTitle {
+.mainCopywrite {
+  display: flex;
+  /* padding: 166px 0; */
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mainCopywrite > p > img {
+  margin: 0;
+  width: 54px;
+}
+
+.mainBigTitle {
+  font-size: 44px;
+  margin: 0;
+}
+
+.mainTitle {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  margin: 20px 0 32px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.mainTitle > img {
+  margin: 0;
+}
+
+.mainDesc {
+  text-align: center;
+  padding: 10px 80px;
+}
+
+.teamProjectDesc {
+  margin-top: 160px;
+}
+
+.teacherTitle {
   text-align: center;
   margin: 0 auto;
   width: 100%;
@@ -54,27 +104,59 @@ a {
 
 .teacherWrap {
   display: flex;
+  justify-content: center;
+  margin-top: 72px;
 }
 
-.teacehrTitle > p,
-.teacehrTitle,
-.teacherDesc,
-.teamProjectDesc > p {
+.teacherProfile {
+  margin: 0 60px;
+}
+
+.teacherTitle > p,
+.teacherTitle,
+.teacherDesc {
   text-align: center;
   margin: 0 auto;
   width: 100%;
 }
 
-.teacehrTitle {
+.teacherDesc {
+  margin-top: 160px;
+}
+
+.teacherTitle {
   font-size: 22px;
 }
 
 .teacherDetail {
   display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
 .teacherDetail > img {
+  width: 180px;
+  margin: 0 60px;
+}
+
+.subMain {
+  display: flex;
+  justify-content: center;
+}
+
+.subjectDetail {
+  margin: 0 18px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://i.ibb.co/sVDQgZ1/sub-Banner01.png");
   width: 400px;
+  height: 400px;
+  background-size: contain;
+  background: brightness(0%);
+}
+
+.subjectDetail > img {
+  width: 400px;
+  margin: 0 10px;
 }
 
 .navMenu {
@@ -96,6 +178,30 @@ a {
   width: 120px;
 }
 
+.footerBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  align-items: center;
+  background: #181818;
+}
+
+.footerBar > p,
+.footerBar > .footerBtnArea {
+  margin: 0;
+  padding: 0 60px;
+  background: none;
+  display: flex;
+  align-items: center;
+}
+
+.footerBar:first-child {
+  width: 70%;
+}
+
 .login {
   border: 1px solid #fff;
   transition: 0.3s;
@@ -115,7 +221,7 @@ a {
 
 .login:hover {
   background-color: #fff;
-  color: #1f2937;
+  color: #252525;
 }
 
 .join {
@@ -131,4 +237,59 @@ a {
 
 .join:hover {
   font-weight: bold;
+}
+
+.redBtn {
+  border: 1px solid #f4361c;
+  color: #f4361c;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 46px;
+  /* padding: 8px 18px;*/
+  line-height: 46px;
+  margin: 0;
+  width: 160px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.redBtn:hover {
+  background-color: #f4361c;
+  color: #fff;
+}
+
+.absoluteBtn {
+  border: 1px solid #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 38px;
+  /* padding: 8px 18px;*/
+  line-height: 38px;
+  margin: 0;
+  width: 104px;
+  text-align: center;
+  font-size: 16px;
+  background: none;
+}
+.absoluteBtn:hover {
+  background-color: #fff;
+  color: #252525;
+}
+
+.footerBtn {
+  border: 1px solid #f4361c;
+  color: #f4361c;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  width: 160px;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footerBtn:hover {
+  background-color: #f4361c;
+  color: #fff;
 }
