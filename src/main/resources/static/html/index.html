@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
   </head>
   <body>
+    <a name="Top"></a>
     <!-- 윤별 20240605 작업 -->
     <div class="Wrapper">
       <div class="header">
@@ -210,23 +211,25 @@
         <div class="footerBtnArea" style="display: flex; justify-content: end">
           <div class="footerBtn">지금 구독하기</div>
           <div class="topBtn">
+            <a href="#Top">
             <img
               src="https://i.ibb.co/Xb6dmHC/Group-46.png"
               alt="Group-46"
               width="26px"
             />
+            </a>
           </div>
         </div>
       </div>
       <div class="footer">
         <form>
-          <select name="teamSite" class="teamSite">
+          <select name="teamSite" class="teamSite" onchange="window.open(value,'_blank');">
             <option value="0">Our Team</option>
-            <option value="1">
-              <a href="/src/test/java/index_YSH_test.html">Yook SeungHwan</a>
+            <option value="https://github.com/SeungHwanYuk">
+             Yuk SeungHwan</a>
             </option>
-            <option value="2">Yoon Byeol</option>
-            <option value="3">Song JinKyung</option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
           </select>
         </form>
         <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
