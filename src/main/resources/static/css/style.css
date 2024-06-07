@@ -23,13 +23,13 @@ a {
 }
 
 .header {
-  margin: 20px 0;
   align-items: center;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 44px;
+  padding: 10px 44px;
+  height: 100px;
 }
 
 .mainSlide {
@@ -249,6 +249,7 @@ a {
   width: 104px;
   text-align: center;
   font-size: 16px;
+  background: none;
 }
 
 .login:hover > a {
