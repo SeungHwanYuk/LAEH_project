@@ -22,8 +22,13 @@ public class CalorieDataController {
         this.calorieDataService = calorieDataService;
     }
 
-    @GetMapping("/Cal/{foodName}")
+    @GetMapping("/cal/{foodName}")
     public ResponseEntity<List<CalorieData>> getCalDataByName(@PathVariable String foodName) {
         return new ResponseEntity<>(calorieDataService.getCalDataByName(foodName), HttpStatus.OK);
+    }
+
+    @GetMapping("/cal/contain/{foodName}")
+    public ResponseEntity<List<CalorieData>> searchFoodName(@PathVariable String foodName) {
+        return new ResponseEntity<>(calorieDataService.searchFoodName(foodName), HttpStatus.OK);
     }
 }

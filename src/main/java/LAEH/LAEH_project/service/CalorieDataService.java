@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -22,7 +23,14 @@ public class CalorieDataService {
     }
 
     public List<CalorieData> getCalDataByName(String foodName) {
-            return calorieDataRepository.findByFoodName(foodName);
-
-        }
+        return calorieDataRepository.findByFoodName(foodName);
     }
+
+    public List<CalorieData> searchFoodName(String foodName) {
+        return calorieDataRepository.findAll()
+                .stream()
+                .filter(calorieData -> calorieData.getFoodName().contains(foodName))
+                .collect(Collectors.toList());
+    }
+
+}

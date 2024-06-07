@@ -1,8 +1,7 @@
 package LAEH.LAEH_project.model;
 
-import LAEH.LAEH_project.repository.UserRepository;
+import LAEH.LAEH_project.model.Enum.LectureCategory;
 import jakarta.persistence.*;
-import jdk.jfr.Name;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +26,7 @@ public class Teacher {
     @Column(name = "강사닉네임")
     private String teacherNickname;
 
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "담당종목")
     private LectureCategory lectureCategory; // ???????
 

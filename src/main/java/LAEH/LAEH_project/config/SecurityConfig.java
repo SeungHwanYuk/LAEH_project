@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .authorizeRequests(auth -> auth
                         .requestMatchers(
                                 new AntPathRequestMatcher("/user/**"),
-                                new AntPathRequestMatcher("/Cal/**"),
+                                new AntPathRequestMatcher("/cal/**"),
                                 new AntPathRequestMatcher("/js/**"),
                                 new AntPathRequestMatcher("/css/**")
 

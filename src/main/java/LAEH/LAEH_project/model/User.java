@@ -1,10 +1,8 @@
 package LAEH.LAEH_project.model;
 
+import LAEH.LAEH_project.model.Enum.Gender;
+import LAEH.LAEH_project.model.Enum.LectureCategory;
 import jakarta.persistence.*;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
@@ -39,12 +37,17 @@ public class User implements UserDetails { // UserDetails 상속 (세큐리티)
     private String userEmail;
     @Column(name = "사용자이름")
     private String userName;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "성별")
+    private Gender gender;
+
     @Column(name = "닉네임")
     private String userNickname;
     @Column(name = "핸드폰번호")
     private String phoneNum;
-    @Column(name = "종목")
-    private String lectureCategory;
+
+
     @Column(name = "계정생성날짜")
     private LocalDateTime createdAt;
 
@@ -54,6 +57,8 @@ public class User implements UserDetails { // UserDetails 상속 (세큐리티)
         return Collections.singletonList(
                 new SimpleGrantedAuthority(authority.getAuthorityName()));
     }
+
+
 
     @Override
     public String getPassword() {

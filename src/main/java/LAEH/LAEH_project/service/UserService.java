@@ -1,5 +1,6 @@
 package LAEH.LAEH_project.service;
 
+import LAEH.LAEH_project.dto.UserDto;
 import LAEH.LAEH_project.model.Authority;
 import LAEH.LAEH_project.model.User;
 import LAEH.LAEH_project.repository.UserRepository;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,20 +35,31 @@ public class UserService {
         Authority authority =new Authority();
         authority.setAuthorityName("ROLE_USER");
 
-        User users = new User(  // 패스워드 암호화 임시코드
-                user.getUserId(),
-                user.getAuthority(),
-                bCryptPasswordEncoder.encode(user.getPassword()),
-                user.getUserEmail(),
-                user.getUsername(),
-                user.getUserNickname(),
-                user.getPhoneNum(),
-                user.getLectureCategory(),
-                LocalDateTime.now());
+    User users = new User(
+             user.getUserId(),
+             authority,
+             bCryptPasswordEncoder.encode(user.getPassword()),
+             user.getUserEmail(),
+             user.getUsername(),
+             user.getGender(),
+             user.getUserNickname(),
+             user.getPhoneNum(),
+             LocalDateTime.now());
     return userRepository.save(users);
     }
 
+
     public List<User> getUser() {
         return userRepository.findAll();
+    }
+
+    public List<UserDto> getAllUserByDto() {
+        List<User> userList = userRepository.findAll();
+        List<UserDto> userDtoList = new ArrayList<>();
+        for (int i = 0; i < userList.size(); i++) {
+            UserDto userDto = new UserDto();
+            userDtoList.add(userDto.toUserDtoFromUser(userList.get(i)));
+        }
+        return userDtoList;
     }
 }

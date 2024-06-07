@@ -1,6 +1,7 @@
 package LAEH.LAEH_project.model;
 
 
+import LAEH.LAEH_project.model.Enum.LectureCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +32,7 @@ public class Lecture {
     @Column(name = "총영상길이")
     private Time contentsTimeAll;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "종목")
     private LectureCategory lectureCategory;
 }

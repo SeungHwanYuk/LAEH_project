@@ -23,6 +23,9 @@ public class Contents {
     @Column(name = "영상번호")
     private String contentsId;
 
+    @Column(name = "영상소스")
+    private String contentsSrc;
+
     @ManyToOne
     @JoinColumn(name = "강의번호")
     private Lecture lectureId;
