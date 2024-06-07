@@ -2,17 +2,20 @@
   text-decoration: none;
   list-style: none;
   /* background-color: #1f2937; */
-  background-color: #252525;
+
   color: #fff;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
+img,
+p,
 a {
   background: none;
 }
 
 .Wrapper {
+  background-color: #252525;
 }
 
 .bold {
@@ -81,6 +84,7 @@ a {
   margin: 20px 0 32px 0;
   font-size: 20px;
   text-align: center;
+  width: 100%;
 }
 
 .mainTitle > img {
@@ -94,6 +98,27 @@ a {
 
 .teamProjectDesc {
   margin-top: 160px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reviewImg {
+  width: 50%;
+}
+
+.reviewImg > img {
+  margin: 0;
+  width: 380px;
+}
+
+.left {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
 }
 
 .teacherTitle {
@@ -176,6 +201,17 @@ a {
 
 .navLogo > img {
   width: 120px;
+}
+
+.footer {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #181818;
+  margin-top: 100px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footerBar {
@@ -287,9 +323,25 @@ a {
   background-color: transparent;
   cursor: pointer;
   transition: 0.3s;
+  margin-right: 30px;
+}
+
+.teamSite {
+  width: 200px;
+  margin-bottom: 20px;
+  background-color: #252525;
+  text-align: center;
+  height: 40px;
+  /* border-radius: 40px; */
+  font-size: 14px;
 }
 
 .footerBtn:hover {
   background-color: #f4361c;
   color: #fff;
+}
+
+.topBtn {
+  width: 26px;
+  cursor: pointer;
 }
