@@ -503,6 +503,7 @@ input {
 .classList {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
 }
 
 .classThumbnail {
@@ -547,6 +548,7 @@ input {
   padding: 14px 0;
   border-bottom: 1px solid #ccc;
   margin-bottom: 16px;
+  align-items: center;
 }
 
 .subjectName {
