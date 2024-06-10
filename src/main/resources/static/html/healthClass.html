@@ -1,9 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health</title>
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <a name="Top"></a>
+    <div class="Wrapper">
+      <div class="header">
+        <div class="navLogo">
+          <img src="https://i.ibb.co/85pwm76/logo02.png" alt="logo02" />
+        </div>
+        <div class="navTitle">
+          <p class="navMenu">
+            <a href="/src/main/resources/static/html/yogaClass.html">요가</a>
+          </p>
+          <p class="navMenu">
+            <a href="/src/main/resources/static/html/pilatesClass.html"
+              >필라테스</a
+            >
+          </p>
+          <p class="navMenu" style="margin-right: 28px">
+            <a href="/src/main/resources/static/html/healthClass.html">헬스</a>
+          </p>
+          <!-- <p class="navMenu">마이페이지</p> -->
+          <button class="login">
+            <a href="/src/main/resources/static/html/login.html"> 로그인 </a>
+          </button>
+
+          <p class="join">
+            <a href="/src/main/resources/static/html/join.html"
+              >아직 회원이 아니신가요?</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="classList">
+        <div class="subjectTitle" style="display: flex">
+          <div class="subjectName noneMargin">헬스</div>
+          <div class="subjectFilter noneMargin">
+            <select title="dd" name="" class="">
+              <option value="popular" style="color: #252525">인기순</option>
+              <option value="date" style="color: #252525">최신순</option>
+            </select>
+          </div>
+        </div>
+        <div class="classListRow" style="display: flex; flex-direction: row">
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
+              하루30분 홈트 D+100 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>윤선생님이 알려주는 왕초보를 위한 기초 필라테스</span>
+              하루30분 왕초보 필라테스 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>송선생님이 알려주는 힐링 명상 요가</span>
+              하루30분 힐링 요가 프로젝트
+            </p>
+          </div>
+        </div>
+
+        <div class="classListRow" style="display: flex; flex-direction: row">
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
+              하루30분 홈트 D+100 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>윤선생님이 알려주는 왕초보를 위한 기초 필라테스</span>
+              하루30분 왕초보 필라테스 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>송선생님이 알려주는 힐링 명상 요가</span>
+              하루30분 힐링 요가 프로젝트
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footerBar" style="display: flex">
+        <p class="bold">
+          3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+          혜택을 누려보세요
+          <img
+            src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+            alt="fire-1f525"
+            width="24px"
+            style="background: none; margin: 0"
+          />
+        </p>
+        <div class="footerBtnArea" style="display: flex; justify-content: end">
+          <div class="footerBtn">지금 구독하기</div>
+          <div class="topBtn">
+            <a href="#Top">
+              <img
+                src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+                alt="Group-46"
+                width="26px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+    </div>
+  </body>
 </html>
