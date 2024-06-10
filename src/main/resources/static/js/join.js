@@ -64,10 +64,12 @@ document.querySelector(".signupInputBtn").addEventListener("click", () => {
         console.log("데이터 : ", response);
         alert("회원가입 되었습니다.");
       } else {
-        // if (data.userId == "" && data.password == "") {
-        alert("아이디와 패스워드는 필수사항 입니다.");
+        if (data.userId == "" && data.password == "") {
+          alert("아이디와 패스워드는 필수사항 입니다.");
+        }
       }
     })
+
     .catch((error) => {
       console.log("에러 발생 : ", error);
     });
