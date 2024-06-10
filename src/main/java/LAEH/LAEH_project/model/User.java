@@ -38,9 +38,8 @@ public class User implements UserDetails { // UserDetails 상속 (세큐리티)
     @Column(name = "사용자이름")
     private String userName;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "성별")
-    private Gender gender;
+    private String gender;
 
     @Column(name = "닉네임")
     private String userNickname;
