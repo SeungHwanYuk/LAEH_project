@@ -185,7 +185,12 @@ a {
 }
 
 .navMenu {
-  margin: 0;
+  width: auto;
+  padding: 0 28px;
+}
+
+.navMenu:hover {
+  font-weight: 900;
 }
 
 .navTitle {
@@ -222,7 +227,7 @@ a {
   bottom: 0;
   height: 60px;
   align-items: center;
-  background: #181818;
+  background: #000;
 }
 
 .footerBar > p,
