@@ -38,4 +38,7 @@ public class Contents {
     private String contentsText;
     @Column(name = "영상등록일")
     private LocalDate contentsUploadDate;
+
+    @Column(name = "컨텐츠이미지")
+    private String contentsImage;
 }

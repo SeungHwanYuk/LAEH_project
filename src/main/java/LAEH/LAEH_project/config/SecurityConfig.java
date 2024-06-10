@@ -33,8 +33,11 @@ public class SecurityConfig {
                         .requestMatchers(
                                 new AntPathRequestMatcher("/user/login"),
                                 new AntPathRequestMatcher("/user/signup"),
+                                new AntPathRequestMatcher("/contents/**"),
+
                                 new AntPathRequestMatcher("/login"),
                                 new AntPathRequestMatcher("/user/current"),
+                                new AntPathRequestMatcher("/LAEH_project/**"),
                                 new AntPathRequestMatcher("/cal/**"),
                                 new AntPathRequestMatcher("/js/**"),
                                 new AntPathRequestMatcher("/css/**")

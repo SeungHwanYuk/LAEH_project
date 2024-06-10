@@ -54,10 +54,10 @@ public class UserController {
     }
 
     @PostMapping("login")
-    public ResponseEntity<String> login(@RequestBody UserDto userDto,
+    public ResponseEntity<String > login(@RequestBody User user,
                                         HttpServletRequest request) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(userDto.getUserId(), userDto.getPassword())
+                new UsernamePasswordAuthenticationToken(user.getUserId(), user.getPassword())
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
