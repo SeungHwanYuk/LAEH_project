@@ -6,13 +6,66 @@
   align-items: center;
   font-size: 1.5rem;
   color: #fff;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .signupBox {
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  
+  gap: 12px 0;
+}
+
+.singupGroup{
+  width: 390px;
+  height: 40px;
+  padding: 0px 20px ;
+}
+
+.signupBox > input {
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+.signupBox > input:focus {
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 64%), 0 3px 6px rgb(0 0 0 / 72%);
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.signupInputBtn{
+  border: 1px solid #f4361c;
+  color: #f4361c;
+  width: 390px;
+  height: 40px;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 46px;
+  line-height: 46px;
+  margin: 0;
+  width: 390px;
+  text-align: center;
+  font-size: 16px;
+}
+.signupInputBtn:hover {
+  background-color: #f4361c;
+  color: #fff;
+}
+
+.signupLogin{
+  width: 360px;
+  display: flex;
+  font-size: 12px;
+
+  align-items: center;
+  margin-top: 8px;
 }
