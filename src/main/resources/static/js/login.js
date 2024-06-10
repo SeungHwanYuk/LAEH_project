@@ -57,8 +57,7 @@ function sessionCurrent() {
       if (response.status == 200) {
         console.log("세션 유지");
         if (response.status == 200) {
-          document.querySelector(".login-box p").textContent =
-            response.data.userId + "님, 환영합니다.";
+          console.log(response.data.userId + "님, 환영합니다.");
         }
       }
     })
