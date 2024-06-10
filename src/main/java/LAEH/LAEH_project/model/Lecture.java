@@ -35,4 +35,10 @@ public class Lecture {
     @Enumerated(EnumType.STRING)
     @Column(name = "종목")
     private LectureCategory lectureCategory;
+
+    @Column(name = "강의내용")
+    private String lectureText;
+
+    @Column(name = "썸네일이미지")
+    private String thumbnailImage;
 }

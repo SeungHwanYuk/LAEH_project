@@ -1,5 +1,6 @@
 const urlLogin = "http://localhost:8080/user/login";
 const urlLogout = "http://localhost:8080/user/logout";
+const urlCurrent = "http://localhost:8080/user/current";
 
 let userId = "";
 let password = "";
@@ -51,7 +52,7 @@ document.querySelector(".logoutBtn").addEventListener("click", () => {
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
-    .get("http://localhost:8080/user/current", { withCredentials: true })
+    .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터", response);
       if (response.status == 200) {

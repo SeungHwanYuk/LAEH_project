@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
+"></script>
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
+  </head>
+  <body>
+    <a name="Top"></a>
+    <div class="Wrapper">
+      <div class="header">
+        <div class="navLogo">
+          <img src="https://i.ibb.co/85pwm76/logo02.png" alt="logo02" />
+        </div>
+        <div class="navTitle">
+          <p class="navMenu">
+            <a href="/src/main/resources/static/html/yogaClass.html">요가</a>
+          </p>
+          <p class="navMenu">
+            <a href="/src/main/resources/static/html/pilatesClass.html"
+              >필라테스</a
+            >
+          </p>
+          <p class="navMenu" style="margin-right: 28px">
+            <a href="/src/main/resources/static/html/healthClass.html">헬스</a>
+          </p>
+          <!-- <p class="navMenu">마이페이지</p> -->
+          <button class="login">
+            <a href="/src/main/resources/static/html/login.html"> 로그인 </a>
+          </button>
+
+          <p class="join">
+            <a href="/src/main/resources/static/html/join.html"
+              >아직 회원이 아니신가요?</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="loginBox">
+        <p></p>
+        <label>아이디</label>
+        <input type="text" id="userId" />
+        <label>비밀번호</label>
+        <input type="password" id="password" />
+        <div></div>
+        <div class="loginBtn">로그인</div>
+        <button class="signupBtn">
+          <a href="/test/java/join_YSH_test.html">회원가입</a>
+        </button>
+
+        <div class="logoutBtn">로그아웃</div>
+      </div>
+      <div class="footerBar" style="display: flex">
+        <p class="bold">
+          3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+          혜택을 누려보세요
+          <img
+            src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+            alt="fire-1f525"
+            width="24px"
+            style="background: none; margin: 0"
+          />
+        </p>
+        <div class="footerBtnArea" style="display: flex; justify-content: end">
+          <div class="footerBtn">지금 구독하기</div>
+          <div class="topBtn">
+            <a href="#Top">
+              <img
+                src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+                alt="Group-46"
+                width="26px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+    </div>
+    <script src="/src/main/resources/static/js/login.js"></script>
+  </body>
+</html>

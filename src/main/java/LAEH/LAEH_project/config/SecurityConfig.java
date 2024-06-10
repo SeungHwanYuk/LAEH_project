@@ -35,6 +35,7 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/user/signup"),
                                 new AntPathRequestMatcher("/login"),
                                 new AntPathRequestMatcher("/user/current"),
+                                new AntPathRequestMatcher("/LAEH_project/**"),
                                 new AntPathRequestMatcher("/cal/**"),
                                 new AntPathRequestMatcher("/js/**"),
                                 new AntPathRequestMatcher("/css/**")
