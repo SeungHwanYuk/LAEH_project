@@ -65,7 +65,7 @@
   display: right;
   text-align: end;
   color: #999999;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .loginBtn {
@@ -86,8 +86,7 @@
 }
 
 .signupBtn {
-  background-color: #000000;
-  border: 1px solid #000000;
+  border: 1px solid #ffffff;
   color: #fff;
   transition: 0.3s;
   cursor: pointer;
@@ -99,7 +98,7 @@
   font-size: 16px;
 }
 .signupBtn:hover {
-  background-color: #f4361c;
-  color: #fff;
-  border: 1px solid #f4361c;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
 }
