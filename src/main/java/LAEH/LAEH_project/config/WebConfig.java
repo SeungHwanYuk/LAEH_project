@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("http://127.0.0.1:5500")
-                .allowedOrigins("http://127.0.0.1:5501")// 이 주소로 오는 것은 다 받아줌
+               // 이 주소로 오는 것은 다 받아줌
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 허용하는 메소드
                 .allowCredentials(true); // 인증정보 시도
     }

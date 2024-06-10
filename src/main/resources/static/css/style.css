@@ -14,6 +14,10 @@ a {
   background: none;
 }
 
+input {
+  color: #252525;
+}
+
 .noneMargin {
   margin: 0;
 }
@@ -392,6 +396,105 @@ a {
 .topBtn {
   width: 26px;
   cursor: pointer;
+}
+
+/* login */
+.loginTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.loginBox {
+  width: 450px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 0;
+  padding: 30px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+
+.loginBox > input {
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+.loginBox > input:focus {
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 64%), 0 3px 6px rgb(0 0 0 / 72%);
+}
+
+.userId {
+  height: 46px;
+  width: 390px;
+  padding: 0px 20px;
+  background-color: #ffffff;
+}
+.password {
+  height: 46px;
+  width: 390px;
+  padding: 0px 20px;
+  background-color: #ffffff;
+}
+
+.passwordFind {
+  text-align: end;
+  color: #999999;
+  font-size: 14px;
+  cursor: pointer;
+  width: 390px;
+}
+.passwordFind:hover {
+  color: #fff;
+}
+
+.loginBtn {
+  border: 1px solid #f4361c;
+  color: #f4361c;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 46px;
+  line-height: 46px;
+  margin: 0;
+  width: 390px;
+  text-align: center;
+  font-size: 16px;
+}
+.loginBtn:hover {
+  background-color: #f4361c;
+  color: #fff;
+}
+
+.signupBtn {
+  border: 1px solid #ffffff;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 46px;
+  line-height: 46px;
+  margin: 0;
+  width: 390px;
+  text-align: center;
+  font-size: 16px;
+}
+.signupBtn:hover {
+  background-color: #ffffff;
+  color: #252525;
+  border: 1px solid #ffffff;
+}
+
+.signupBtn:hover a {
+  color: #252525;
 }
 
 /* 
