@@ -48,6 +48,18 @@
   border-radius: 5px;
 }
 
+.loginBox > input{
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+.loginBox > input:focus{
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 64%), 0 3px 6px rgb(0 0 0 / 72%);
+}
+
+
 .userId {
   height: 46px;
   width: 390px;
