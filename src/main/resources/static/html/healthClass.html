@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <script src="
-https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
-"></script>
+    <title>Health</title>
     <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
   </head>
   <body>
@@ -40,21 +37,78 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
           </p>
         </div>
       </div>
-      <div class="loginBox">
-        <p></p>
-        <label>아이디</label>
-        <input type="text" id="userId" />
-        <label>비밀번호</label>
-        <input type="password" id="password" />
-        <div></div>
-        <div class="loginBtn">로그인</div>
-        <button class="signupBtn">
-          <a href="/test/java/join_YSH_test.html">회원가입</a>
-        </button>
 
-        <div class="logoutBtn">로그아웃</div>
-    
+      <div class="classList">
+        <div class="subjectTitle" style="display: flex">
+          <div class="subjectName noneMargin">헬스</div>
+          <div class="subjectFilter noneMargin">
+            <select title="dd" name="" class="">
+              <option value="popular" style="color: #252525">인기순</option>
+              <option value="date" style="color: #252525">최신순</option>
+            </select>
+          </div>
+        </div>
+        <div class="classListRow" style="display: flex; flex-direction: row">
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
+              하루30분 홈트 D+100 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>윤선생님이 알려주는 왕초보를 위한 기초 필라테스</span>
+              하루30분 왕초보 필라테스 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>송선생님이 알려주는 힐링 명상 요가</span>
+              하루30분 힐링 요가 프로젝트
+            </p>
+          </div>
+        </div>
+
+        <div class="classListRow" style="display: flex; flex-direction: row">
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
+              하루30분 홈트 D+100 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>윤선생님이 알려주는 왕초보를 위한 기초 필라테스</span>
+              하루30분 왕초보 필라테스 프로젝트
+            </p>
+          </div>
+          <div class="classThumbnail">
+            <div class="thumbImage">
+              <img src="" alt="" />
+            </div>
+            <p class="classTitle">
+              <span>송선생님이 알려주는 힐링 명상 요가</span>
+              하루30분 힐링 요가 프로젝트
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="footerBar" style="display: flex">
         <p class="bold">
           3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
@@ -99,6 +153,5 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
         <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
       </div>
     </div>
-    <script src="/main/resources/static/js/login.js"></script>
   </body>
 </html>

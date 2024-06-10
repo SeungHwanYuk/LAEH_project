@@ -14,6 +14,10 @@ a {
   background: none;
 }
 
+.noneMargin {
+  margin: 0;
+}
+
 .Wrapper {
   background-color: #252525;
 }
@@ -169,7 +173,18 @@ a {
   justify-content: center;
 }
 
-.subjectDetail {
+.subjectDetailHealth {
+  margin: 0 18px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://i.ibb.co/TtWJvMb/Health.png");
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+  background: brightness(0%);
+  background-repeat: no-repeat;
+}
+
+.subjectDetailYoga {
   margin: 0 18px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("https://i.ibb.co/sVDQgZ1/sub-Banner01.png");
@@ -177,15 +192,32 @@ a {
   height: 400px;
   background-size: contain;
   background: brightness(0%);
+  background-repeat: no-repeat;
 }
 
-.subjectDetail > img {
+.subjectDetailPilates {
+  margin: 0 18px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://i.ibb.co/5nS1d40/Pilates.png");
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+  background: brightness(0%);
+  background-repeat: no-repeat;
+}
+
+.subjectDetailYoga > img {
   width: 400px;
   margin: 0 10px;
 }
 
 .navMenu {
-  margin: 0;
+  width: auto;
+  padding: 0 28px;
+}
+
+.navMenu:hover {
+  font-weight: 900;
 }
 
 .navTitle {
@@ -222,7 +254,7 @@ a {
   bottom: 0;
   height: 60px;
   align-items: center;
-  background: #181818;
+  background: #000;
 }
 
 .footerBar > p,
@@ -290,8 +322,16 @@ a {
   font-size: 16px;
 }
 
+.redBtn > a {
+  color: #f4361c;
+}
+
 .redBtn:hover {
   background-color: #f4361c;
+  color: #fff;
+}
+
+.redBtn:hover > a {
   color: #fff;
 }
 
@@ -308,9 +348,16 @@ a {
   font-size: 16px;
   background: none;
 }
+.absoluteBtn:hover > a {
+  color: #252525;
+}
+
+.absoluteBtn > a {
+  color: #fff;
+}
+
 .absoluteBtn:hover {
   background-color: #fff;
-  color: #252525;
 }
 
 .footerBtn {
@@ -345,4 +392,69 @@ a {
 .topBtn {
   width: 26px;
   cursor: pointer;
+}
+
+/* 
+클래스 목록창 */
+
+.classList {
+  display: flex;
+  flex-direction: column;
+}
+
+.classThumbnail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 400px;
+  margin: 20px;
+}
+
+.thumbImage > img {
+  width: 400px;
+  height: 260px;
+}
+
+.classTitle {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 2px;
+  cursor: pointer;
+}
+
+.classTitle > span {
+  width: 400px;
+  text-align: start;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.subjectTitle {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1280px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 16px;
+}
+
+.subjectName {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subjectFilter > select {
+  color: #252525;
+  width: 100px;
+  height: 28px;
+  padding: 0 4px;
 }
