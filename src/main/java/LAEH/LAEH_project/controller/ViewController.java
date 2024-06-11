@@ -28,4 +28,7 @@ public class ViewController {
 
     @GetMapping("/LAEH_project/healthClass.html")
     public String healthClass() {return "healthClass";}
+
+    @GetMapping("/LAEH_project/classDetail.html")
+    public String classDetail() {return "classDetail";}
 }

@@ -23,6 +23,9 @@ function displayClassDetail(data) {
   content.classList.add("content");
   contentsImage.classList.add("image");
 
-  img.src = data.contentsImage;
+  contentsImage.src = data.contentsImage;
   title.textContent = "수업 제목 : " + data.contentsName;
+
+  content.appendChild(contentsImage);
+  content.appendChild(title);
 }
