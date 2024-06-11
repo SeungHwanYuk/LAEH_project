@@ -4,29 +4,35 @@ axios
   .get(url)
   .then((response) => {
     console.log("응답 Response: ", response);
-    displayClassDetail(response.data);
+    displayContents(response.data);
   })
   .catch((error) => {
     console.log("에러 발생: ", error);
   });
 
-function displayClassDetail(contentsData) {
+function displayContents(contentsData) {
   console.log(contentsData.length);
   if (contentsData.length > 0) {
+    // healthClass.index 태그 이름 생성
     const lecture = document.querySelector(".lecture");
-    contentsData.forEach((data) => {
-      const contents = document.createElement("div");
-      contents.classList.add("contents");
+    contentsData.array.forEach((data) => {
+      const content = document.createElement("div");
+      content.classList.add("content");
       const img = document.createElement("img");
-      img.classList.add("contentsImage");
+      img.classList.add("image");
       img.src = data.contentsImage;
+      contents.appendChild(img);
+
       const contentsName = document.createElement("p");
+      const contentsText = document.createElement("p");
       contentsName.textContent = "강의 제목" + data.contentsName;
+      contentsText.textContent = "강의 내용" + data.contentsText;
       contents.appendChild(contentsName);
+      contents.appendChild(contentsText);
+
       contents.addEventListener("click", () => {
-        window.location.href = "classDetail.html?id" + data.id;
+        console.log("click!!!!");
       });
-      lecture.appendChild(content);
     });
   }
 }

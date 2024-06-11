@@ -8,24 +8,27 @@ axios
   .get(url)
   .then((response) => {
     console.log("데이터 : " + response.data);
-    displayClassDetail(response.data);
+    displayContents(response.data);
   })
   .catch((error) => {
     console.log("에러 발생 : ", error);
   });
 
-function displayClassDetail(data) {
-  const content = document.querySelector(".content");
-  const lecture = document.createElement("div");
-  const contentsImage = document.createElement("img");
-  const title = document.createElement("p");
+function displayContents(data) {
+  const contents = document.querySelector(".contents");
+  // const contents = document.createElement("div");
+  const img = document.createElement("img");
+  const contentsName = document.createElement("p");
+  const contentsText = document.createElement("p");
 
-  content.classList.add("content");
-  contentsImage.classList.add("image");
+  // contents.classList.add("contents");
+  img.classList.add("image");
 
-  contentsImage.src = data.contentsImage;
-  title.textContent = "수업 제목 : " + data.contentsName;
+  img.src = data.contentsImage;
+  contentsName.textContent = "수업 제목 : " + data.contentsName;
+  contentsText.textContent = "수업 내용 : " + data.contentsText;
 
-  content.appendChild(contentsImage);
-  content.appendChild(title);
+  contents.appendChild(img);
+  contents.appendChild(contentsName);
+  contents.appendChild(contentsText);
 }
