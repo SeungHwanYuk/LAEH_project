@@ -244,9 +244,9 @@ input {
   margin: 0;
 }
 
-.navLogo > img {
+/* .navLogo > img {
   width: 120px;
-}
+} */
 
 .footer {
   height: 300px;
@@ -568,8 +568,7 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #fff;
 }
 
-
-.signupLogin{
+.signupLogin {
   width: 250px;
   display: flex;
   font-size: 12px;
@@ -578,7 +577,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-top: 8px;
 }
 
-.signupLoginBtn{
+.signupLoginBtn {
   cursor: pointer;
   width: 90px;
   text-decoration: underline;
