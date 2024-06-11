@@ -648,3 +648,12 @@ input[type="number"]::-webkit-inner-spin-button {
   height: 28px;
   padding: 0 4px;
 }
+
+.content {
+  width: 100%;
+  display: grid;
+  background-color: khaki;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
