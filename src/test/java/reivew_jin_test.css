@@ -1,0 +1,64 @@
+body{
+  margin: 0 auto;
+}
+
+.reviewWrapper{
+  background-color: #252525;
+}
+
+.reivewtext{
+  margin: 0 auto;
+  width: 80%;
+  min-width: 1100px;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  padding: 20px
+}
+.reivewBtn{
+  width: 100px;
+  height: 40px;
+  background-color: #9c9c9c;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.reivewStart {
+  margin: 0 auto;
+  border: 1px #ffffff solid;
+  background-color: #ffffff;
+  font-size: 14px;
+  width: 80%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  border-radius: 5px;
+
+}
+
+.reivewTitle {
+  text-align: center;
+  padding: 20px 0;
+  color: #ffffff;
+  
+}
+
+.reivewCaption{
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.reivewhead{
+  border-bottom: 1px #9c9c9c solid;
+  height: 40px;
+}
+
+.reivewNum{
+  text-align: center;
+}
+
+.reivewBody > tr > td{
+  height: 40px;
+}
