@@ -33,6 +33,8 @@ public class Teacher {
     @Column(name = "강사등록일")
     private LocalDate teacherJoinDate;
 
+    
+    // 윤별 작업
     @Column(name = "강사사진")
     private String teacherPicture;
 
