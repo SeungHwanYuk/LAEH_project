@@ -20,15 +20,20 @@ function displayContents(data) {
   const img = document.createElement("img");
   const contentsName = document.createElement("p");
   const contentsText = document.createElement("p");
+  const lectureDesc = document.createElement("p");
 
   // content.classList.add("contents");
-  img.classList.add("image");
+  img.classList.add("detailImage");
+  contentsText.classList.add("classDetailDesc");
+  contentsName.classList.add("classDetailTitle");
 
   img.src = data.contentsImage;
-  contentsName.textContent = "수업 제목 : " + data.contentsName;
-  contentsText.textContent = "수업 내용 : " + data.contentsText;
+  contentsText.textContent = data.contentsText;
+  contentsName.textContent = data.contentsName;
+  lectureDesc.textContent = data.lectureDesc;
 
   content.appendChild(img);
-  content.appendChild(contentsName);
   content.appendChild(contentsText);
+  content.appendChild(contentsName);
+  content.appendChild(lectureDesc);
 }

@@ -33,5 +33,7 @@ public class Teacher {
     @Column(name = "강사등록일")
     private LocalDate teacherJoinDate;
 
+    @Column(name = "강사사진")
+    private String teacherPicture;
 
 }

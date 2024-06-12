@@ -62,7 +62,8 @@ document.querySelector(".signupInputBtn").addEventListener("click", () => {
     .then((response) => {
       if (data.userId != "" && data.password != "") {
         console.log("데이터 : ", response);
-        alert("회원가입 되었습니다.");
+        // alert("회원가입 되었습니다.");
+        window.location.href = "signupSuccess.html";
       } else {
         if (data.userId == "" && data.password == "") {
           alert("아이디와 패스워드는 필수사항 입니다.");

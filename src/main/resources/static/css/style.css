@@ -24,6 +24,10 @@ input {
   color: #252525;
 }
 
+select:focus {
+  outline: none;
+}
+
 .noneMargin {
   margin: 0;
 }
@@ -34,6 +38,10 @@ input {
 
 .bold {
   font-weight: 900;
+}
+
+.point {
+  color: #00ffa3;
 }
 
 .header {
@@ -690,7 +698,7 @@ input[type="number"]::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-.content > img {
+.image {
   max-width: 400px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -704,4 +712,37 @@ input[type="number"]::-webkit-inner-spin-button {
 .contentsName {
   font-weight: 600;
   font-size: 18px;
+}
+
+/* 강좌 자세히보기 */
+
+.lectureIntroTitle {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.classDetailDesc {
+  margin-top: 8px;
+  color: #00ffa3;
+  width: 100%;
+  font-size: 18px;
+}
+
+.classDetailTitle {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 200;
+  font-weight: 600;
+}
+
+.detailImage {
+  width: 600px;
+  border-radius: 8px;
 }

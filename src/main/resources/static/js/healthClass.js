@@ -35,7 +35,7 @@ function displayContents(contentsData) {
 
       lecture.addEventListener("click", () => {
         console.log("click!!!!");
-        window.location.href = "classDetail.html?id=" + data.id;
+        window.location.href = "classDetail.html?id=" + data.contentsId;
       });
       lecture.appendChild(content);
     });
