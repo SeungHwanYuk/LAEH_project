@@ -1,9 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pilates</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+    <script src="../static/js/healthClass.js"></script>
   </head>
-  <body></body>
+  <body>
+    <a name="Top"></a>
+    <div class="Wrapper">
+      <div class="header">
+        <div class="navLogo">
+          <a href="index.html">
+            <img
+              src="https://i.ibb.co/9VyktjQ/image.png"
+              alt="HelloLogo"
+              class="helloLogo"
+            />
+          </a>
+        </div>
+        <div class="navTitle">
+          <a href="yogaClass.html">
+            <p class="navMenu">요가</p>
+          </a>
+          <a href="pilatesClass.html">
+            <p class="navMenu navMenuFocus">필라테스</p>
+          </a>
+          <a href="healthClass.html">
+            <p class="navMenu" style="margin-right: 28px">헬스</p>
+          </a>
+          <!-- <p class="navMenu">마이페이지</p> -->
+          <button class="login">
+            <a href="login.html" style="color: #181818"> 로그인 </a>
+          </button>
+
+          <p class="join">
+            <a href="join.html">아직 회원이 아니신가요?</a>
+            <img
+              src="https://i.ibb.co/7gRtFWv/image.png"
+              alt="image"
+              width="24px"
+            />
+          </p>
+        </div>
+      </div>
+
+      <div class="classList">
+        <div class="subjectTitle" style="display: flex">
+          <div class="subjectName noneMargin">Pilates</div>
+          <div class="subjectFilter noneMargin">
+            <select title="dd" name="" class="">
+              <option value="popular" style="color: #252525">인기순</option>
+              <option value="date" style="color: #252525">최신순</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div class="lecture"></div>
+        </div>
+        <!-- <div class="thumbImage">
+            <img src="" alt="" />
+          </div>
+          <p class="classTitle">
+            <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
+            하루30분 홈트 D+100 프로젝트
+          </p> -->
+      </div>
+
+      <div class="footerBar" style="display: flex">
+        <p class="bold">
+          3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+          혜택을 누려보세요
+          <img
+            src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+            alt="fire-1f525"
+            width="24px"
+            style="background: none; margin: 0"
+          />
+        </p>
+        <div class="footerBtnArea" style="display: flex; justify-content: end">
+          <div class="footerBtn">지금 구독하기</div>
+          <div class="topBtn">
+            <a href="#Top">
+              <img
+                src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+                alt="Group-46"
+                width="26px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+    </div>
+  </body>
 </html>

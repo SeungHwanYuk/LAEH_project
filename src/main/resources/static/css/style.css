@@ -7,7 +7,8 @@
   margin: 0 auto;
   box-sizing: border-box;
 
-  font-family: "Noto Sans KR", sans-serif;
+  /* font-family: "Noto Sans KR", sans-serif; */
+  font-family: "Nanum Gothic", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   font-style: normal;
@@ -41,12 +42,12 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 44px;
+  padding: 10px 120px;
   height: 100px;
 }
 
 .helloLogo {
-  width: 160px;
+  width: 120px;
 }
 
 .mainSlide {
@@ -227,10 +228,18 @@ input {
 .navMenu {
   width: auto;
   padding: 0 28px;
+  color: #ccc;
+  transition: 0.3s;
 }
 
 .navMenu:hover {
   font-weight: 900;
+  color: #00ffa3;
+}
+
+.navMenuFocus {
+  font-weight: 900;
+  color: #00ffa3;
 }
 
 .navTitle {
@@ -249,7 +258,7 @@ input {
 } */
 
 .footer {
-  height: 300px;
+  height: 360px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -260,14 +269,18 @@ input {
 }
 
 .footerBar {
-  width: 100%;
+  width: 98%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   position: fixed;
-  bottom: 0;
+  bottom: 12px;
+  left: 1%;
   height: 60px;
   align-items: center;
-  background: #000;
+  background: #00ffa3;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 55%), 0 6px 6px rgb(0 0 0 / 75%);
 }
 
 .footerBar > p,
@@ -277,6 +290,7 @@ input {
   background: none;
   display: flex;
   align-items: center;
+  color: #181818;
 }
 
 .footerBar:first-child {
@@ -284,7 +298,9 @@ input {
 }
 
 .login {
-  border: 1px solid #fff;
+  border: 1px solid #00ffa3;
+  background-color: #00ffa3;
+  color: #181818;
   transition: 0.3s;
   cursor: pointer;
   height: 38px;
@@ -294,27 +310,30 @@ input {
   width: 104px;
   text-align: center;
   font-size: 16px;
-  background: none;
+  border-radius: 38px;
+  /* background: none; */
 }
 
 .login:hover > a {
-  color: #1f2937;
+  color: #181818;
 }
 
 .login:hover {
-  background-color: #fff;
+  background-color: #76ffcd;
   color: #252525;
 }
 
 .join {
   text-decoration: underline;
   cursor: pointer;
-  height: 32px;
+  /* height: 32px; */
   /* padding: 12px; */
-  line-height: 38px;
-  margin: 0 0 0 20px;
+  /* line-height: 38px; */
+  margin: 4px 0 0 20px;
   color: #fff;
   transition: 0.3s;
+  display: flex;
+  width: 204px;
 }
 
 .join:hover {
@@ -322,8 +341,11 @@ input {
 }
 
 .redBtn {
-  border: 1px solid #f4361c;
-  color: #f4361c;
+  /* border: 1px solid #f4361c; */
+  color: #181818;
+  background-color: #00ffa3;
+  /* border: 1px solid #00ffa3; */
+
   transition: 0.3s;
   cursor: pointer;
   height: 46px;
@@ -335,13 +357,11 @@ input {
   font-size: 16px;
 }
 
-.redBtn > a {
-  color: #f4361c;
-}
-
 .redBtn:hover {
-  background-color: #f4361c;
-  color: #fff;
+  /* border: 1px solid #00ffa3; */
+  /* opacity: 0.4; */
+  background-color: #76ffcd;
+  color: #181818;
 }
 
 .redBtn:hover > a {
@@ -374,14 +394,14 @@ input {
 }
 
 .footerBtn {
-  border: 1px solid #f4361c;
-  color: #f4361c;
+  /* border: 1px solid #f4361c; */
+  color: #fff;
   height: 38px;
   line-height: 38px;
   text-align: center;
   width: 160px;
   margin: 0;
-  background-color: transparent;
+  background-color: #181818;
   cursor: pointer;
   transition: 0.3s;
   margin-right: 30px;
@@ -398,13 +418,14 @@ input {
 }
 
 .footerBtn:hover {
-  background-color: #f4361c;
+  background-color: #292929;
   color: #fff;
 }
 
 .topBtn {
   width: 26px;
   cursor: pointer;
+  filter: brightness(0);
 }
 
 /* login */
@@ -467,8 +488,9 @@ input {
 }
 
 .loginBtn {
-  border: 1px solid #f4361c;
-  color: #f4361c;
+  /* border: 1px solid #f4361c; */
+  color: #181818;
+  background-color: #00ffa3;
   transition: 0.3s;
   cursor: pointer;
   height: 46px;
@@ -479,13 +501,15 @@ input {
   font-size: 16px;
 }
 .loginBtn:hover {
-  background-color: #f4361c;
-  color: #fff;
+  /* background-color: #f4361c; */
+  background-color: #76ffcd;
+  /* color: #fff; */
 }
 
 .signupBtn {
-  border: 1px solid #ffffff;
+  /* border: 1px solid #ffffff; */
   color: #fff;
+  background-color: #000;
   transition: 0.3s;
   cursor: pointer;
   height: 46px;
@@ -496,13 +520,13 @@ input {
   font-size: 16px;
 }
 .signupBtn:hover {
-  background-color: #ffffff;
-  color: #252525;
-  border: 1px solid #ffffff;
+  background-color: #111111;
+  color: #fff;
+  /* border: 1px solid #ffffff; */
 }
 
 .signupBtn:hover a {
-  color: #252525;
+  color: #fff;
 }
 
 /* 회원가입 */
@@ -649,11 +673,35 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 0 4px;
 }
 
-.content {
+.lecture {
   width: 100%;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
   background-color: khaki;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  padding: 20px;
+  padding: 20px; */
+}
+
+.content {
+  width: 100%;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.content > img {
+  max-width: 400px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.contentsText {
+  font-size: 14px;
+  color: #00ffa3;
+}
+
+.contentsName {
+  font-weight: 600;
+  font-size: 18px;
 }

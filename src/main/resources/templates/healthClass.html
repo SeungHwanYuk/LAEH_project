@@ -6,7 +6,7 @@
     <title>Health</title>
     <link rel="stylesheet" href="../static/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
-    <script src="/js/healthClass.js"></script>
+    <script src="../static/js/healthClass.js"></script>
   </head>
   <body>
     <a name="Top"></a>
@@ -15,36 +15,41 @@
         <div class="navLogo">
           <a href="index.html">
             <img
-              src="https://i.ibb.co/BjHQmPn/Hello-Logo.png"
+              src="https://i.ibb.co/9VyktjQ/image.png"
               alt="HelloLogo"
               class="helloLogo"
             />
           </a>
         </div>
         <div class="navTitle">
-          <p class="navMenu">
-            <a href="yogaClass.html">요가</a>
-          </p>
-          <p class="navMenu">
-            <a href="pilatesClass.html">필라테스</a>
-          </p>
-          <p class="navMenu" style="margin-right: 28px">
-            <a href="healthClass.html">헬스</a>
-          </p>
+          <a href="yogaClass.html">
+            <p class="navMenu">요가</p>
+          </a>
+          <a href="pilatesClass.html">
+            <p class="navMenu">필라테스</p>
+          </a>
+          <a href="healthClass.html">
+            <p class="navMenu navMenuFocus" style="margin-right: 28px">헬스</p>
+          </a>
           <!-- <p class="navMenu">마이페이지</p> -->
           <button class="login">
-            <a href="login.html"> 로그인 </a>
+            <a href="login.html" style="color: #181818"> 로그인 </a>
           </button>
 
           <p class="join">
             <a href="join.html">아직 회원이 아니신가요?</a>
+            <img
+              src="https://i.ibb.co/7gRtFWv/image.png"
+              alt="image"
+              width="24px"
+            />
           </p>
         </div>
       </div>
 
       <div class="classList">
         <div class="subjectTitle" style="display: flex">
-          <div class="subjectName noneMargin">헬스</div>
+          <div class="subjectName noneMargin">Health</div>
           <div class="subjectFilter noneMargin">
             <select title="dd" name="" class="">
               <option value="popular" style="color: #252525">인기순</option>
@@ -52,16 +57,16 @@
             </select>
           </div>
         </div>
-
-        <div class="content">
-          <!-- <div class="thumbImage">
+        <div>
+          <div class="lecture"></div>
+        </div>
+        <!-- <div class="thumbImage">
             <img src="" alt="" />
           </div>
           <p class="classTitle">
             <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
             하루30분 홈트 D+100 프로젝트
           </p> -->
-        </div>
       </div>
 
       <div class="footerBar" style="display: flex">

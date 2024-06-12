@@ -23,16 +23,21 @@ function displayContents(contentsData) {
       img.src = data.contentsImage;
       content.appendChild(img);
 
-      const contentsName = document.createElement("p");
       const contentsText = document.createElement("p");
-      contentsName.textContent = "강의 제목" + data.contentsName;
-      contentsText.textContent = "강의 내용" + data.contentsText;
-      content.appendChild(contentsName);
-      content.appendChild(contentsText);
+      contentsText.classList.add("contentsText");
+      const contentsName = document.createElement("p");
+      contentsName.classList.add("contentsName");
 
-      content.addEventListener("click", () => {
+      contentsText.textContent = data.contentsText;
+      contentsName.textContent = data.contentsName;
+      content.appendChild(contentsText);
+      content.appendChild(contentsName);
+
+      lecture.addEventListener("click", () => {
         console.log("click!!!!");
+        window.location.href = "classDetail.html?id=" + data.id;
       });
+      lecture.appendChild(content);
     });
   }
 }

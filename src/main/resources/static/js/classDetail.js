@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 console.log("Class ID : ", id);
 
-const url = "http://localhost:8080/contents/all" + id;
+const url = "http://localhost:8080/contents/" + id;
 
 axios
   .get(url)
@@ -16,7 +16,7 @@ axios
 
 function displayContents(data) {
   const content = document.querySelector(".content");
-  // const contents = document.createElement("div");
+  // const content = document.createElement("div");
   const img = document.createElement("img");
   const contentsName = document.createElement("p");
   const contentsText = document.createElement("p");
