@@ -13,7 +13,6 @@ axios
 function displayContents(contentsData) {
   console.log(contentsData.length);
   if (contentsData.length > 0) {
-    // healthClass.index 태그 이름 생성
     const lecture = document.querySelector(".lecture");
     contentsData.forEach((data) => {
       const content = document.createElement("div");
@@ -34,7 +33,7 @@ function displayContents(contentsData) {
       content.appendChild(contentsName);
 
       lecture.addEventListener("click", () => {
-        console.log("click!!!!");
+        // console.log("click!!!!");
         window.location.href = "classDetail.html?id=" + data.contentsId;
       });
       lecture.appendChild(content);
