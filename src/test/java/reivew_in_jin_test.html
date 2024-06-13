@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/test/java/reivew_jin_test.css" />
+  <title>리뷰글작성</title>
+</head>
+
+
+<body>
+  <form method="post" >
+    <div class="reivewInpuWrapper">
+
+  <table class="reivewInputTable"> 
+    <!-- action="reivew_jin_test.html"  -->
+      <tr><td class="reivewInputText"><h1>Reivew</h1></td></tr>
+      <tr><td class="reivewInputHeader">Title</td></tr>
+      <tr><td><input type="text" class="reivewInput" placeholder="제목을 입력하세요" name="title"></td></tr>
+      <tr><td class="reivewInputHeader">Comment</td></tr>
+      <tr><td><textarea class="reivewInputTextarea" placeholder="내용을 입력하세요" name="detail"></textarea></td></tr>
+      
+      <tr><td class="reivewInputSubmitGroup">
+        <input  class="reivewInputSubmit" type="submit" value="등록" onclick="alert('작성 완료!'), location.href('reivew_jin_test.html')"></td></tr>
+    </table>
+  </form>
+
+  </div>
+  </body>
+</html>

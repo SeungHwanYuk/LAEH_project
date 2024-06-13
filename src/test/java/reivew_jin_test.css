@@ -2,11 +2,16 @@ body{
   margin: 0 auto;
 }
 
+input:focus{
+  outline: none;
+}
+
+/* 리뷰창 */
 .reviewWrapper{
   background-color: #252525;
 }
 
-.reivewtext{
+/* .reivewtext{
   margin: 0 auto;
   width: 80%;
   min-width: 1100px;
@@ -14,28 +19,42 @@ body{
   justify-content: right;
   align-items: right;
   padding: 20px
-}
+} */
 .reivewBtn{
-  width: 100px;
-  height: 40px;
-  background-color: #9c9c9c;
-  color: white;
-  font-weight: 700;
+  width: 130px;
+  /* height: 40px; */
+  color: #181818;
+  background-color: #00ffa3;
+  /* font-weight: 700; */
   text-align: center;
-  line-height: 35px;
+  line-height: 40px;
   cursor: pointer;
+  
 }
+
+.reivewBtn:hover {
+  /* background-color: #f4361c; */
+  background-color: #76ffcd;
+  /* color: #fff; */
+  
+}
+.reivewBtn>a{
+  text-decoration-line: none;
+}
+
 
 .reivewStart {
   margin: 0 auto;
-  border: 1px #ffffff solid;
-  background-color: #ffffff;
+  /* border: 1px #ffffff solid; */
+  /* background-color: #ffffff; */
   font-size: 14px;
   width: 80%;
   min-width: 1100px;
   border-collapse: collapse;
   border-radius: 5px;
-
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #fff;
 }
 
 .reivewTitle {
@@ -61,4 +80,191 @@ body{
 
 .reivewBody > tr > td{
   height: 40px;
+}
+
+.reivewText{
+  cursor: pointer;
+}
+
+.reivewText:hover{
+  background-color: #333333;
+}
+
+
+/* 검색창 */
+.reivewSearchGrop{
+  margin: 0 auto;
+  width: 80%;
+  min-width: 1100px;
+  /* height: 40px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:  20px 0
+}
+
+ .reviewsearch{
+  width: 80px;
+  max-width: 1100px;
+  height: 40px;
+  color: #fff;
+  /* border-radius: 2px; */
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  /* box-sizing: border-box; */
+ }
+
+ .reviewSearchFilter{
+  width: 130px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  
+}
+.reviewSearchFilter:focus {
+  outline: none;
+}
+
+.searchBar {
+  width: auto;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 2px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* box-sizing: border-box; */
+  margin: 20px;
+}
+.searchBarInput {
+  width: auto;
+  min-width: 730px;
+  /* height: 27px; */
+  border: none;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left; */
+  margin-left: 10px;
+  /* overflow: auto; */
+  font-size: 16px;
+
+}
+.reviewSearchImg{
+  height: 22px;
+  padding: 20px;
+  margin-top: 3px;
+}
+
+
+/* 페이징 */
+
+.pageWrap {
+	text-align:center;
+	font-size:0;
+ }
+
+.clicked {
+  background-color:#474747;
+  color:#fff;
+  border:1px solid #474747;
+}
+
+.pageNation {
+	display:inline-block;
+}
+
+.pageNation a {
+	display:block;
+	margin:25px 3px;
+	float:left;
+	width:28px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	font-size:13px;
+	color:#999999;
+	text-decoration:none;
+}
+
+.active{
+  border:1px solid #3d3d3d;
+  color: #fff !important; 
+}
+/* 
+.active:focus{
+  background: #000;
+} */
+
+
+.pageNation a.active:hover {
+	background-color:#474747;
+	color:#fff;
+	border:1px solid #474747;
+}
+
+
+/* 글쓰기 */
+.reivewInpuWrapper{
+  background-color: #252525;
+}
+.reivewInputTable {
+  margin: 0 auto;
+  color: #fff;
+
+}
+.reivewInputText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reivewInput[type="text"] {
+  border: 1.5px solid #999999;
+  width: 600px;
+  height: 30px;
+  /* border-radius: 5px; */
+  padding-left: 10px;
+}
+.reivewInputTextarea {
+  border: 1.5px  solid #999999;
+  width: 600px;
+  height: 400px;
+  /* border-radius: 5px; */
+  padding-left: 10px;
+  padding-top: 10px;
+  resize: none;
+}
+.reivewInputHeader {
+  height: 30px;
+}
+.reivewInputTextarea:focus {
+ outline: none;
+}
+.reivewInput[type="submit"] {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  padding-left: 10px;
+}
+.reivewInput[type="submit"]:active {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  padding-left: 10px;
+}
+.reivewInputSubmitGroup{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+}
+.reivewInputSubmit{
+  width: 100px;
+  height: 40px;
+  background-color: #00ffa3;
 }
