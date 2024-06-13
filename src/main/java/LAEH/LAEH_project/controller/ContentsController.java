@@ -34,9 +34,9 @@ public class ContentsController {
         return new ResponseEntity<>(contentsService.getContentsById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/{lectureId}")
-    public ResponseEntity<Contents> getContentsByLectureId(@PathVariable String lectureId){
-        return new ResponseEntity<>(contentsService.getContentsByLectureId(lectureId), HttpStatus.OK);
-    }
+//    @GetMapping("/{lectureId}")
+//    public ResponseEntity<Contents> getContentsByLectureId(@PathVariable String lectureId){
+//        return new ResponseEntity<>(contentsService.getContentsByLectureId(lectureId), HttpStatus.OK);
+//    }
 
 }

@@ -34,13 +34,13 @@ public class ContentsService {
             throw new ResourceNotFoundException("Contents", "ID", id);
         }
     }
-
-    public Contents getContentsByLectureId(String lectureId) {
-        Optional<Contents> contentsOptional = contentsRepository.findByLectureId(lectureId);
-        if (contentsOptional.isPresent()) {
-            return contentsOptional.get();
-        } else {
-            throw new ResourceNotFoundException("Contents", "lecture ID", lectureId);
-        }
-    }
+//
+//    public Contents getContentsByLectureId(String lectureId) {
+//        Optional<Contents> contentsOptional = contentsRepository.findByLectureId(lectureId);
+//        if (contentsOptional.isPresent()) {
+//            return contentsOptional.get();
+//        } else {
+//            throw new ResourceNotFoundException("Contents", "lecture ID", lectureId);
+//        }
+//    }
 }
