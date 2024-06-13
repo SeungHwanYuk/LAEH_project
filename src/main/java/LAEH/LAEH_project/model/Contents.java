@@ -45,4 +45,7 @@ public class Contents {
     // 윤별 작업
     @Column(name = "강의소개")
     private String lectureDesc;
+
+    @Column(name = "강의소개이미지")
+    private String lectureInfoImg;
 }

@@ -716,6 +716,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* 강좌 자세히보기 */
 
+.detailPageWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .lectureIntroTitle {
   position: relative;
   width: 100%;
@@ -743,6 +750,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .detailImage {
-  width: 600px;
   border-radius: 8px;
+}
+
+.classDetailInfo {
+  margin-top: 10px;
 }
