@@ -7,7 +7,7 @@
     <script src="
 https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
 "></script>
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <a name="Top"></a>
@@ -52,18 +52,38 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
         <h2>Sign up</h2>
       </div>
       <div class="signupBox">
+        <!-- ---------------------------------- -->
         <input
           type="text"
           class="singupGroup"
           id="newUserId"
           placeholder="아이디"
         />
+        <div class="successMessage hidden">사용 가능한 아이디입니다</div>
+        <div class="lengthMessage hidden">
+          아이디는 4~12글자 내로 입력해주세요
+        </div>
+        <div class="conditionErrorMessage hidden">
+          아이디는 영어 또는 숫자만 가능합니다
+        </div>
         <input
           type="password"
           class="singupGroup"
           id="newPassword"
           placeholder="비밀번호"
         />
+        <div class="conditionWarningMessage hidden">
+          8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요
+        </div>
+        <input
+          type="password"
+          class="singupGroup"
+          id="checkPassword"
+          placeholder="비밀번호 확인"
+        />
+        <div class="mismatchMessage hidden">비밀번호가 일치하지 않습니다</div>
+        <!-- ---------------------------------- -->
+
         <input
           type="text"
           class="singupGroup"

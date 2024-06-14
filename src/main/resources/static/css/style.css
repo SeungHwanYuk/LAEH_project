@@ -44,6 +44,10 @@ select:focus {
   color: #00ffa3;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   align-items: center;
   width: 100%;

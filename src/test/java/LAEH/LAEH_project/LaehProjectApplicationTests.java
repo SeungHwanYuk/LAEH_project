@@ -1,7 +1,7 @@
 package LAEH.LAEH_project;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.check;
+import org.springframework.boot.check.context.SpringBootTest;
 
 @SpringBootTest
 class LaehProjectApplicationTests {
