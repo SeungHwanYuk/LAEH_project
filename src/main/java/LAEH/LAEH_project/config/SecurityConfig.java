@@ -33,6 +33,7 @@ public class SecurityConfig {
                         .requestMatchers(
                                 new AntPathRequestMatcher("/user/login"),
                                 new AntPathRequestMatcher("/user/signup"),
+                                new AntPathRequestMatcher("/user/**"),
                                 new AntPathRequestMatcher("/contents/**"),
 
                                 new AntPathRequestMatcher("/login"),
