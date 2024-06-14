@@ -30,6 +30,11 @@ public class ContentsController {
         return new ResponseEntity<>(contentsService.getListContents(lectureId), HttpStatus.OK);
     }
 
+    @PutMapping("/{contentsId}")
+    public ResponseEntity<Contents> clickCountBycontentsId(@PathVariable String contentsId) {
+        return new ResponseEntity<>(contentsService.clickCountBycontentsId(contentsId), HttpStatus.OK);
+    }
+
 
 
     // 윤별 작업 (ID별 강좌 조회)
