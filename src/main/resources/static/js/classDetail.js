@@ -44,33 +44,28 @@ function displayContents(data) {
   // content.appendChild(lectureInfoImg);
 }
 
+// 상세페이지의 강의이미지 불러오기
 function displayLectureImg(data) {
   let strH = "H";
   let strY = "Y";
   let strP = "P";
-
   const lectureId = data.lectureId;
-  console.log(lectureId);
-
+  // console.log(lectureId);
   const detailImageWrap = document.querySelector(".detailImageWrap");
-
   if (lectureId == strH) {
     detailImageWrap.querySelector(".detailImage01").classList.remove("hidden");
-    console.log("HHHH");
   } else {
     if (lectureId == strP) {
       // 필라테스 이미지 히든 삭제
       detailImageWrap
         .querySelector(".detailImage03")
         .classList.remove("hidden");
-      console.log("PPPP");
     } else {
       if (lectureId == strY) {
         // 요가 이미지 히든 삭제
         detailImageWrap
           .querySelector(".detailImage02")
           .classList.remove("hidden");
-        console.log("YYYY");
       }
     }
   }

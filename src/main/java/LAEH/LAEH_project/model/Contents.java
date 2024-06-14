@@ -20,8 +20,9 @@ import java.time.LocalDate;
 public class Contents {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "영상번호")
-    private String contentsId;
+    private long contentsId;
 
     @Column(name = "영상소스")
     private String contentsSrc;
@@ -45,7 +46,8 @@ public class Contents {
     // 윤별 작업
     @Column(name = "강의소개")
     private String lectureDesc;
-
-    @Column(name = "강의소개이미지")
-    private String lectureInfoImg;
+    
+    // 삭제
+//    @Column(name = "강의소개이미지")
+//    private String lectureInfoImg;
 }
