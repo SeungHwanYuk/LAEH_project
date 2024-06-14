@@ -8,7 +8,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="Wrapper">
+    <div
+      class="Wrapper"
+      style="
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+      "
+    >
       <div class="header">
         <div class="navLogo">
           <a href="index.html">
@@ -45,13 +53,24 @@
         </div>
       </div>
       <!-- ---------------------------------- -->
-      <div class="welcomeMessage">
-        <p>HelloPT에 오신 것을 환영합니다!</p>
-        <p>회원가입이 정상적으로 완료되었습니다.</p>
-        <p>지금 바로 로그인하여 다양한 혜택을 누려보세요</p>
+      <div class="welcomeWrap">
+        <div class="welcomeChar">
+          <img src="../static/image/pinkChar.png" alt="green" width="80px" />
+          <img src="../static/image/greenChar.png" alt="green" width="94px" />
+          <img src="../static/image/yellowChar.png" alt="green" width="80px" />
+        </div>
+        <div class="welcomeMessage">
+          <h2 class="point">HelloPT에 오신 것을 환영합니다!</h2>
+          <p>회원가입이 정상적으로 완료되었습니다.</p>
+          <p>지금 바로 로그인하여 다양한 혜택을 누려보세요</p>
+        </div>
+        <a href="login.html">
+          <div class="signupBtn" style="margin-top: 42px">Login</div>
+        </a>
       </div>
+
       <!-- ---------------------------------- -->
-      <div class="footer">
+      <div class="footer" style="margin-top: 0; !important">
         <form>
           <select
             title="teamSite"
@@ -71,6 +90,31 @@
         <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
       </div>
       <!-- ---------------------------------- -->
+    </div>
+    <!-- ---------------------------------- -->
+    <div class="footerBar" style="display: flex">
+      <p class="bold">
+        3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+        혜택을 누려보세요
+        <img
+          src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+          alt="fire-1f525"
+          width="24px"
+          style="background: none; margin: 0"
+        />
+      </p>
+      <div class="footerBtnArea" style="display: flex; justify-content: end">
+        <div class="footerBtn">지금 구독하기</div>
+        <div class="topBtn">
+          <a href="#Top">
+            <img
+              src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+              alt="Group-46"
+              width="26px"
+            />
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
