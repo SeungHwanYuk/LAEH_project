@@ -9,6 +9,7 @@ axios
   .then((response) => {
     console.log("데이터 : " + response.data);
     displayContents(response.data);
+    displayLectureImg(response.data);
   })
   .catch((error) => {
     console.log("에러 발생 : ", error);
@@ -41,4 +42,24 @@ function displayContents(data) {
   content.appendChild(contentsName);
   content.appendChild(lectureDesc);
   // content.appendChild(lectureInfoImg);
+}
+
+function displayLectureImg(data) {
+  const strH = H;
+  const strY = Y;
+  const strP = Y;
+  console.log(data.lectureId);
+
+  const detailImageWrap = document.querySelector(".detailImageWrap");
+  if (data.lectureId == strH) {
+    detailImageWrap.querySelector(".detailImage01").classList.remove(".hidden");
+  } else if (data.lectureId == strP) {
+    // 필라테스 이미지 히든 삭제
+    detailImageWrap.querySelector(".detailImage03").classList.remove(".hidden");
+  } else if (data.lectureId == strY) {
+    // 요가 이미지 히든 삭제
+    detailImageWrap.querySelector(".detailImage02").classList.remove(".hidden");
+  } else {
+    console.log("암것도없는디?");
+  }
 }
