@@ -41,7 +41,9 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/LAEH_project/**"),
                                 new AntPathRequestMatcher("/cal/**"),
                                 new AntPathRequestMatcher("/js/**"),
-                                new AntPathRequestMatcher("/css/**")
+                                new AntPathRequestMatcher("/css/**"),
+
+                                new AntPathRequestMatcher("/post") //진경
 
                         ).permitAll()
                         .anyRequest().authenticated())

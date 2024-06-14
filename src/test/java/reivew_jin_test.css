@@ -221,6 +221,13 @@ input:focus{
   justify-content: center;
   align-items: center;
 }
+.reivewInputText2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin: 20px 0;
+}
 .reivewInput[type="text"] {
   border: 1.5px solid #999999;
   width: 600px;
