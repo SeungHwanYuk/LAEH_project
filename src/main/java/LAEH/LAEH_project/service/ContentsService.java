@@ -45,8 +45,21 @@ public class ContentsService {
         }
     }
 
+    // 조회수 카운트 코드 (null값 수정해야함)
+    public Contents clickCountByContentsId(String contentsId) {
+        Optional<Contents> contentsOptional = contentsRepository.findById(contentsId);
+        if(contentsOptional.isPresent()) {
 
-    
+            long temp = 0;
+            temp = contentsOptional.get().getContentsClickedCount();
+            contentsOptional.get().setContentsClickedCount(temp + 1);
+            return contentsOptional.get();
+        }
+        else {
+            throw new ResourceNotFoundException("Contents", "ID", contentsId);
+            }
+        }
+
     // 윤별 작업 (ID별 강좌 조회)
     public Contents getContentsById(String id) {
         Optional<Contents> contentsOptional = contentsRepository.findById(id);

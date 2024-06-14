@@ -14,6 +14,8 @@ import java.util.List;
 @RequestMapping("/contents")
 public class ContentsController {
 
+    // 영상 등록시 조회수 null로 못하게 막을것!
+
     private ContentsService contentsService;
 
     @Autowired
@@ -23,13 +25,20 @@ public class ContentsController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Contents>> getAllContents() {
-        return new ResponseEntity<>(contentsService.getAllContents(), HttpStatus.OK);};
+        return new ResponseEntity<>(contentsService.getAllContents(), HttpStatus.OK);
+    }
+
+
 
     @GetMapping("/listContents/{lectureId}")
     public ResponseEntity<List<Contents>> getListContents(@PathVariable String lectureId) {
         return new ResponseEntity<>(contentsService.getListContents(lectureId), HttpStatus.OK);
     }
 
+    @PutMapping("/count/{contentsId}")
+    public ResponseEntity<Contents> clickCountBycontentsId(@PathVariable String contentsId) {
+        return new ResponseEntity<>(contentsService.clickCountByContentsId(contentsId), HttpStatus.OK);
+    }
 
 
     // 윤별 작업 (ID별 강좌 조회)
