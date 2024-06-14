@@ -43,7 +43,7 @@ public class Contents {
     @Column(name = "컨텐츠이미지")
     private String contentsImage;
 
-    @Column(name = "조회수")
+    @Column(name = "조회수", scale = 0)
     private long contentsClickedCount;
 
     // 윤별 작업

@@ -3,6 +3,7 @@ const id = urlParams.get("id");
 console.log("Class ID : ", id);
 
 const url = "http://localhost:8080/contents/" + id;
+const urlUpdateCount = "http://localhost:8080/contents/count/" + id;
 
 axios
   .get(url)
@@ -10,6 +11,7 @@ axios
     console.log("데이터 : " + response.data);
     displayContents(response.data);
     displayLectureImg(response.data.lectureId);
+    contentsClickedCount(response.data.lectureId);
   })
   .catch((error) => {
     console.log("에러 발생 : ", error);
@@ -42,6 +44,18 @@ function displayContents(data) {
   content.appendChild(contentsName);
   content.appendChild(lectureDesc);
   // content.appendChild(lectureInfoImg);
+}
+
+// 조회수 카운트
+function contentsClickedCount(data) {
+  axios
+    .put(urlUpdateCount, data)
+    .then((response) => {
+      console.log("데이타 : ", response.data);
+    })
+    .catch((error) => {
+      console.log("에러 발생 : ", error);
+    });
 }
 
 // 상세페이지의 강의이미지 불러오기
