@@ -3,9 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <p>success</p>
+    <div class="Wrapper">
+      <div class="header">
+        <div class="navLogo">
+          <a href="index.html">
+            <img
+              src="https://i.ibb.co/9VyktjQ/image.png"
+              alt="HelloLogo"
+              class="helloLogo"
+            />
+          </a>
+        </div>
+        <div class="navTitle">
+          <a href="yogaClass.html">
+            <p class="navMenu">요가</p>
+          </a>
+          <a href="pilatesClass.html">
+            <p class="navMenu">필라테스</p>
+          </a>
+          <a href="healthClass.html">
+            <p class="navMenu navMenuFocus" style="margin-right: 28px">헬스</p>
+          </a>
+          <!-- <p class="navMenu">마이페이지</p> -->
+          <button class="login">
+            <a href="login.html" style="color: #181818"> 로그인 </a>
+          </button>
+
+          <p class="join">
+            <a href="join.html">아직 회원이 아니신가요?</a>
+            <img
+              src="https://i.ibb.co/7gRtFWv/image.png"
+              alt="image"
+              width="24px"
+            />
+          </p>
+        </div>
+      </div>
+      <!-- ---------------------------------- -->
+      <div class="welcomeMessage">
+        <p>HelloPT에 오신 것을 환영합니다!</p>
+        <p>회원가입이 정상적으로 완료되었습니다.</p>
+        <p>지금 바로 로그인하여 다양한 혜택을 누려보세요</p>
+      </div>
+      <!-- ---------------------------------- -->
+      <div class="footer">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+      <!-- ---------------------------------- -->
+    </div>
   </body>
 </html>

@@ -1,4 +1,5 @@
 const urlSignup = "http://localhost:8080/user/signup";
+const urlAll = "http://localhost:8080/user/all";
 
 // const genders = {
 //   MEN: "남자",
@@ -42,6 +43,11 @@ let elStrongPasswordMessage = document.querySelector(
 );
 
 function idLength(value) {
+  // if (value.length >= 4 && value.length <= 12) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
   return value.length >= 4 && value.length <= 12;
 }
 
@@ -121,6 +127,11 @@ document.querySelector("#newPassword").addEventListener("change", (e) => {
   console.log(e.target.value);
   newPassword = e.target.value;
 });
+let checkPassword = "";
+document.querySelector("#checkPassword").addEventListener("change", (e) => {
+  console.log(e.target.value);
+  checkPassword = e.target.value;
+});
 document.querySelector("#newUserEmail").addEventListener("change", (e) => {
   console.log(e.target.value);
   newUserEmail = e.target.value;
@@ -144,33 +155,77 @@ document.querySelector("#newUserPhoneNum").addEventListener("change", (e) => {
 
 // 회원가입
 
-document.querySelector(".loginBtn").addEventListener("click", () => {
-  const data = {
-    userId: newUserId,
-    password: newPassword,
-    userEmail: newUserEmail,
-    userName: newUserName,
-    gender: newUserGender,
-    userNickname: newUserNickname,
-    phoneNum: newUserPhoneNum,
-  };
+document
+  .querySelector(".loginBtn")
+  .addEventListener("click", () => {
+    const data = {
+      userId: newUserId,
+      password: newPassword,
+      userEmail: newUserEmail,
+      userName: newUserName,
+      gender: newUserGender,
+      userNickname: newUserNickname,
+      phoneNum: newUserPhoneNum,
+    };
 
-  axios
-    .post(urlSignup, data, { withCredentials: true })
-    .then((response) => {
-      if (data.userId != "" && data.password != "") {
-        console.log("데이터 : ", response);
-        // alert("회원가입 되었습니다.");
-        window.location.href = "signupSuccess.html";
-      } else if (data.userId == "" && data.password == "") {
-        alert("아이디와 패스워드는 필수사항 입니다.");
+    axios.get(urlAll).then((response) => {
+      console.log("데이터 : ", response);
+
+      // response.data.forEach((e) => {
+      // console.log(data.userId);
+      // console.log(e.userId);
+      // console.log(e.password);
+      // console.log(checkPassword);
+      // if (data.userId != e.userId && data.password == checkPassword) {
+      //   axios
+      //     .post(urlSignup, data, { withCredentials: true })
+      //     .then((response) => {
+      //       // if (data.userId != "" && data.password != "") {}
+      //       alert(`회원가입 되었습니다., ${response.data}`);
+      //       window.location.href = "signupSuccess.html";
+      //     })
+      //     .catch((error) => {
+      //       console.log("에라 발생 : ", error);
+      //     });
+      // }
+
+      for (let i = 0; i < response.data.length; i++) {
+        let test = response.data[i];
+
+        if (
+          data.userId != test.userId &&
+          data.password == checkPassword &&
+          idLength(data.userId)
+        ) {
+          console.log("asdasd");
+          axios
+            .post(urlSignup, data, { withCredentials: true })
+            .then((response) => {
+              alert(`회원가입 되었습니다., ${response.data}`);
+              window.location.href = "signupSuccess.html";
+            })
+            .catch((error) => {
+              console.error("에러 발생:", error);
+            });
+          return data;
+        } else {
+          // alert("입력하신 아이디가 이미 존재합니다.");
+          // alert("오류");
+          break;
+        }
       }
-    })
-
-    .catch((error) => {
-      console.log("에러 발생 : ", error);
     });
-});
+
+    if (data.userId == "" && data.password == "" && data.userName == "") {
+      alert("필수입력란을 확인해주세요.");
+    } else if (!isMatch(data.password, checkPassword)) {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  })
+  .catch((error) => {
+    console.log("에러 발생 : ", error);
+  });
+// });
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
@@ -181,8 +236,8 @@ function sessionCurrent() {
       if (response.status == 200) {
         console.log("세션 유지");
         if (response.status == 200) {
-          document.querySelector("singup-box p").textContent =
-            response.data.userId + "님, 환영합니다.";
+          // document.querySelector(".singup-box p").textContent =
+          //   response.data.userId + "님, 환영합니다.";
         }
       }
     })

@@ -47,7 +47,7 @@ function displayContents(data) {
 function displayLectureImg(data) {
   const strH = H;
   const strY = Y;
-  const strP = Y;
+  const strP = P;
   console.log(data.lectureId);
 
   const detailImageWrap = document.querySelector(".detailImageWrap");
