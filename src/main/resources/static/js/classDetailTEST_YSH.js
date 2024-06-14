@@ -51,11 +51,12 @@ function displayLectureImg(data) {
   const strH = "H";
   const strY = "Y";
   const strP = "P";
-  if (data.lectureId == strH) {
+  const lectureId = data.lectureId;
+  if (lectureId == strH) {
     // 헬스 이미지 히든삭제
-  } else if (data.lectureId == strP) {
+  } else if (lectureId == strP) {
     // 필라테스 이미지 히든 삭제
-  } else if (data.lectureId == strY) {
+  } else if (lectureId == strY) {
     // 요가 이미지 히든 삭제
   } else {
     console.log("암것도없는디?");
