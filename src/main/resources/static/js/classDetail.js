@@ -45,10 +45,12 @@ function displayContents(data) {
 }
 
 function displayLectureImg(data) {
-  const strH = H;
-  const strY = Y;
-  const strP = P;
-  console.log(data.lectureId);
+  let strH = "H";
+  let strY = "Y";
+  let strP = "P";
+
+  const lectureId = data.lectureId;
+  console.log(lectureId);
 
   const detailImageWrap = document.querySelector(".detailImageWrap");
 
