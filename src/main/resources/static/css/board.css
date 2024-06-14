@@ -1,0 +1,203 @@
+body{
+  margin: 0 auto;
+}
+
+input:focus{
+  outline: none;
+}
+
+/* 게시판창 */
+.boardWrapper{
+  background-color: #252525;
+}
+/* .boardBtn{
+  width: 130px;
+  color: #181818;
+  background-color: #00ffa3;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  
+}
+
+.boardBtn:hover {
+  background-color: #76ffcd;
+  
+}
+.boardwBtn>a{
+  text-decoration-line: none;
+}
+
+
+.boardStart {
+  margin: 0 auto;
+  font-size: 14px;
+  width: 80%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+} */
+
+.boardTitle {
+  text-align: center;
+  padding: 20px 0;
+  color: #ffffff;
+  
+}
+
+.boardCaption{
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+/* 
+.boardhead{
+  border-bottom: 1px #9c9c9c solid;
+  height: 40px;
+}
+
+.boardNum{
+  text-align: center;
+}
+
+.boardBody > tr > td{
+  height: 40px;
+}
+
+.boardText{
+  cursor: pointer;
+}
+
+.boardText:hover{
+  background-color: #333333;
+} */
+
+
+/* 검색창 */
+.boardGrop{
+  margin: 0 auto;
+  width: 80%;
+  min-width: 800px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.boardSearchGrop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boardSearchTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: #fff;
+}
+
+ /* .boardSearch{
+  width: 80%;
+  max-width: 1100px;
+  height: 40px;
+  color: #fff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+ } */
+
+ .boardSearchFilter{
+  width: 130px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+
+  
+}
+.boardSearchFilter:focus {
+  outline: none;
+}
+
+.boardSearchBar {
+  width: auto;
+  height: 40px;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  margin: 1px;
+}
+.boardSearchBarInput {
+  width: auto;
+  min-width: 230px;
+  border: none;
+  margin-left: 10px;
+  font-size: 16px;
+
+}
+.boardSearchImg{
+  height: 22px;
+  padding: 20px;
+  margin-top: 3px;
+}
+
+.boardLine{
+  width : 80%;
+  min-width : 800px;
+  height: 1px;
+  border: none;
+  background-color: #474747;
+}
+
+
+/* 페이징 */
+
+.boardpageWrap {
+	text-align:center;
+	font-size:0;
+ }
+
+.boardclicked {
+  background-color:#474747;
+  color:#fff;
+  border:1px solid #474747;
+}
+
+.boardpageNation {
+	display:inline-block;
+}
+
+.boardpageNation a {
+	display:block;
+	margin:25px 3px;
+	float:left;
+	width:28px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	font-size:13px;
+	color:#999999;
+	text-decoration:none;
+}
+
+.boardactive{
+  border:1px solid #3d3d3d;
+  color: #fff !important; 
+}
+
+
+.boardactive:focus{
+  background: #474747;
+}
+
+.boardpageNation a.boardactive:hover {
+	background-color:#474747;
+	color:#fff;
+	border:1px solid #474747;
+}

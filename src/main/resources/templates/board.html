@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="/src/main/resources/static/css/board.css" />
+  </head>
+
+      <!-- 게시판시작 -->
+       <div class="boardWrapper">
+       <div class="boardTitle">
+        <h1>Forum</h1>
+        <div class="boardCaption">편안한 소통을 해주세요</div>
+      </div>
+
+      <div class="boardGrop">
+        <div class="boardSearchTitle">자유게시판</div>
+      <!-- <form>
+        <select title="searchFilter" class="boardSearchFilter" >
+          <option value="0">자유게시판</option>
+          <option value="1">QnA</option>
+          <option value="1">FAQ</option>
+        </select>
+      </form> -->
+      <div class="boardSearchGrop">
+      <form>
+        <select title="boardSearchFilter" class="boardSearchFilter" >
+          <option value="0">제목</option>
+          <option value="1">작성자</option>
+        </select>
+      </form>
+
+      <div class="boardSearch">
+
+        <div class="boardSearchBar">
+          <input class="boardSearchBarInput" type="text" placeholder="검색어 입력" />
+          <a href>
+            <img class="boardSearchImg" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+          </a>
+          </div>
+      </div>
+    </div>
+      <!-- <div class="boardtext">
+        <div class="boardBtn"> <a href="/src/test/java/board_in_jin_test.html" style="color: #181818;" >글쓰기</a>
+        </div>
+      </div> -->
+
+
+    </div>
+    <hr class="boardLine">
+
+
+
+
+    
+       <nav>
+        <div class="boardpageWrap">
+          <div class="boardpageNation">
+             <a class="boardarrow pprev" href="#"><img src="https://i.ibb.co/99C6nHS/Group-59.png"></a></a>
+             <a class="boardarrow prev" href="#"><img src="https://i.ibb.co/2N7DcK4/Vector-38.png"></a></a>
+             <a href="#" class="boardactive">1</a>
+             <a href="#" class="boardactive">2</a>
+             <a href="#" class="boardactive">3</a>
+             <a href="#" class="boardactive">4</a>
+             <a href="#" class="boardactive">5</a>
+             <a href="#" class="boardactive2">···</a>
+             <a class="boardarrow next" href="#"><img src="https://i.ibb.co/T08SyrT/Vector-37-3.png"></a></a>
+             <a class="boardarrow nnext" href="#"><img src="https://i.ibb.co/93hYNXj/Group-58.png" ></a></a>
+          </div>
+       </div>
+
+
+       <div style="height: 300px; width: 100%;"></div>
+      </div>
+
+
+
+      <!-- 게시판 끝 -->
+
+<script src="/src/main/resources/static/js/board.js"></script>
+  </body>
+</html>
