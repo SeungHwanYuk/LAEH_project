@@ -36,8 +36,9 @@ public class ContentsService {
 //        if (contentsOptional.isPresent()) {
         Optional<Lecture> lectureOptional = lectureRepository.findById(lectureId);
         if (lectureOptional.isPresent()) {
-            return contentsRepository.findByLectureId(lectureOptional.get())
+            return contentsRepository.findAll()
                     .stream()
+                    .filter(contents -> contents.getLectureId().equals(lectureOptional.get()))
                     .collect(Collectors.toList());
         } else {
             throw new ResourceNotFoundException("Contents", "ID", lectureId);

@@ -1,5 +1,5 @@
 const url = "http://localhost:8080/contents/all";
-const urlLectureId = "http://localhost:8080/contents/listContents/H"; // 강의 아이디로 영상 검색
+const urlLectureId = "http://localhost:8080/contents/listContents/P"; // 강의 아이디로 영상 검색
 
 axios
   .get(urlLectureId)
