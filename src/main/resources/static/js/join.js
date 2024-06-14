@@ -46,7 +46,7 @@ document.querySelector("#newUserPhoneNum").addEventListener("change", (e) => {
 
 // 회원가입
 
-document.querySelector(".signupInputBtn").addEventListener("click", () => {
+document.querySelector(".loginBtn").addEventListener("click", () => {
   const data = {
     userId: newUserId,
     password: newPassword,

@@ -20,7 +20,7 @@ public class Lecture {
 
     @Id
     @Column(name = "강의번호")
-    private String lectureId;
+    private String lectureId; // 렉쳐 아이디로 컨텐츠찾기
 
     @ManyToOne
     @JoinColumn(name = "강사번호")

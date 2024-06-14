@@ -31,4 +31,7 @@ public class ViewController {
 
     @GetMapping("/LAEH_project/classDetail.html")
     public String classDetail() {return "classDetail";}
+
+    @GetMapping("/LAEH_project/signupSuccess.html")
+    public String signupSuccess() {return "signupSuccess";}
 }

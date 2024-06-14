@@ -6,10 +6,7 @@ import LAEH.LAEH_project.service.ContentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,13 @@ public class ContentsController {
     @GetMapping("/all")
     public ResponseEntity<List<Contents>> getAllContents() {
         return new ResponseEntity<>(contentsService.getAllContents(), HttpStatus.OK);};
+
+    @GetMapping("/listContents/{lectureId}")
+    public ResponseEntity<List<Contents>> getListContents(@PathVariable String lectureId) {
+        return new ResponseEntity<>(contentsService.getListContents(lectureId), HttpStatus.OK);
+    }
+
+
 
     // 윤별 작업 (ID별 강좌 조회)
     @GetMapping("/{id}")
