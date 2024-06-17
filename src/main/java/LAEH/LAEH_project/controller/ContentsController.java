@@ -28,16 +28,24 @@ public class ContentsController {
         return new ResponseEntity<>(contentsService.getAllContents(), HttpStatus.OK);
     }
 
-
-
     @GetMapping("/listContents/{lectureId}")
     public ResponseEntity<List<Contents>> getListContents(@PathVariable String lectureId) {
         return new ResponseEntity<>(contentsService.getListContents(lectureId), HttpStatus.OK);
     }
 
+    @GetMapping("/listContents/popular/{lectureId}")
+    public ResponseEntity<List<Contents>> getListContentsSortedClick(@PathVariable String lectureId) {
+        return new ResponseEntity<>(contentsService.getListContentsSortedClick(lectureId), HttpStatus.OK);
+    }
+
     @PutMapping("/count/{contentsId}")
-    public ResponseEntity<Contents> clickCountBycontentsId(@PathVariable String contentsId) {
+    public ResponseEntity<Contents> clickCountByContentsId(@PathVariable String contentsId) {
         return new ResponseEntity<>(contentsService.clickCountByContentsId(contentsId), HttpStatus.OK);
+    }
+
+    @PostMapping("/save")
+    public ResponseEntity<Contents> saveContents(@RequestBody Contents contents) {
+        return new ResponseEntity<>(contentsService.saveContents(contents), HttpStatus.OK);
     }
 
 

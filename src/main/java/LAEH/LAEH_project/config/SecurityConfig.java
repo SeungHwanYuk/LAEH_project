@@ -37,6 +37,8 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/contents/**"),
                                 new AntPathRequestMatcher("/count/**"),
 
+                                new AntPathRequestMatcher("/memo/**"),
+
                                 new AntPathRequestMatcher("/login"),
                                 new AntPathRequestMatcher("/user/current"),
                                 new AntPathRequestMatcher("/LAEH_project/**"),

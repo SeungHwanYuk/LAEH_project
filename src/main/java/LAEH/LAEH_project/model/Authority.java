@@ -9,12 +9,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "권한")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
 @Setter
+@Getter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "권한")
 public class Authority {
 
     @Id

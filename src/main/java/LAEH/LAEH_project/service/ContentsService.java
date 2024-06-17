@@ -9,6 +9,9 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -39,6 +42,24 @@ public class ContentsService {
             return contentsRepository.findAll()
                     .stream()
                     .filter(contents -> contents.getLectureId().equals(lectureOptional.get()))
+                    .sorted(Comparator.comparing(Contents::getContentsUploadDate).reversed())
+                    .collect(Collectors.toList());
+        } else {
+            throw new ResourceNotFoundException("Contents", "ID", lectureId);
+        }
+    }
+
+
+
+    public List<Contents> getListContentsSortedClick(String lectureId) {
+//        Optional<Contents> contentsOptional = contentsRepository.findByLectureId(lectureId);
+//        if (contentsOptional.isPresent()) {
+        Optional<Lecture> lectureOptional = lectureRepository.findById(lectureId);
+        if (lectureOptional.isPresent()) {
+            return contentsRepository.findAll()
+                    .stream()
+                    .filter(contents -> contents.getLectureId().equals(lectureOptional.get()))
+                    .sorted(Comparator.comparing(Contents::getContentsClickedCount).reversed())
                     .collect(Collectors.toList());
         } else {
             throw new ResourceNotFoundException("Contents", "ID", lectureId);
@@ -58,6 +79,12 @@ public class ContentsService {
         else {
             throw new ResourceNotFoundException("Contents", "ID", contentsId);
             }
+        }
+
+        public Contents saveContents(Contents contents) {
+            contents.setContentsUploadDate(LocalDate.now());
+            contents.setContentsClickedCount(0);
+            return contentsRepository.save(contents);
         }
 
     // 윤별 작업 (ID별 강좌 조회)

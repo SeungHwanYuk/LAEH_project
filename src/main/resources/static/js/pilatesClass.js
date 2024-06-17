@@ -1,5 +1,7 @@
 const url = "http://localhost:8080/contents/all";
 const urlLectureId = "http://localhost:8080/contents/listContents/P"; // 강의 아이디로 영상 검색
+const urlLectureIdsortedClickCount =
+  "http://localhost:8080/contents/listContents/popular/P"; // 조회수별 정렬
 
 axios
   .get(urlLectureId)
@@ -27,11 +29,17 @@ function displayContents(contentsData) {
       contentsText.classList.add("contentsText");
       const contentsName = document.createElement("p");
       contentsName.classList.add("contentsName");
+      const contentsClickedCount = document.createElement("p");
+      contentsClickedCount.classList.add("contentsClickedCount");
 
       contentsText.textContent = data.contentsText;
       contentsName.textContent = data.contentsName;
+      contentsClickedCount.textContent =
+        "조회수 : " + data.contentsClickedCount;
+
       content.appendChild(contentsText);
       content.appendChild(contentsName);
+      content.appendChild(contentsClickedCount);
 
       content.addEventListener("click", () => {
         // console.log("click!!!!");

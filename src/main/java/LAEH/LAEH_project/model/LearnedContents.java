@@ -16,6 +16,7 @@ import lombok.Setter;
 public class LearnedContents {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "진도율고유번호")
     private int LearnedContentsId;
 

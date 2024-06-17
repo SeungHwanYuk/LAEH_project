@@ -46,7 +46,7 @@ function displayContents(data) {
   // content.appendChild(lectureInfoImg);
 }
 
-// 조회수 카운트
+// 조회 수 카운트
 function contentsClickedCount(data) {
   axios
     .put(urlUpdateCount, data)

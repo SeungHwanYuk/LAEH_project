@@ -18,8 +18,9 @@ import java.time.LocalDate;
 public class Subscribe {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "구독번호")
-    private String subscribeId;
+    private long subscribeId;
 
     @ManyToOne
     @JoinColumn(name = "강의번호")
