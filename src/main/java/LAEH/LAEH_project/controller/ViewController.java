@@ -29,10 +29,49 @@ public class ViewController {
     @GetMapping("/LAEH_project/healthClass.html")
     public String healthClass() {return "healthClass";}
 
+    @GetMapping("/LAEH_project/yogaClass.html")
+    public String yogaClass() {return "yogaClass";}
+
+    @GetMapping("/LAEH_project/pilatesClass.html")
+    public String pilatesClass() {return "pilatesClass";}
+
     @GetMapping("/LAEH_project/classDetail.html")
     public String classDetail() {return "classDetail";}
 
     @GetMapping("/LAEH_project/signupSuccess.html")
     public String signupSuccess() {return "signupSuccess";}
-    
+
+    @GetMapping("/LAEH_project/findId.html")
+    public String findId() {return "findId";}
+
+    @GetMapping("/LAEH_project/board.html")
+    public String board() {return "board";}
+
+    @GetMapping("/LAEH_project/calorieDetail.html")
+    public String calorieDetail() {return "calorieDetail";}
+
+    @GetMapping("/LAEH_project/calorieSearch.html")
+    public String calorieSearch() {return "calorieSearch";}
+
+    @GetMapping("/LAEH_project/findPassword.html")
+    public String findPassword() {return "findPassword";}
+
+    @GetMapping("/LAEH_project/lecturePlayer.html")
+    public String lecturePlayer() {return "lecturePlayer";}
+
+    @GetMapping("/LAEH_project/myPage.html")
+    public String myPage() {return "myPage";}
+
+    @GetMapping("/LAEH_project/Payment.html")
+    public String Payment() {return "Payment";}
+
+    @GetMapping("/LAEH_project/PaymentCheck.html")
+    public String PaymentCheck() {return "PaymentCheck";}
+
+    @GetMapping("/LAEH_project/PaymentPopup.html")
+    public String PaymentPopup() {return "PaymentPopup";}
+
+    @GetMapping("/LAEH_project/review.html")
+    public String review() {return "review";}
+
 }
