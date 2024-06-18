@@ -5,12 +5,12 @@ const urlCurrent = "http://localhost:8080/user/current";
 let userId = "";
 let password = "";
 
-document.querySelector("#userId").addEventListener("change", (e) => {
+document.querySelector(".userId").addEventListener("change", (e) => {
   console.log(e.target.value);
   userId = e.target.value;
 });
 
-document.querySelector("#password").addEventListener("change", (e) => {
+document.querySelector(".password").addEventListener("change", (e) => {
   console.log(e.target.value);
   password = e.target.value;
 });

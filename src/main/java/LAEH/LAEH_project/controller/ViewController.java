@@ -34,4 +34,6 @@ public class ViewController {
 
     @GetMapping("/LAEH_project/signupSuccess.html")
     public String signupSuccess() {return "signupSuccess";}
+
+
 }
