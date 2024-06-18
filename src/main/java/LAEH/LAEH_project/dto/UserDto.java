@@ -1,6 +1,7 @@
 package LAEH.LAEH_project.dto;
 
 import LAEH.LAEH_project.model.User;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,12 @@ public class UserDto {
     private String password;
     private String userName;
     private String userEmail;
+
+
+    private String gender;
+    private String userNickname;
+    private String phoneNum;
+
 
     public UserDto toUserDtoFromUser(User user) {
         UserDto userDto = new UserDto();

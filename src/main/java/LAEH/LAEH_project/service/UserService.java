@@ -1,6 +1,7 @@
 package LAEH.LAEH_project.service;
 
 import LAEH.LAEH_project.dto.UserDto;
+import LAEH.LAEH_project.exception.ResourceNotFoundException;
 import LAEH.LAEH_project.model.Authority;
 import LAEH.LAEH_project.model.User;
 import LAEH.LAEH_project.repository.UserRepository;
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,21 +33,21 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    public User saveUser(User user) {
+    public String saveUser(UserDto userDto) {
         Authority authority =new Authority();
         authority.setAuthorityName("ROLE_USER");
 
     User users = new User(
-             user.getUserId(),
+             userDto.getUserId(),
              authority,
-             bCryptPasswordEncoder.encode(user.getPassword()),
-             user.getUserEmail(),
-             user.getUsername(),
-             user.getGender(),
-             user.getUserNickname(),
-             user.getPhoneNum(),
+             bCryptPasswordEncoder.encode(userDto.getPassword()),
+             userDto.getUserEmail(),
+             userDto.getUserName(),
+             userDto.getGender(),
+             userDto.getUserNickname(),
+             userDto.getPhoneNum(),
              LocalDateTime.now());
-    return userRepository.save(users);
+    return userRepository.save(users).getUserId();
     }
 
 
@@ -62,5 +64,23 @@ public class UserService {
             userDtoList.add(userDto.toUserDtoFromUser(userList.get(i)));
         }
         return userDtoList;
+    }
+
+
+    // 회원 정보 수정
+    public User updateUserById(String id, UserDto userDto) {
+        Optional<User> user1 = userRepository.findById(id);
+        if (user1.isPresent()) {
+            user1.get().setUserEmail(userDto.getUserEmail());
+            user1.get().setUserName(userDto.getUserName());
+            user1.get().setUserNickname(userDto.getUserNickname());
+            user1.get().setGender(userDto.getGender());
+            user1.get().setPassword(userDto.getPassword());
+            user1.get().setPhoneNum(userDto.getPhoneNum());
+            userRepository.save(user1.get());
+            return user1.get();
+        } else {
+            throw new ResourceNotFoundException("User", "ID", id);
+        }
     }
 }

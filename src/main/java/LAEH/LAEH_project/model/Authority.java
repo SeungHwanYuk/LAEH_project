@@ -9,8 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
-@Getter
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +20,12 @@ public class Authority {
     @Column(name = "권한명", length = 50)
     private String authorityName;
 
+
+    public String getAuthorityName() {
+        return authorityName != null ? authorityName : "";
+    }
+
+    public void setAuthorityName(String authorityName) {
+        this.authorityName = authorityName;
+    }
 }
