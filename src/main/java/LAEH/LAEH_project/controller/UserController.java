@@ -62,7 +62,7 @@ public class UserController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         // 세션 생성
-        HttpSession session = request.getSession(true); // true : 세선이 없으면 새로 생성
+        HttpSession session = request.getSession(false); // true : 세선이 없으면 새로 생성
         // 세션에 인증 객체 저장
         session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
                 SecurityContextHolder.getContext());
