@@ -36,6 +36,7 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/user/**"),
                                 new AntPathRequestMatcher("/contents/**"),
                                 new AntPathRequestMatcher("/count/**"),
+                                new AntPathRequestMatcher("/subscribe/**"),
 
                                 new AntPathRequestMatcher("/memo/**"),
 
@@ -43,8 +44,10 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/user/current"),
                                 new AntPathRequestMatcher("/LAEH_project/**"),
                                 new AntPathRequestMatcher("/cal/**"),
+
                                 new AntPathRequestMatcher("/js/**"),
                                 new AntPathRequestMatcher("/css/**"),
+                                new AntPathRequestMatcher("/image/**"),
 
                                 new AntPathRequestMatcher("/post") //진경
 

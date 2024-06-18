@@ -23,12 +23,13 @@ public class Subscribe {
     private long subscribeId;
 
     @ManyToOne
-    @JoinColumn(name = "강의번호")
-    private Lecture lectureId;
+    @JoinColumn(name = "영상번호")
+    private Contents contentsId;
 
     @ManyToOne
     @JoinColumn(name = "사용자아이디")
     private User userId;
+
 
     @Column(name = "구독시작일")
     private LocalDate subscribeStartDate;

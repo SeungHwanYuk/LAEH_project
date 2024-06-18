@@ -39,8 +39,8 @@ public class UserController {
     }
 
     @PostMapping("signup")
-    public ResponseEntity<User> saveUser(@RequestBody User user) {
-        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
+    public ResponseEntity<String> saveUser(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(userService.saveUser(userDto), HttpStatus.OK);
     }
 
     @GetMapping("all")
@@ -54,10 +54,10 @@ public class UserController {
     }
 
     @PostMapping("login")
-    public ResponseEntity<String > login(@RequestBody User user,
+    public ResponseEntity<String> login(@RequestBody UserDto userDto,
                                         HttpServletRequest request) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(user.getUserId(), user.getPassword())
+                new UsernamePasswordAuthenticationToken(userDto.getUserId(), userDto.getPassword())
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
@@ -89,6 +89,12 @@ public class UserController {
         sessionDto.setUserId(authentication.getName());
         sessionDto.setAuthority(authentication.getAuthorities());
         return sessionDto;
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUserById(@PathVariable String id,
+                                               @RequestBody UserDto userDto) {
+        return new ResponseEntity<>(userService.updateUserById(id , userDto),HttpStatus.OK);
     }
 
 

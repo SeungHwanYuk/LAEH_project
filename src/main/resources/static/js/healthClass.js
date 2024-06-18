@@ -1,10 +1,10 @@
 const url = "http://localhost:8080/contents/all";
-const urlLectureId = "http://localhost:8080/contents/listContents/H"; // 강의 아이디로 영상 출력 ( 기본 date 오름차 순 )
+const urlLectureId = "http://localhost:8080/contents/listContents/H"; // 강의 아이디로 영상 출력 ( 기본 최신날짜 순 )
 const urlLectureIdsortedClickCount =
   "http://localhost:8080/contents/listContents/popular/H"; // 조회수별 정렬
 
 axios
-  .get(urlLectureId)
+  .get(urlLectureId) // 기본 최신날짜순
   .then((response) => {
     console.log("응답 Response: ", response);
     displayContents(response.data);
