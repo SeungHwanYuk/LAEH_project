@@ -846,3 +846,20 @@ input[type="number"]::-webkit-inner-spin-button {
 .hidden {
   display: none;
 }
+
+.carlorieTab {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 60px;
+  align-items: center;
+}
+
+.carlorieTab > .carlorieTabMenu01,
+.carlorieTab > .carlorieTabMenu02 {
+  border-bottom: 2px solid #fff;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 10px;
+}
