@@ -74,4 +74,9 @@ public class ViewController {
     @GetMapping("/LAEH_project/review.html")
     public String review() {return "review";}
 
+    @GetMapping("/LAEH_project/courseHistory.html")
+    public String courseHistory() {return "courseHistory";}
+
+    @GetMapping("/LAEH_project/editProfile.html")
+    public String editProfile() {return "editProfile";}
 }

@@ -44,10 +44,6 @@ select:focus {
   color: #00ffa3;
 }
 
-.hidden {
-  display: none;
-}
-
 .header {
   align-items: center;
   width: 100%;
@@ -784,4 +780,69 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .welcomeMessage > h2 {
   margin-bottom: 12px;
+}
+
+/* 마이페이지 */
+
+.myPageMenu {
+  display: flex;
+  padding: 80px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.myPageTab {
+  border: 1px solid #fff;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+.myPageTab:hover {
+  border: 1px solid #00ffa3;
+  opacity: 1;
+}
+
+.myPageTabTitle {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.myPageTab > a > img {
+  filter: invert();
+}
+
+.courseHistoryTab {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 60px;
+  align-items: center;
+}
+
+.courseHistoryTab > .courseHistoryTabMenu01,
+.courseHistoryTab > .courseHistoryTabMenu02 {
+  border-bottom: 2px solid #fff;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* .courseHistoryTab > .courseHistoryTabMenu01:focus {
+  .courseHistoryTab >.courseHistoryTabMenu02 {
+    display: none;
+  }
+} */
+
+.hidden {
+  display: none;
 }

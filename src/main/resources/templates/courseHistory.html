@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health</title>
     <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="/css/style.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
-    <script src="../static/js/healthClass.js"></script>
-    <script src="/src/main/resources/static/js/healthClass.js"></script>
-    <script src="/js/healthClass.js"></script>
+    <title>수강이력</title>
   </head>
   <body>
-    <a name="Top"></a>
     <div class="Wrapper">
       <div class="header">
         <div class="navLogo">
@@ -26,17 +20,17 @@
           </a>
         </div>
         <div class="navTitle">
-          <a href="yogaClass.html">
-            <p class="navMenu">요가</p>
-          </a>
-          <a href="pilatesClass.html">
-            <p class="navMenu">필라테스</p>
-          </a>
-          <a href="healthClass.html">
-            <p class="navMenu navMenuFocus">헬스</p>
-          </a>
+          <p class="navMenu">
+            <a href="yogaClass.html">요가</a>
+          </p>
+          <p class="navMenu">
+            <a href="pilatesClass.html">필라테스</a>
+          </p>
+          <p class="navMenu">
+            <a href="healthClass.html">헬스</a>
+          </p>
           <a href="myPage.html">
-            <p class="navMenu">마이페이지</p>
+            <p class="navMenu navMenuFocus">마이페이지</p>
           </a>
           <button class="login">
             <a href="login.html" style="color: #181818"> 로그인 </a>
@@ -53,28 +47,22 @@
         </div>
       </div>
 
-      <div class="classList">
-        <div class="subjectTitle" style="display: flex">
-          <div class="subjectName noneMargin">Health</div>
-          <div class="subjectFilter noneMargin">
-            <select title="dd" name="" class="">
-              <option value="popular" style="color: #252525">인기순</option>
-              <option value="date" style="color: #252525">최신순</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <div class="lecture"></div>
-        </div>
-        <!-- <div class="thumbImage">
-            <img src="" alt="" />
-          </div>
-          <p class="classTitle">
-            <span>육선생님이 알려주는 하루 30분 초간단 홈트</span>
-            하루30분 홈트 D+100 프로젝트
-          </p> -->
-      </div>
+<!-- ---------------------------------- -->
+ <div class="courseHistoryTab">
+    <div id="courseHistoryTabMenu01" class="tabContents"><p>내가 듣는 강좌</p></div>
+    <div id="courseHistoryTabMenu02" class="tabContents"><p>위시리스트</p></div>
+    
+ </div>
 
+ <div class="myCourseWrap01">
+    <p>내가 듣는 강좌</p>
+ </div>
+ 
+
+ <div class="myCourseWrap02 hidden">
+    <p>위시리스트</p>
+ </div>
+<!-- ---------------------------------- -->
       <div class="footerBar" style="display: flex">
         <p class="bold">
           3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
@@ -119,5 +107,7 @@
         <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
       </div>
     </div>
+    </div>
+    <script src="/js/courseHistory.js"></script>
   </body>
 </html>

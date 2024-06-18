@@ -4,9 +4,127 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>마이페이지</title>
+    <title>My Page</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+    <script src="/js/pilatesClass.js"></script>
   </head>
   <body>
-    <h1>마이페이지</h1>
+    <div class="Wrapper">
+      <a name="Top"></a>
+      <div class="header">
+        <div class="navLogo">
+          <a href="index.html">
+            <img
+              src="https://i.ibb.co/9VyktjQ/image.png"
+              alt="HelloLogo"
+              class="helloLogo"
+            />
+          </a>
+        </div>
+        <div class="navTitle">
+          <a href="yogaClass.html">
+            <p class="navMenu">요가</p>
+          </a>
+          <a href="pilatesClass.html">
+            <p class="navMenu">필라테스</p>
+          </a>
+          <a href="healthClass.html">
+            <p class="navMenu">헬스</p>
+          </a>
+          <a href="myPage.html">
+            <a href="myPage.html">
+              <p class="navMenu navMenuFocus">마이페이지</p>
+            </a>
+          </a>
+          <button class="login">
+            <a href="login.html" style="color: #181818"> 로그인 </a>
+          </button>
+
+          <p class="join">
+            <a href="join.html">아직 회원이 아니신가요?</a>
+            <img
+              src="https://i.ibb.co/7gRtFWv/image.png"
+              alt="image"
+              width="24px"
+            />
+          </p>
+        </div>
+      </div>
+      <div class="loginTitle" style="margin-top: 25px; !important">
+        <h2>마이페이지</h2>
+      </div>
+      <div class="myPageMenu">
+        <div class="myPageTab">
+          <a href="editProfile.html">
+            <img src="/src/main/resources/static/image/edit.png" alt="" />
+            <p class="myPageTabTitle">회원정보 수정</p>
+          </a>
+        </div>
+        <div class="myPageTab">
+          <a href="courseHistory.html">
+            <img
+              src="/src/main/resources/static/image/graduation-cap.png"
+              alt=""
+            />
+            <p class="myPageTabTitle">수강이력</p>
+          </a>
+        </div>
+        <div class="myPageTab">
+          <a href="dailyChart.html">
+            <img src="/src/main/resources/static/image/edit.png" alt="" />
+            <p class="myPageTabTitle">데일리차트</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer" style="margin-top: 0; !important">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+      <!-- ---------------------------------- -->
+    </div>
+    <!-- ---------------------------------- -->
+    <div class="footerBar" style="display: flex">
+      <p class="bold">
+        3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+        혜택을 누려보세요
+        <img
+          src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+          alt="fire-1f525"
+          width="24px"
+          style="background: none; margin: 0"
+        />
+      </p>
+      <div class="footerBtnArea" style="display: flex; justify-content: end">
+        <div class="footerBtn">지금 구독하기</div>
+        <div class="topBtn">
+          <a href="#Top">
+            <img
+              src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+              alt="Group-46"
+              width="26px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
