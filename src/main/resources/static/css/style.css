@@ -551,8 +551,10 @@ select:focus {
 }
 
 .signupBox {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  display: flex;
+  /* grid-template-rows: 1fr 1fr 1fr;
+   */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px 0;
