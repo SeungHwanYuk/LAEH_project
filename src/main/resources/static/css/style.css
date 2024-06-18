@@ -331,6 +331,32 @@ select:focus {
   color: #252525;
 }
 
+.logOutBtn {
+  border: 1px solid #00ffa3;
+  background-color: #00ffa3;
+  color: #181818;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 38px;
+  /* padding: 8px 18px;*/
+  line-height: 38px;
+  margin: 0;
+  width: 104px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 38px;
+  /* background: none; */
+}
+
+.logOutBtn:hover > a {
+  color: #181818;
+}
+
+.logOutBtn:hover {
+  background-color: #76ffcd;
+  color: #252525;
+}
+
 .join {
   text-decoration: underline;
   cursor: pointer;
