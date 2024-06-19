@@ -54,7 +54,7 @@ document
       .then((response) => {
         // console.log("앙기모띠", response);
         // alert("등록완료");
-        window.location.href="board.html"
+        window.location.href = "board.html";
       })
       .catch((error) => {
         console.log("에러발생: ", error);
@@ -85,4 +85,5 @@ function sessionCurrent() {
       console.log("에러 발생", error);
     });
 }
+
 sessionCurrent();

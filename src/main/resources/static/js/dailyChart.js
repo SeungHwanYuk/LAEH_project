@@ -40,4 +40,5 @@ function sessionCurrent() {
       console.log("에러 발생", error);
     });
 }
+
 sessionCurrent();
