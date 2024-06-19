@@ -1,5 +1,4 @@
 // 장바구니
-
 const url = "http://localhost:8080/subscribe/buy/list";
 
 function sessionCurrent() {
@@ -16,11 +15,12 @@ function sessionCurrent() {
         let cartItems = JSON.parse(localStorage.getItem(userId));
         if (cartItems) {
           displayCart(cartItems, userId);
+          console.log("카트아이템", cartItems);
           const data = cartItems.map((contents) => {
             console.log("컨텐츠 아이디 추측 : ", contents);
             // purchase객체를 만들어서 리턴
             return {
-              contentsId: contents,
+              contents: contents,
               userId: {
                 userId: userId,
                 authority: { authorityName: authority },
@@ -37,9 +37,9 @@ function sessionCurrent() {
                   .post(url, data, { withCredentials: true })
                   .then((response) => {
                     console.log("데이터 : ", response.data);
-                    localStorage.removeItem(userId);
-                    alert("구매해주셔서 감사합니다.");
-                    window.location.reload();
+                    // localStorage.removeItem(userId);
+                    // alert("구매해주셔서 감사합니다.");
+                    // window.location.reload();
                   })
                   .catch((error) => {
                     console.log("에러 발생 : ", error);
@@ -51,7 +51,6 @@ function sessionCurrent() {
     })
     .catch((error) => {
       console.log("에러 발생 : ", error);
-      alert("캐치입니다");
     });
 }
 
