@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="/src/test/java/boardPage_jin_test.css" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  <title>글쓰기</title>
+
+</head>
+
+
+<body>
+
+  <form method="post" >
+    <div class="boardPageInpuWrapper">
+      <tr><td class="boardPageInputText"><h1>글작성하기</h1></td></tr>
+      <tr><td class="boardPageInputText2">글을 작성해주세요</td></tr>
+
+
+      <div class="boardPageInpuGrop">
+        <form>
+          <select title="boardPageInpuFilter" class="boardPageInpuFilter" >
+            <option value="0">자유게시판</option>
+            <option value="1">Q&A</option>
+          </select>
+        </form>
+      </div>
+      <div class="boardPageInpuUserId">작성자
+      <input class="boardPageInpuUserId" type="text" placeholder="작성자" />
+    </div>
+
+  <table class="boardPageInputTable"> 
+    <!-- action="boardPage_jin_test.html"  -->
+
+      <tr><td class="boardPageInputHeader">Title</td></tr>
+      <tr><td><input type="text" class="boardPageInput" placeholder="제목을 입력하세요" name="title"></td></tr>
+      <tr><td class="boardPageInputHeader">Comment</td></tr>
+      <tr><td><textarea class="boardPageInputTextarea" placeholder="내용을 입력하세요" name="detail"></textarea></td></tr>
+      
+      <tr><td class="boardPageInputSubmitGroup">
+         <button class="boardPageInputSubmit">등록</button></td></tr>
+    </table>   
+  </div>
+  </form>
+
+  <div class="boardPageModify">수정</div>
+  <a href="board.html">뒤로가기</a>
+  <div class="boardPageDelete">삭제</div>
+  <script src="/src/main/resources/static/js/boardPost.js"></script>
+
+  </div>
+  </body>
+</html>
