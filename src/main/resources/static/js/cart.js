@@ -18,9 +18,10 @@ function sessionCurrent() {
           console.log("카트아이템", cartItems);
           const data = cartItems.map((contents) => {
             console.log("컨텐츠 아이디 추측 : ", contents);
+            let contentsId = contents;
             // purchase객체를 만들어서 리턴
             return {
-              contentsId: cartItems,
+              contentsId: contentsId,
               userId: {
                 userId: userId,
                 authority: { authorityName: authority },
@@ -42,7 +43,7 @@ function sessionCurrent() {
                     // window.location.reload();
                   })
                   .catch((error) => {
-                    console.log("에러 발생 : ", error);
+                    console.log("에러 발생 : 환불안댄다니까", error);
                   });
               }
             });

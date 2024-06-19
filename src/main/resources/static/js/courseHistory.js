@@ -1,4 +1,5 @@
 const url = "http://localhost:8080";
+const urlSubscribeList = "http://localhost:8080/subscribe/current";
 
 document
   .querySelector("#courseHistoryTabMenu01")
@@ -19,9 +20,7 @@ document
   });
 
 const urlCurrent = "http://localhost:8080/user/current";
-
 function sessionCurrent() {
-  // 로그인 유지 확인 코드
   axios
     .get(urlCurrent, { withCredentials: true })
     .then((response) => {
@@ -38,6 +37,15 @@ function sessionCurrent() {
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");
         }
+
+        axios
+          .get(urlSubscribeList, { withCredentials: true })
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log("리스트에러 : ", error);
+          });
       }
     })
     .catch((error) => {

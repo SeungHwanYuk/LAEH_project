@@ -17,13 +17,11 @@ public class MemoDto {
 
     private String userId;
     private String memoText;
-    private LocalDateTime memoDateTime;
 
     public MemoDto toMemoDto(Memo memo) {
         MemoDto memoDto = new MemoDto();
         memoDto.setUserId(memo.getUserId());
         memoDto.setMemoText(memo.getMemoText());
-        memoDto.setMemoDateTime(memo.getMemoDateTime());
         return memoDto;
     }
 }
