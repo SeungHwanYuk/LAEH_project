@@ -36,7 +36,7 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
           <p class="navMenu">
             <a href="myPage.html">마이페이지</a>
           </p>
-          <button class="login" onclick="location.href='index.html'">
+          <button class="login">
             <a href="index.html" style="color: #181818"> 로그인 </a>
           </button>
           <button class="logout hidden">
@@ -57,7 +57,12 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
         <h2>Login</h2>
       </div>
       <div class="loginBox">
-        <input type="text" class="userId" placeholder="아이디" />
+        <input
+          type="text"
+          class="userId"
+          placeholder="아이디"
+          onkeyup="enterkey()"
+        />
         <input
           type="password"
           class="password"
@@ -122,6 +127,7 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
       </div>
     </div>
     <script src="/js/login.js"></script>
+    <script src="/js/session.js"></script>
     <!-- <script src="/src/main/resources/static/js/login.js"></script> -->
   </body>
 </html>
