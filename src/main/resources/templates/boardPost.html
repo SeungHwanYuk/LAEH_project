@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="/src/test/java/boardPage_jin_test.css" /> -->
+  <link rel="stylesheet" href="/src/main/resources/static/css/boardPost.css" />
+  <link rel="stylesheet" href="/css/boardPost.css" />
   <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
   <title>글쓰기</title>
 
@@ -14,34 +15,38 @@
 
   <div method="post" >
     <div class="boardPageInpuWrapper">
-      <tr><td class="boardPageInputText"><h1>글작성하기</h1></td></tr>
-      <tr><td class="boardPageInputText2">글을 작성해주세요</td></tr>
+      <div><h2 class="boardPageInputText">글작성하기</h2></div>
+      <div class="boardPageInputText2">글을 작성해주세요</div>
 
-
+<div class="boardPageInpuTap">
       <div class="boardPageInpuGrop">
-        <div>
+        <div class="boardPageInpuFilterGrop">게시판
+        <!-- <div> -->
           <select title="boardPageInpuFilter" class="boardPageInpuFilter" >
             <option value="0">자유게시판</option>
             <option value="1">Q&A</option>
           </select>
-        </div>
+        <!-- </div> -->
+      </div>
       </div>
       <div class="boardPageInpuUserId">작성자
       <input class="boardPageInpuUserId" type="text" placeholder="작성자" />
     </div>
 
-  <table class="boardPageInputTable"> 
+  <div class="boardPageInputTable"> 
     <!-- action="boardPage_jin_test.html"  -->
 
-      <tr><td class="boardPageInputHeader">Title</td></tr>
-      <tr><td><input type="text" class="boardPageInput" placeholder="제목을 입력하세요" name="title"></td></tr>
-      <tr><td class="boardPageInputHeader">Comment</td></tr>
-      <tr><td><textarea class="boardPageInputTextarea" placeholder="내용을 입력하세요" name="detail"></textarea></td></tr>
-      
-      <tr><td class="boardPageInputSubmitGroup">
-         <button class="boardPageInputSubmit">등록</button></td></tr>
-    </table>   
+      <div class="boardPageInputHeader">Title</div>
+      <div><input type="text" class="boardPageInput" placeholder="제목을 입력하세요" name="title"></div>
+      <div class="boardPageInputHeader">Comment</div>
+      <div><textarea class="boardPageInputTextarea" placeholder="내용을 입력하세요" name="detail"></textarea></div>
+
+    </div>   
   </div>
+</div>
+      
+<tr><td class="boardPageInputSubmitGroup">
+  <button class="boardPageInputSubmit">등록</button></td></tr>
   </div>
 
   <div class="boardPageModify">수정</div>
