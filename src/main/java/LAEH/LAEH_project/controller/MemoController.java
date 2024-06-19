@@ -28,10 +28,10 @@ public class MemoController {
         return new ResponseEntity<>(memoService.getMemoByUserId(userId), HttpStatus.OK);
     }
 
-//    @PostMapping("/save")
-//    public ResponseEntity<MemoDto> saveMemo(@RequestBody MemoDto memoDto) {
-//        return new ResponseEntity<>(memoService.saveMemo(memoDto), HttpStatus.CREATED);
-//    }
+    @PostMapping("/save")
+    public ResponseEntity<MemoDto> saveMemo(@RequestBody MemoDto memoDto) {
+        return new ResponseEntity<>(memoService.saveMemo(memoDto), HttpStatus.CREATED);
+    }
 
     @DeleteMapping("/delete/{memoId}")
     public ResponseEntity<String> deleteMemo(@PathVariable long memoId) {

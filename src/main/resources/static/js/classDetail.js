@@ -4,11 +4,15 @@ console.log("Class ID : ", id);
 
 const url = "http://localhost:8080/contents/" + id;
 const urlUpdateCount = "http://localhost:8080/contents/count/" + id;
+const urlBuyContents = "http://localhost:8080/subscribe/buy";
 
+let userId;
+let contentsId = id;
 axios
   .get(url)
   .then((response) => {
     console.log("데이터 : " + response.data);
+
     displayContents(response.data);
     displayLectureImg(response.data.lectureId);
     contentsClickedCount(response.data.lectureId);
@@ -46,13 +50,54 @@ function displayContents(data) {
   // content.appendChild(lectureInfoImg);
 
   document.querySelector(".addCartBtn").addEventListener("click", () => {
-    if (confirm("장바구니에 담으시겠습니까?")) {
-      sessionCurrent(data);
+    if (confirm("장바구니?")) {
+      buyOne();
     }
   });
+  // sessionCurrent(data);
 }
 
-// 장바구니 담기
+function buyOne() {
+  const data2 = {
+    contentsId: { contentsId: contentsId },
+    userId: { userId: userId },
+  };
+  console.log("data2 : ", data2);
+  axios
+    .post(urlBuyContents, data2, { withCredentials: true })
+    .then((response) => {
+      console.log("데이터 : ", response.data);
+      if (response.data.userId == "anonymousUser") {
+        alert("로그인이 필요합니다.");
+        window.location.href = "login.html";
+      } else {
+        console.log("세션유지urlBuyContents성공");
+      }
+    })
+    .catch((error) => {
+      console.log("에러 발생이지만 DB에는 정상적으로 들어감 : ", error);
+    });
+}
+
+// 구매
+// function sessionCurrent(data) {
+//   axios
+//     .post(urlBuyContents, data, { withCredentials: true })
+//     .then((response) => {
+//       console.log("데이터 : ", response.data);
+//       if (response.data.userId == "anonymousUser") {
+//         alert("로그인이 필요합니다.");
+//         window.location.href = "login.html";
+//       } else {
+//         console.log("세션유지, 구매 완료");
+//       }
+//     })
+//     .catch((error) => {
+//       console.log("에러 발생 : ", error);
+//     });
+// }
+
+// 장바구니 담기 // 0619 리스트 저장 시 수정필요
 function sessionCurrent(data) {
   axios
     .get("http://localhost:8080/user/current", { withCredentials: true })
@@ -119,30 +164,31 @@ function displayLectureImg(data) {
   }
 }
 
-// const urlCurrent = "http://localhost:8080/user/current";
+const urlCurrent = "http://localhost:8080/user/current";
 
-// function sessionCurrent() {
-//   // 로그인 유지 확인 코드
-//   axios
-//     .get(urlCurrent, { withCredentials: true })
-//     .then((response) => {
-//       console.log("데이터", response);
-//       if (response.data.userId == "anonymousUser") {
-//         alert("로그인이 필요합니다.");
-//         window.location.href = "login.html";
-//       } else {
-//         //   if (response.data.userId != "anonymousUser") {
-//         console.log("세션 유지");
-//         if (response.status == 200) {
-//           console.log(response.data.userId + "님, 환영합니다.");
-//           document.querySelector(".logout").classList.remove("hidden");
-//           document.querySelector(".login").classList.add("hidden");
-//           document.querySelector(".join").classList.add("hidden");
-//         }
-//       }
-//     })
-//     .catch((error) => {
-//       console.log("에러 발생", error);
-//     });
-// }
-// sessionCurrent();
+function sessionCurrent() {
+  // 로그인 유지 확인 코드
+  axios
+    .get(urlCurrent, { withCredentials: true })
+    .then((response) => {
+      userId = response.data.userId;
+      console.log("데이터", response);
+      if (response.data.userId == "anonymousUser") {
+        alert("로그인이 필요합니다.");
+        window.location.href = "login.html";
+      } else {
+        //   if (response.data.userId != "anonymousUser") {
+        console.log("세션 유지");
+        if (response.status == 200) {
+          console.log(response.data.userId + "님, 환영합니다.");
+          document.querySelector(".logout").classList.remove("hidden");
+          document.querySelector(".login").classList.add("hidden");
+          document.querySelector(".join").classList.add("hidden");
+        }
+      }
+    })
+    .catch((error) => {
+      console.log("에러 발생", error);
+    });
+}
+sessionCurrent();

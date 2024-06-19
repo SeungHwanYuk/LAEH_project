@@ -1,5 +1,6 @@
 // 장바구니
-const url = "http://localhost:8080/subscribe/buy/list";
+const urlBuyAll = "http://localhost:8080/subscribe/buy/list";
+const urlBuyContents = "http://localhost:8080/subscribe/buy";
 
 function sessionCurrent() {
   axios
@@ -29,15 +30,29 @@ function sessionCurrent() {
             };
           });
           console.log("맵 데이터 :", data);
-
           document
             .querySelector(".purchaseBtn")
             .addEventListener("click", () => {
               if (confirm("환불안댐!!!")) {
+                let data1 = cartItems[0].map((contents) => {
+                  console.log("컨텐츠 아이디 추측 : ", contents);
+                  let contentsId = contents;
+                  // purchase객체를 만들어서 리턴
+                  return {
+                    contentsId: contentsId,
+                    userId: {
+                      userId: userId,
+                      authority: { authorityName: authority },
+                    },
+                  };
+                });
+                console.log("data1 : ", data1);
                 axios
-                  .post(url, data, { withCredentials: true })
+                  .post(urlBuyContents, data1, {
+                    withCredentials: true,
+                  })
                   .then((response) => {
-                    console.log("데이터 : ", response.data);
+                    console.log("데이터 : ", response);
                     // localStorage.removeItem(userId);
                     // alert("구매해주셔서 감사합니다.");
                     // window.location.reload();
