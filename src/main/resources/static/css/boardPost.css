@@ -1,0 +1,33 @@
+
+/* 게시판창 */
+body{
+  background-color: #252525;
+  margin: 0 auto;
+}
+
+.post{
+  margin: 0 auto;
+}
+
+.boardPageInputText {
+  text-align: center;
+  padding: 30px 0px 5px;
+  color: #ffffff;
+  
+}
+.boardPageInputText2{
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.boardPageInpuTap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  color: #ffffff;
+  /* font-size: 14px; */
+  margin-bottom: 20px;
+}
