@@ -28,7 +28,7 @@ public class Memo {
 
     @ManyToOne
     @JoinColumn(name = "사용자아이디")
-    private User userId; // String 으로 받음!!
+    private User userId;
 
 //    @ManyToOne
 //    @JoinColumn(name = "사용자아이디")
