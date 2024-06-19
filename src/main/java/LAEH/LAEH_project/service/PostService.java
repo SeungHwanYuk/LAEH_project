@@ -26,13 +26,11 @@ public class PostService {
                 .orElseThrow(()->new IllegalArgumentException("유효하지 않은 게시판아이디입니다."));
         User user= userRepository.findById(postDto.getUserId())
                 .orElseThrow(()-> new IllegalArgumentException("아이디를 확인해주세요."));
-
         Post post = new Post();
         post.setBoard(board);
         post.setUserId(user);
         post.setPostTitle(postDto.getPostTitle());
         post.setPostContent(postDto.getPostContent());
-
         Post savePost = postRepository.save(post);
         return postDto.toPostDtoFromPost(savePost);
     }
