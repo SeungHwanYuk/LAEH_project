@@ -42,7 +42,7 @@ public class MemoService {
         return memoDtoList;
     }
 
-    // 메모저장
+//     메모저장
 //    public Memo saveMemo(MemoDto memoDto) {
 //        Memo memo = memoRepository.findById(memoDto.getUserId())
 //                .orElseThrow(()->new IllegalArgumentException("유효하지 않은 게시판아이디입니다."));
@@ -50,14 +50,7 @@ public class MemoService {
 //        return memoRepository.save(memo);
 //    }
 
-//    public Memo saveMemo(MemoDto memoDto) {
-//        Memo memo = new Memo();
-//        memoDto.setUserId(String.valueOf(memo.getUserId()));
-//        memoDto.setMemoText(memo.getMemoText());
-//        memoDto.setMemoDateTime(memo.getMemoDateTime());
-//
-//        return memoRepository.save(memo);
-//    }
+
 
 
     // 메모삭제
