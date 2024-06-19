@@ -20,14 +20,14 @@ function sessionCurrent() {
             console.log("컨텐츠 아이디 추측 : ", contents);
             // purchase객체를 만들어서 리턴
             return {
-              contents: contents,
+              contentsId: contents[1],
               userId: {
                 userId: userId,
                 authority: { authorityName: authority },
               },
             };
           });
-          console.log("맵 데이터 :", data);
+          console.log("맵 데이터 :", data.contentsId);
 
           document
             .querySelector(".purchaseBtn")
