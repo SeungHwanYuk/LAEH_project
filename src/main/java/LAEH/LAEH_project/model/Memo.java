@@ -26,8 +26,9 @@ public class Memo {
     @Column(name = "메모등록날짜")
     private LocalDateTime memoDateTime;
 
-    @Column(name = "사용자아이디")
-    private String userId; // String 으로 받음!!
+    @ManyToOne
+    @JoinColumn(name = "사용자아이디")
+    private User userId; // String 으로 받음!!
 
 //    @ManyToOne
 //    @JoinColumn(name = "사용자아이디")

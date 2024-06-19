@@ -24,6 +24,8 @@ public class SubscribeController {
     }
 
 
+
+
     // 구독
     @PostMapping("/buy")
     @PreAuthorize("hasAnyRole('ADMIN','USER','TEACHER')")

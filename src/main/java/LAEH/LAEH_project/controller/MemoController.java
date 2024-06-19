@@ -29,8 +29,8 @@ public class MemoController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Memo> saveMemo(@RequestBody Memo memo) {
-        return new ResponseEntity<>(memoService.saveMemo(memo), HttpStatus.CREATED);
+    public ResponseEntity<MemoDto> saveMemo(@RequestBody MemoDto memoDto) {
+        return new ResponseEntity<>(memoService.saveMemo(memoDto), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{memoId}")
