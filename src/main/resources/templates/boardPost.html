@@ -15,45 +15,52 @@
 
   <div method="post" >
     <div class="boardPageInpuWrapper">
-      <div><h2 class="boardPageInputText">글작성하기</h2></div>
+      <div><h1 class="boardPageInputText">Comment</h1></div>
       <div class="boardPageInputText2">글을 작성해주세요</div>
 
 <div class="boardPageInpuTap">
       <div class="boardPageInpuGrop">
-        <div class="boardPageInpuFilterGrop">게시판
+        <div class="boardPageInpuFilterGrop">
+        <div class="boardPageInpuFiltertitle">게시판</div>
         <!-- <div> -->
           <select title="boardPageInpuFilter" class="boardPageInpuFilter" >
-            <option value="0">자유게시판</option>
-            <option value="1">Q&A</option>
+            <option value="1">자유게시판</option>
+            <option value="2">Q&A</option>
           </select>
         <!-- </div> -->
       </div>
       </div>
-      <div class="boardPageInpuUserId">작성자
-      <input class="boardPageInpuUserId" type="text" placeholder="작성자" />
-    </div>
+      <div class="boardPageInpuUserIdGrop">
+      <div class="boardPageInpuUserId">작성자</div>
+      <input class="boardPageInpuUserIdtype" type="text" placeholder="작성자 ID" />
+    
+  </div>
 
   <div class="boardPageInputTable"> 
     <!-- action="boardPage_jin_test.html"  -->
-
+<div class="boardPageInputHeaderGrop">
       <div class="boardPageInputHeader">Title</div>
-      <div><input type="text" class="boardPageInput" placeholder="제목을 입력하세요" name="title"></div>
+      <div><input type="text" class="boardPageInput" placeholder="제목을 입력해주세요" name="title"></div>
+    </div>
+    <div class="boardPageInputHeaderCommentGrop">
       <div class="boardPageInputHeader">Comment</div>
-      <div><textarea class="boardPageInputTextarea" placeholder="내용을 입력하세요" name="detail"></textarea></div>
-
+      <div><textarea class="boardPageInputTextarea" placeholder="내용을 입력해주세요" name="detail"></textarea></div>
+    </div>
     </div>   
   </div>
 </div>
       
-<tr><td class="boardPageInputSubmitGroup">
-  <button class="boardPageInputSubmit">등록</button></td></tr>
-  </div>
+<div class="boardPageInputSubmitGroup">
 
-  <div class="boardPageModify">수정</div>
-  <a href="board.html">뒤로가기</a>
-  <div class="boardPageDelete">삭제</div>
+
+  <!-- <div class="boardPageModify">수정</div> -->
+
+  <a href="board.html" class="boardPageBack">뒤로가기</a>
+  <div class="boardPageInputSubmit">등록</div> 
+  <!-- <div class="boardPageDelete">삭제</div> -->
   <script src="/js/boardPost.js"></script>
 
   </div>
+</div>
   </body>
 </html>

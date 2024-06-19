@@ -6,6 +6,7 @@
     <title>게시판</title>
     <link rel="stylesheet" href="/src/main/resources/static/css/board.css" />
     <link rel="stylesheet" href="/css/board.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
 
   </head>
 
@@ -79,6 +80,7 @@
       
       <br>
       <table class="boardTablesubtitle">
+        <thead>
           <tr class="boardTablesubtitleTr">
               <td class="boardTablesubtitleTd">번호</td>
               <td class="boardTablesubtitleTd">제목</td>
@@ -86,6 +88,8 @@
               <td class="boardTablesubtitleTd">일시</td>
               <td class="boardTablesubtitleTd">조회수</td>
           </tr>
+        </thead>
+          <tbody class="boardBody"></tbody>
       </table>
 
 

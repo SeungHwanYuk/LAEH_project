@@ -11,15 +11,23 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class PostService {
-    @Autowired
     PostRepository postRepository;
-    @Autowired
+
     UserRepository userRepository;
-    @Autowired
+
     BoardRepository boardRepository;
+
+    @Autowired
+    public PostService(PostRepository postRepository, UserRepository userRepository, BoardRepository boardRepository) {
+        this.postRepository = postRepository;
+        this.userRepository = userRepository;
+        this.boardRepository = boardRepository;
+    }
 
     public PostDto savePost(PostDto postDto){
         Board board = boardRepository.findById(postDto.getBoardNumber())
@@ -33,6 +41,10 @@ public class PostService {
         post.setPostContent(postDto.getPostContent());
         Post savePost = postRepository.save(post);
         return postDto.toPostDtoFromPost(savePost);
+    }
+
+    public List<Post> getAllPost (){
+        return postRepository.findAll();
     }
 
 }

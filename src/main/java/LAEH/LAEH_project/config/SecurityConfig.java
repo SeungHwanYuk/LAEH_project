@@ -50,7 +50,10 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/css/**"),
                                 new AntPathRequestMatcher("/image/**"),
 
-                                new AntPathRequestMatcher("/post/**") //진경
+                                new AntPathRequestMatcher("/post/**"), //진경
+                                new AntPathRequestMatcher("/board/**") //진경
+
+
 
                         ).permitAll()
                         .anyRequest().authenticated())
