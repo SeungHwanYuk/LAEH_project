@@ -85,4 +85,8 @@ public class ViewController {
 
     @GetMapping("/LAEH_project/cart.html")
     public String cart() {return "cart";}
+
+    @GetMapping("/LAEH_project/boardPost.html")
+    public String boardPost() {return "boardPost";}
+
 }

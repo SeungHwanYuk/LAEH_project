@@ -52,9 +52,9 @@ document
     axios
       .post(url, data, { withCredentials: true })
       .then((response) => {
-        console.log("앙기모띠", response);
-        alert("등록완료");
-        // window.location.href="board.html"
+        // console.log("앙기모띠", response);
+        // alert("등록완료");
+        window.location.href="board.html"
       })
       .catch((error) => {
         console.log("에러발생: ", error);
