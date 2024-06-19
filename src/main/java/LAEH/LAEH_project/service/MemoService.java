@@ -43,12 +43,12 @@ public class MemoService {
     }
 
     // 메모저장
-    public Memo saveMemo(MemoDto memoDto) {
-        Memo memo = memoRepository.findById(memoDto.getUserId())
-                .orElseThrow(()->new IllegalArgumentException("유효하지 않은 게시판아이디입니다."));
-        memo.setMemoDateTime(LocalDateTime.now());
-        return memoRepository.save(memo);
-    }
+//    public Memo saveMemo(MemoDto memoDto) {
+//        Memo memo = memoRepository.findById(memoDto.getUserId())
+//                .orElseThrow(()->new IllegalArgumentException("유효하지 않은 게시판아이디입니다."));
+//        memo.setMemoDateTime(LocalDateTime.now());
+//        return memoRepository.save(memo);
+//    }
 
 //    public Memo saveMemo(MemoDto memoDto) {
 //        Memo memo = new Memo();
