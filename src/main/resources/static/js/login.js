@@ -26,9 +26,12 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
     .then((response) => {
       console.log("데이터 : ", response);
       sessionCurrent();
+      alert("로그인이 완료되었습니다.");
+      window.location.href = "index.html";
     })
     .catch((error) => {
       console.log("에러 발생 : ", error);
+      alert("아이디 혹은 패스워드를 확인해주세요.");
     });
 });
 
@@ -70,5 +73,29 @@ function sessionCurrent() {
       alert("로그인이 필요합니다.");
       href = "login.html";
     });
+}
+
+function enterkey() {
+  if (window.event.keyCode == 13) {
+    // 로그인 버튼
+    const data = {
+      userId: userId,
+      password: password,
+    };
+    axios
+      .post(urlLogin, data, { withCredentials: true })
+      .then((response) => {
+        console.log("데이터 : ", response);
+        sessionCurrent();
+        alert("로그인이 완료되었습니다.");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        console.log("에러 발생 : ", error);
+        alert("아이디 혹은 패스워드를 확인해주세요.");
+      });
+    // window.location.href = "index.html";
+    console.log("click enter");
+  }
 }
 sessionCurrent();
