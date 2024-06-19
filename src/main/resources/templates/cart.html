@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Cart</title>
     <script src="
 https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
 "></script>
@@ -53,23 +53,28 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
           </p>
         </div>
       </div>
-      <div class="loginTitle">
-        <h2>Login</h2>
-      </div>
-      <div class="loginBox">
-        <input type="text" class="userId" placeholder="아이디" />
-        <input type="password" class="password" placeholder="비밀번호" />
 
-        <div class="passwordFind">
-          <a href="findPassword.html">
-            <p>비밀번호찾기</p>
-          </a>
-        </div>
-        <div class="loginBtn">Login</div>
-        <a href="join.html">
-          <div class="signupBtn">Join</div>
-        </a>
+      <!-- 승환 장바구니 추가 -->
+      <div class="cartTitle">
+        <h2>Cart</h2>
       </div>
+      <div class="cartBox">
+        <table class="cartTable">
+          <thead>
+            <th>영상</th>
+            <th>제목</th>
+            <th>강의</th>
+            <th>구독료</th>
+            <th></th>
+          </thead>
+          <tbody class="cartBody"></tbody>
+        </table>
+        <div class="purchaseBtn">구매하기</div>
+        <div class="totalPrice">합계</div>
+        <div class="deleteAllBtn">다지워버령</div>
+      </div>
+      <!-- 예아아아ㅏ아아아아아ㅏ아아아아아ㅏ -->
+
       <div class="footerBar" style="display: flex">
         <p class="bold">
           3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
@@ -114,7 +119,8 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
         <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
       </div>
     </div>
-    <script src="/js/login.js"></script>
+
+    <script src="/js/cart.js"></script>
     <!-- <script src="/src/main/resources/static/js/login.js"></script> -->
   </body>
 </html>

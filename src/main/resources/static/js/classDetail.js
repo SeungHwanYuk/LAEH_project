@@ -44,6 +44,36 @@ function displayContents(data) {
   content.appendChild(contentsName);
   content.appendChild(lectureDesc);
   // content.appendChild(lectureInfoImg);
+
+  document.querySelector(".addCartBtn").addEventListener("click", () => {
+    if (confirm("장바구니에 담으시겠습니까?")) {
+      sessionCurrent(data);
+    }
+  });
+}
+
+// 장바구니 담기
+function sessionCurrent(data) {
+  axios
+    .get("http://localhost:8080/user/current", { withCredentials: true })
+    .then((response) => {
+      console.log("데이터 : ", response.data);
+      if (response.data.userId != "anonymousUser") {
+        const userId = response.data.userId;
+        let cartItems = JSON.parse(localStorage.getItem(userId));
+        if (!cartItems) {
+          cartItems = [];
+        }
+        cartItems.push(data);
+        localStorage.setItem(userId, JSON.stringify(cartItems));
+        alert("장바구니에 담겼습니다.");
+      }
+    })
+    .catch((error) => {
+      console.log("에러 발생 : ", error);
+      alert("로그인이 필요합니다.");
+      href = "login.html";
+    });
 }
 
 // 조회 수 카운트

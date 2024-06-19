@@ -31,7 +31,13 @@ public class SubscribeController {
         return new ResponseEntity<>(subscribeService.saveSubscribe(subscribe), HttpStatus.CREATED);
     }
 
-    // 현재 세선 구독목록
+    @PostMapping("/buy/list")
+    @PreAuthorize("hasAnyRole('ADMIN','USER','TEACHER')")
+    public List<Subscribe> savePurchaseListToSubscribe(@RequestBody List<Subscribe> purchaseList){
+        return subscribeService.savePurchaseListToSubscribe(purchaseList);
+    }
+
+    // 현재 세션 구독목록
     @GetMapping("/current")
     public List<Subscribe> getSubscribeListByCurrentUser() {
         return subscribeService.getSubscribeListByCurrentUser();

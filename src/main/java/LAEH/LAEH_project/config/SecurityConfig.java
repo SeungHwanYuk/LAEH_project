@@ -37,6 +37,7 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/contents/**"),
                                 new AntPathRequestMatcher("/count/**"),
                                 new AntPathRequestMatcher("/subscribe/**"),
+                                new AntPathRequestMatcher("/cart/**"),
 
                                 new AntPathRequestMatcher("/memo/**"),
 

@@ -30,13 +30,23 @@ public class SubscribeService {
         this.userRepository = userRepository;
     }
 
+
+    // 한개만 구독
     public Subscribe saveSubscribe(Subscribe subscribe) {
-        // 구매확정 바로 직전, 현재시간을 저장함
         subscribe.setSubscribeStartDate(LocalDate.now());
         subscribeRepository.save(subscribe);
 
         return subscribe;
+    }
 
+
+    // 장바구니 리스트 구독
+    public List<Subscribe> savePurchaseListToSubscribe(List<Subscribe> purchaseList) {
+        for (int i = 0; i < purchaseList.size(); i++) {
+            purchaseList.get(i).setSubscribeStartDate(LocalDate.now());
+            subscribeRepository.save(purchaseList.get(i));
+        }
+        return purchaseList;
     }
 
 

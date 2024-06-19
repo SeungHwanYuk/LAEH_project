@@ -82,4 +82,7 @@ public class ViewController {
 
     @GetMapping("/LAEH_project/dailyChart.html")
     public String dailyChart() {return "dailyChart";}
+
+    @GetMapping("/LAEH_project/cart.html")
+    public String cart() {return "cart";}
 }

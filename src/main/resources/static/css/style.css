@@ -331,7 +331,7 @@ select:focus {
   color: #252525;
 }
 
-.logOutBtn {
+.logoutBtn {
   border: 1px solid #00ffa3;
   background-color: #00ffa3;
   color: #181818;
@@ -348,11 +348,11 @@ select:focus {
   /* background: none; */
 }
 
-.logOutBtn:hover > a {
+.logoutBtn:hover > a {
   color: #181818;
 }
 
-.logOutBtn:hover {
+.logoutBtn:hover {
   background-color: #76ffcd;
   color: #252525;
 }

@@ -96,7 +96,4 @@ public class UserController {
                                                @RequestBody UserDto userDto) {
         return new ResponseEntity<>(userService.updateUserById(id , userDto),HttpStatus.OK);
     }
-
-
-
 }
