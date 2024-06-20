@@ -7,6 +7,12 @@ const urlBuyContents = "http://localhost:8080/subscribe/buy";
 document
   .querySelector("#courseHistoryTabMenu01")
   .addEventListener("click", (e) => {
+    // 모든 자식 삭제 (페이지 초기화)
+    let removeNodes = document.querySelector(".subscribeBody");
+    while (removeNodes.firstChild) {
+      removeNodes.removeChild(removeNodes.firstChild);
+    }
+    //
     console.log("tab01 내가듣는강좌 clicked!!");
 
     document.querySelector(".myCourseWrap01").classList.remove("hidden");
@@ -17,6 +23,12 @@ document
 document
   .querySelector("#courseHistoryTabMenu02")
   .addEventListener("click", (e) => {
+    // 모든 자식 삭제 (페이지 초기화)
+    let removeNodes = document.querySelector(".WishListBody");
+    while (removeNodes.firstChild) {
+      removeNodes.removeChild(removeNodes.firstChild);
+    }
+    //
     console.log("tab02 위시리스트 clicked!!");
 
     document.querySelector(".myCourseWrap01").classList.add("hidden");
@@ -72,6 +84,8 @@ function sessionCheckAndgetWishList() {
                   });
               }
             });
+        } else {
+          console.log("위시리스트가 없어용ㅠㅠ", cartItems);
         }
       }
     })
@@ -199,7 +213,11 @@ function sessionCheckAndGetAllSubscribeList() {
           .get(urlSubscribeList, { withCredentials: true })
           .then((response) => {
             console.log(response);
-            displaySubscribe(response.data);
+            if (response.data == "") {
+              console.log("구독한게 없다오ㅜㅜㅜㅜㅠㅠㅠ");
+            } else {
+              displaySubscribe(response.data);
+            }
           })
           .catch((error) => {
             console.log("urlSubscribeList 리스트에러 : ", error);
