@@ -1,20 +1,46 @@
-const url = "http://localhost:8080";
+const urlCurrent = "http://localhost:8080/user/current";
+const urlsaveMemo = "http://localhost:8080/memo/save";
+// const url = "http://localhost:8080";
+
+let currentUserId;
+let memoText = "";
 
 document.querySelector("#carlorieTabMenu01").addEventListener("click", (e) => {
-  // console.log("tab01 clicked!!");
+  console.log("tab01 일기장 clicked!!");
 
   document.querySelector(".carlorieWrap01").classList.remove("hidden");
   document.querySelector(".carlorieWrap02").classList.add("hidden");
 });
 
 document.querySelector("#carlorieTabMenu02").addEventListener("click", (e) => {
-  // console.log("tab02 clicked!!");
+  console.log("tab02 칼로리 검색 clicked!!");
 
   document.querySelector(".carlorieWrap01").classList.add("hidden");
   document.querySelector(".carlorieWrap02").classList.remove("hidden");
 });
 
-const urlCurrent = "http://localhost:8080/user/current";
+document.querySelector("#newMemoText").addEventListener("change", (e) => {
+  console.log(e.target.value);
+  memoText = e.target.value;
+});
+
+// 메모 저장
+document.querySelector(".memoSaveBtn").addEventListener("click", (e) => {
+  if (confirm("메모를 등록할거냐 묻고있다.")) {
+    let data = {
+      userId: currentUserId,
+      memoText: memoText,
+    };
+    axios
+      .post(urlsaveMemo, data, { withCredentials: true })
+      .then((response) => {
+        console.log("데이터 : ", response);
+      })
+      .catch((error) => {
+        console.log("urlsaveMemo 에러발생", error);
+      });
+  }
+});
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
@@ -30,6 +56,7 @@ function sessionCurrent() {
         console.log("세션 유지");
         if (response.status == 200) {
           console.log(response.data.userId + "님, 환영합니다.");
+          currentUserId = response.data.userId;
           document.querySelector(".logout").classList.remove("hidden");
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");

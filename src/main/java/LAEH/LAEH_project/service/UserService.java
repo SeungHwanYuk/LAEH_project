@@ -75,7 +75,7 @@ public class UserService {
             user1.get().setUserName(userDto.getUserName());
             user1.get().setUserNickname(userDto.getUserNickname());
             user1.get().setGender(userDto.getGender());
-            user1.get().setPassword(userDto.getPassword());
+            user1.get().setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
             user1.get().setPhoneNum(userDto.getPhoneNum());
             userRepository.save(user1.get());
             return user1.get();

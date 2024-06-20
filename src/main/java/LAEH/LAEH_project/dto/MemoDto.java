@@ -21,7 +21,7 @@ public class MemoDto {
     public MemoDto toMemoDto(Memo memo) {
         MemoDto memoDto = new MemoDto();
         memoDto.setUserId(getUserId());
-        memoDto.setMemoText(memo.getMemoText());
+        memoDto.setMemoText(getMemoText());
         return memoDto;
     }
 }
