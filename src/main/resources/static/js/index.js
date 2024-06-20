@@ -1,4 +1,22 @@
 const urlCurrent = "http://localhost:8080/user/current";
+const urlLogout = "http://localhost:8080/user/logout";
+
+document.querySelector(".redBtn").addEventListener("click", (e) => {
+  axios
+    .get(urlCurrent, { withCredentials: true })
+    .then((response) => {
+      console.log("데이터", response);
+      if (response.data.userId != "anonymousUser") {
+        console.log("세션 유지");
+        window.location.href = "courseHistory.html";
+      } else {
+        window.location.href = "#sub";
+      }
+    })
+    .catch((error) => {
+      console.log("urlCurrent 에러 발생", error);
+    });
+});
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
@@ -17,13 +35,9 @@ function sessionCurrent() {
       }
     })
     .catch((error) => {
-      console.log("에러 발생", error);
-      alert("로그인이 필요합니다.");
-      href = "login.html";
+      console.log(" urlCurrent 에러 발생", error);
     });
 }
-
-
 
 document.querySelector(".logout").addEventListener("click", () => {
   // 로그아웃 버튼
@@ -34,6 +48,7 @@ document.querySelector(".logout").addEventListener("click", () => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
           alert = "로그아웃 되었습니다.";
+          window.location.reload;
         }
       })
       .catch((error) => {

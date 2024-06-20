@@ -4,6 +4,24 @@ const urlCurrent = "http://localhost:8080/user/current";
 const urlBuyAll = "http://localhost:8080/subscribe/buy/list";
 const urlBuyContents = "http://localhost:8080/subscribe/buy";
 
+// const urlParams = new URLSearchParams(window.location.search);
+// const id = urlParams.get();
+// console.log("Class ID : ", id);
+
+// 첫 페이지 진입시 실행코드
+document.querySelector(".historyTextP01").classList.add("historyTextFocus");
+sessionCheckAndGetAllSubscribeList();
+//
+
+// window.onload 이벤트를 사용하여 페이지 로드 후 실행될 초기화 코드 작성
+window.onload = function () {
+  // 현재 페이지 URL을 확인하거나 다른 조건을 사용하여 필요한 경우만 실행할 수 있습니다.
+  if (window.location.href.includes("classDetail.html")) {
+    // #courseHistoryTabMenu02 요소를 찾아서 클릭 이벤트 발생시키기
+    document.querySelector("#courseHistoryTabMenu02").click();
+  }
+};
+
 document
   .querySelector("#courseHistoryTabMenu01")
   .addEventListener("click", (e) => {
@@ -51,7 +69,7 @@ document
 // 위시리스트로 이름 수정 필요 0620
 function sessionCheckAndgetWishList() {
   axios
-    .get("http://localhost:8080/user/current", { withCredentials: true })
+    .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터 : ", response.data);
       if (response.data.userId == "anonymousUser") {
@@ -65,15 +83,12 @@ function sessionCheckAndgetWishList() {
           displayWishList(cartItems, userId);
           console.log("카트아이템", cartItems);
           const data = cartItems.map((contents) => {
-            console.log("컨텐츠 아이디 추측 : ", contents);
-            let contentsId = contents;
+            console.log("컨텐츠 아이디 추측 : ", contents.contentsId);
+
             // purchase객체를 만들어서 리턴
             return {
-              contentsId: contentsId,
-              userId: {
-                userId: userId,
-                authority: { authorityName: authority },
-              },
+              contentsId: contents.contentsId,
+              userId: userId,
             };
           });
           console.log("맵 데이터 :", data);
@@ -82,17 +97,17 @@ function sessionCheckAndgetWishList() {
             .addEventListener("click", () => {
               if (confirm("환불안댐!!!")) {
                 axios
-                  .post(urlBuyContents, data1, {
+                  .post(urlBuyAll, data, {
                     withCredentials: true,
                   })
                   .then((response) => {
                     console.log("데이터 : ", response);
-                    // localStorage.removeItem(userId);
-                    // alert("구매해주셔서 감사합니다.");
-                    // window.location.reload();
+                    localStorage.removeItem(userId);
+                    alert("구매해주셔서 감사합니다.");
+                    window.location.href = "courseHistory.html";
                   })
                   .catch((error) => {
-                    console.log("에러 발생 : 환불안댄다니까", error);
+                    console.log(" urlBuyAll 에러 발생 : 환불안댄다니까", error);
                   });
               }
             });
@@ -100,7 +115,7 @@ function sessionCheckAndgetWishList() {
       }
     })
     .catch((error) => {
-      console.log("에러 발생 : ", error);
+      console.log(" urlCurrent 에러 발생 : ", error);
     });
 }
 
@@ -187,12 +202,10 @@ function displaySubscribe(contents) {
     const tr = document.createElement("tr");
     const imgtd = document.createElement("td");
     const title = document.createElement("td");
-    const deleteBtn = document.createElement("button");
 
-    // const text = document.createElement("td");
+    const text = document.createElement("td");
     const img = document.createElement("img");
     tr.classList.add("historyTr");
-
 
     // 클래스 이름 생성
     imgtd.classList.add("imgtd");
