@@ -58,7 +58,7 @@ function displayPost(data) {
     const postTitle = document.createElement("td");
     const userId = document.createElement("td");
     const postContent = document.createElement("td");
-    const search = document.createElement("td");
+    // const search = document.createElement("td");
 
 
     // 클래스 이름 생성
@@ -66,11 +66,11 @@ function displayPost(data) {
     
     // 태그 속성 추가
 
-    num.textContent = data.num;
+    num.textContent = data.board.boardNumber;
     postTitle.textContent = data.postTitle;
     userId.textContent = data.userId.userId;
-    postContent.textContent = data.postContent;
-    search.textContent= data.search;
+    postContent.textContent = data.postDate;
+    // search.textContent= data.search;
 
 
     // appendChild 부모,자식 위치 설정
@@ -78,7 +78,7 @@ function displayPost(data) {
     tr.appendChild(postTitle);
     tr.appendChild(userId);
     tr.appendChild(postContent);
-    tr.appendChild(search);
+    // tr.appendChild(search);
     tbody.appendChild(tr);
   });
 }

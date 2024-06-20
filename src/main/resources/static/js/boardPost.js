@@ -15,8 +15,10 @@ const urlCurrent = "http://localhost:8080/user/current";
 let title = "";
 let content = "";
 let userId = "";
-let board = "";
+let board = 1;
 
+
+console.log("게시판 번호는 : ", board);
 document.querySelector(".boardPageInput").addEventListener("change", (e) => {
   console.log(e.target.value);
   title = e.target.value;

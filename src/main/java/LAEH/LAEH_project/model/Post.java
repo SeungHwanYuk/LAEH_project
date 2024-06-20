@@ -36,6 +36,8 @@ public class Post {
     @JoinColumn(name = "게시판ID", nullable = false)
     private Board board;
 
+
+
     @PrePersist
     protected void onCreate(){
         this.postDate = LocalDateTime.now();
