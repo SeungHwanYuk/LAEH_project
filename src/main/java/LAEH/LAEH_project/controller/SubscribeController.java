@@ -1,6 +1,7 @@
 package LAEH.LAEH_project.controller;
 
 
+import LAEH.LAEH_project.dto.SubscribeDto;
 import LAEH.LAEH_project.model.Subscribe;
 import LAEH.LAEH_project.repository.SubscribeRepository;
 import LAEH.LAEH_project.service.SubscribeService;
@@ -25,18 +26,17 @@ public class SubscribeController {
 
 
 
-
     // 구독
     @PostMapping("/buy")
     @PreAuthorize("hasAnyRole('ADMIN','USER','TEACHER')")
-    public ResponseEntity<Subscribe> saveSubscribe(@RequestBody Subscribe subscribe){
-        return new ResponseEntity<>(subscribeService.saveSubscribe(subscribe), HttpStatus.CREATED);
+    public ResponseEntity<SubscribeDto> saveSubscribe(@RequestBody SubscribeDto subscribeDto){
+        return new ResponseEntity<>(subscribeService.saveSubscribe(subscribeDto), HttpStatus.CREATED);
     }
 
     @PostMapping("/buy/list")
     @PreAuthorize("hasAnyRole('ADMIN','USER','TEACHER')")
-    public List<Subscribe> savePurchaseListToSubscribe(@RequestBody List<Subscribe> purchaseList){
-        return subscribeService.savePurchaseListToSubscribe(purchaseList);
+    public ResponseEntity<List<SubscribeDto>> saveSubscribeList(@RequestBody List<SubscribeDto> subscribeDto){
+        return new ResponseEntity<>(subscribeService.saveSubscribeList(subscribeDto),HttpStatus.OK);
     }
 
     // 현재 세션 구독목록

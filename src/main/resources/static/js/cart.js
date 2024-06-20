@@ -1,7 +1,10 @@
 // 장바구니
+
+// 망해써
 const urlBuyAll = "http://localhost:8080/subscribe/buy/list";
 const urlBuyContents = "http://localhost:8080/subscribe/buy";
 
+// 위시리스트로 이름 수정 필요 0620
 function sessionCurrent() {
   axios
     .get("http://localhost:8080/user/current", { withCredentials: true })
@@ -19,10 +22,9 @@ function sessionCurrent() {
           console.log("카트아이템", cartItems);
           const data = cartItems.map((contents) => {
             console.log("컨텐츠 아이디 추측 : ", contents);
-            let contentsId = contents;
             // purchase객체를 만들어서 리턴
             return {
-              contentsId: contentsId,
+              contentsId: contents,
               userId: {
                 userId: userId,
                 authority: { authorityName: authority },
@@ -34,21 +36,8 @@ function sessionCurrent() {
             .querySelector(".purchaseBtn")
             .addEventListener("click", () => {
               if (confirm("환불안댐!!!")) {
-                let data1 = cartItems[0].map((contents) => {
-                  console.log("컨텐츠 아이디 추측 : ", contents);
-                  let contentsId = contents;
-                  // purchase객체를 만들어서 리턴
-                  return {
-                    contentsId: contentsId,
-                    userId: {
-                      userId: userId,
-                      authority: { authorityName: authority },
-                    },
-                  };
-                });
-                console.log("data1 : ", data1);
                 axios
-                  .post(urlBuyContents, data1, {
+                  .post(urlBuyContents, data, {
                     withCredentials: true,
                   })
                   .then((response) => {

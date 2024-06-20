@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
-    <link rel="stylesheet" href="/css/style.css" />
     <script src="
     https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
     "></script>
-    <title>수강이력</title>
+    <title>Wishlist</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
+"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <a name="Top"></a>
     <div class="Wrapper">
       <div class="header">
         <div class="navLogo">
@@ -32,9 +36,9 @@
           <p class="navMenu">
             <a href="healthClass.html">헬스</a>
           </p>
-          <a href="myPage.html">
-            <p class="navMenu navMenuFocus">마이페이지</p>
-          </a>
+          <p class="navMenu">
+            <a href="myPage.html">마이페이지</a>
+          </p>
           <button class="login">
             <a href="login.html" style="color: #181818"> 로그인 </a>
           </button>
@@ -53,20 +57,27 @@
         </div>
       </div>
 
-<!-- ---------------------------------- -->
- <div class="courseHistoryTab">
-    <div id="courseHistoryTabMenu01" class="tabContents"><p>내가 듣는 강좌</p></div>
-    <div id="courseHistoryTabMenu02" class="tabContents"><p>위시리스트</p></div>
- </div>
+      <!-- 승환 장바구니 추가 -->
+      <div class="cartTitle">
+        <h2>Cart</h2>
+      </div>
+      <div class="cartBox">
+        <table class="cartTable">
+          <thead>
+            <th>영상</th>
+            <th>제목</th>
+            <th>강의</th>
+            <th>구독료</th>
+            <th></th>
+          </thead>
+          <tbody class="cartBody"></tbody>
+        </table>
+        <div class="purchaseBtn">구매하기</div>
+        <div class="totalPrice">합계</div>
+        <div class="deleteAllBtn">다지워버령</div>
+      </div>
+      <!-- 예아아아ㅏ아아아아아ㅏ아아아아아ㅏ -->
 
- <div class="myCourseWrap01">
-    <p>내가 듣는 강좌</p>
- </div>
- 
- <div class="myCourseWrap02 hidden">
-    <p>위시리스트</p>
- </div>
-<!-- ---------------------------------- -->
       <div class="footerBar" style="display: flex">
         <p class="bold">
           3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
@@ -111,7 +122,8 @@
         <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
       </div>
     </div>
-    </div>
-    <script src="/js/courseHistory.js"></script>
+
+    <script src="/js/cart.js"></script>
+    <!-- <script src="/src/main/resources/static/js/login.js"></script> -->
   </body>
 </html>
