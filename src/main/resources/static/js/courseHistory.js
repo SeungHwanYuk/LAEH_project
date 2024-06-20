@@ -165,7 +165,8 @@ function displayWishList(contents, userId) {
         const deletedArr = JSON.stringify(deletedData);
         console.log("deletedArr :", deletedArr);
         localStorage.setItem(userId, deletedArr);
-        window.location.reload();
+        // window.location.reload;
+        sessionCheckAndgetWishList();
       }
     });
   });
