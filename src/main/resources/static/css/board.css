@@ -1,22 +1,22 @@
-/* body{
+body{
   margin: 0 auto;
 }
 
 input:focus{
   outline: none;
-} */
+}
 
-* {
+/* * {
   text-decoration: none;
   list-style: none;
   /* background-color: #1f2937; */
 
-  color: #fff;
+  /* color: #fff;
   margin: 0 auto;
   box-sizing: border-box;
 
   /* font-family: "Noto Sans KR", sans-serif; */
-  font-family: "Nanum Gothic", sans-serif;
+  /* font-family: "Nanum Gothic", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   font-style: normal;
@@ -64,7 +64,7 @@ select:focus {
 .helloLogo {
   width: 120px;
 }
-
+ */ 
 
 
 /* 게시판창 */
