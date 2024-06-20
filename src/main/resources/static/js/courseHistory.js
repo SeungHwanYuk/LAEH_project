@@ -187,9 +187,12 @@ function displaySubscribe(contents) {
     const tr = document.createElement("tr");
     const imgtd = document.createElement("td");
     const title = document.createElement("td");
-    const text = document.createElement("td");
+    const deleteBtn = document.createElement("button");
+
+    // const text = document.createElement("td");
     const img = document.createElement("img");
     tr.classList.add("historyTr");
+
 
     // 클래스 이름 생성
     imgtd.classList.add("imgtd");
