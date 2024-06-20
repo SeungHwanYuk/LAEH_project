@@ -1,4 +1,6 @@
 const url = "http://localhost:8080/contents/all";
+const urlLogout = "http://localhost:8080/user/logout";
+const urlCurrent = "http://localhost:8080/user/current";
 const urlLectureId = "http://localhost:8080/contents/listContents/H"; // 강의 아이디로 영상 출력 ( 기본 최신날짜 순 )
 const urlLectureIdsortedClickCount =
   "http://localhost:8080/contents/listContents/popular/H"; // 조회수별 정렬
@@ -49,8 +51,6 @@ function displayContents(contentsData) {
   }
 }
 
-const urlCurrent = "http://localhost:8080/user/current";
-
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
@@ -77,8 +77,8 @@ function sessionCurrent() {
     });
 }
 
+// 로그아웃 버튼
 document.querySelector(".logout").addEventListener("click", () => {
-  // 로그아웃 버튼
   if (confirm("로그아웃 하시겠습니까?")) {
     axios
       .post(urlLogout, {}, { withCredentials: true })
@@ -86,6 +86,7 @@ document.querySelector(".logout").addEventListener("click", () => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
           alert = "로그아웃 되었습니다.";
+          window.location.reload;
         }
       })
       .catch((error) => {

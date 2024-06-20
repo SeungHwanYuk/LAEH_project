@@ -1,4 +1,6 @@
 const url = "http://localhost:8080/contents/all";
+const urlLogout = "http://localhost:8080/user/logout";
+const urlCurrent = "http://localhost:8080/user/current";
 const urlLectureId = "http://localhost:8080/contents/listContents/Y"; // 강의 아이디로 영상 검색
 const urlLectureIdsortedClickCount =
   "http://localhost:8080/contents/listContents/popular/Y"; // 조회수별 정렬
@@ -49,20 +51,13 @@ function displayContents(contentsData) {
   }
 }
 
-const urlCurrent = "http://localhost:8080/user/current";
-
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
     .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터", response);
-      if (response.data.userId == "anonymousUser") {
-        document.querySelector(".logout").classList.add("hidden");
-        document.querySelector(".login").classList.remove("hidden");
-        document.querySelector(".join").classList.remove("hidden");
-      } else {
-        //   if (response.data.userId != "anonymousUser") {
+      if (response.data.userId != "anonymousUser") {
         console.log("세션 유지");
         if (response.status == 200) {
           console.log(response.data.userId + "님, 환영합니다.");
@@ -73,12 +68,12 @@ function sessionCurrent() {
       }
     })
     .catch((error) => {
-      console.log("에러 발생", error);
+      console.log(" urlCurrent 에러 발생", error);
     });
 }
 
+// 로그아웃 버튼
 document.querySelector(".logout").addEventListener("click", () => {
-  // 로그아웃 버튼
   if (confirm("로그아웃 하시겠습니까?")) {
     axios
       .post(urlLogout, {}, { withCredentials: true })
@@ -86,6 +81,7 @@ document.querySelector(".logout").addEventListener("click", () => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
           alert = "로그아웃 되었습니다.";
+          window.location.reload;
         }
       })
       .catch((error) => {
