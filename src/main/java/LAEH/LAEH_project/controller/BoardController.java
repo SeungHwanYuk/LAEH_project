@@ -28,14 +28,30 @@ public class BoardController {
 //                HttpStatus.OK);
 //    }
     PostService postService;
+
+    BoardService boardService;
+
     @Autowired
-    public BoardController(PostService postService) {
+
+    public BoardController(PostService postService, BoardService boardService) {
         this.postService = postService;
+        this.boardService = boardService;
     }
+
+
 
     @GetMapping("/board/all")
     public ResponseEntity<List<Post>> getAllPost(){
         return new ResponseEntity<>(postService.getAllPost(),HttpStatus.OK);
+    }
+    @GetMapping("/board/all/reverse")
+    public ResponseEntity<List<Post>> getAllPostByReverse(){
+        return new ResponseEntity<>(postService.getAllPostByReverse(),HttpStatus.OK);
+    }
+
+    @GetMapping("/freeBoard/{boardId}")
+    public ResponseEntity<List<Post>> getPostByFreeBoard (@PathVariable Board boardId) {
+        return new ResponseEntity<>(boardService.getPostByFreeBoard(boardId),HttpStatus.OK);
     }
 
 

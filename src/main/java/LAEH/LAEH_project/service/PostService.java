@@ -46,4 +46,8 @@ public class PostService {
     public List<Post> getAllPost (){
         return postRepository.findAll();
     }
+    public List<Post> getAllPostByReverse (){
+        return postRepository.findAll()
+                .reversed();
+    }
 }

@@ -8,6 +8,10 @@ body{
 .post{
   margin: 0 auto;
 }
+.boardPageInputTable{
+  display: flex;
+    flex-direction: column;
+}
 
 /* 제목 */
 .boardPageInputText {
@@ -114,6 +118,7 @@ body{
   margin-bottom: 20px;
   box-sizing: border-box;
   padding: 13px 20px;
+  color: black;
 }
 .boardPageInputTextarea:focus {
   outline: none;
@@ -188,3 +193,6 @@ background-color: #60ffc5 ;
   }
 
 
+  .hidden {
+    display: none;
+  }

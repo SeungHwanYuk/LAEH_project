@@ -9,7 +9,11 @@
 // }
 // post.addEventListener("title",submiHandler);
 
+
+
+
 const url = "http://localhost:8080/post/write";
+
 const urlCurrent = "http://localhost:8080/user/current";
 
 let title = "";
@@ -29,12 +33,12 @@ document
     console.log(e.target.value);
     content = e.target.value;
   });
-document
-  .querySelector(".boardPageInpuUserId")
-  .addEventListener("change", (e) => {
-    console.log(e.target.value);
-    userId = e.target.value;
-  });
+// document
+//   .querySelector(".boardPageInpuUserId")
+//   .addEventListener("change", (e) => {
+//     console.log(e.target.value);
+//     userId = e.target.value;
+//   });
 document
   .querySelector(".boardPageInpuFilter")
   .addEventListener("change", (e) => {
@@ -77,6 +81,7 @@ function sessionCurrent() {
         console.log("세션 유지");
         if (response.status == 200) {
           console.log(response.data.userId + "님, 환영합니다.");
+          userId=response.data.userId
           document.querySelector(".logout").classList.remove("hidden");
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");

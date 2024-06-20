@@ -1,106 +1,3 @@
-body{
-  margin: 0 auto;
-}
-
-input:focus{
-  outline: none;
-}
-
-/* * {
-  text-decoration: none;
-  list-style: none;
-  /* background-color: #1f2937; */
-
-  /* color: #fff;
-  margin: 0 auto;
-  box-sizing: border-box;
-
-  /* font-family: "Noto Sans KR", sans-serif; */
-  /* font-family: "Nanum Gothic", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
-  font-style: normal;
-}
-
-img,
-p,
-a {
-  background: none;
-}
-
-input {
-  color: #252525;
-}
-
-select:focus {
-  outline: none;
-}
-
-.noneMargin {
-  margin: 0;
-}
-
-.Wrapper {
-  background-color: #252525;
-}
-
-.bold {
-  font-weight: 900;
-}
-
-.point {
-  color: #00ffa3;
-}
-.header {
-  align-items: center;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 120px;
-  height: 100px;
-}
-
-.helloLogo {
-  width: 120px;
-}
- */ 
-
-
-/* 게시판창 */
-.boardWrapper{
-  background-color: #252525;
-}
-/* .boardBtn{
-  width: 130px;
-  color: #181818;
-  background-color: #00ffa3;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-  
-}
-
-.boardBtn:hover {
-  background-color: #76ffcd;
-  
-}
-.boardwBtn>a{
-  text-decoration-line: none;
-}
-
-
-.boardStart {
-  margin: 0 auto;
-  font-size: 14px;
-  width: 80%;
-  min-width: 1100px;
-  border-collapse: collapse;
-  border-radius: 5px;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  color: #fff;
-} */
 
 .boardTitle {
   text-align: center;
@@ -111,40 +8,15 @@ select:focus {
 
 .boardCaption{
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
-/* 
-.boardhead{
-  border-bottom: 1px #9c9c9c solid;
-  height: 40px;
-}
-
-.boardNum{
-  text-align: center;
-}
-
-.boardBody > tr > td{
-  height: 40px;
-}
-
-.boardText{
-  cursor: pointer;
-}
-
-.boardText:hover{
-  background-color: #333333;
-} */
 
 
 /* 검색창 */
 .boardGrop{
   margin: 0 auto;
-  width: 80%;
-  min-width: 800px;
-  height: 35px;
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
 }
 .boardSearchGrop{
   display: flex;
@@ -153,33 +25,18 @@ select:focus {
 }
 
 .boardSearchTitle{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 130px;
+  border: none;
   font-size: 25px;
   color: #fff;
 }
-
- /* .boardSearch{
-  width: 80%;
-  max-width: 1100px;
-  height: 40px;
-  color: #fff;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
- } */
-
  .boardSearchFilter{
   width: 130px;
   height: 35px;
   font-size: 16px;
   padding: 0 10px;
   border: none;
-
-  
+  color: black;
 }
 .boardSearchFilter:focus {
   outline: none;
@@ -203,8 +60,9 @@ select:focus {
 }
 .boardSearchImg{
   height: 22px;
-  padding: 20px;
   margin-top: 3px;
+  color: black;
+  margin-right: 10px;
 }
 
 .boardLine{
@@ -216,42 +74,51 @@ select:focus {
 }
 /* 테이블 */
 .boardTableBar{
-  width: 100%;
+  width: 80%;
+  min-width: 800px;
   height: 40px;
-  /* margin-top: 20px; */
+  margin-top: 20px;
+  border-collapse: collapse;
 }
 
 .boardTableBar thead{
-
-  /* display: flex;
-  justify-content: center; */
-
     margin: 0 auto;
-    width: 80%;
-    min-width: 800px;
+    margin-top: 10px;
     height: 35px;
-    /* display: flex;
-    justify-content: space-between; */
     padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .boardTableBarTr{
-  /* width: 80%;
-  min-width: 800px; */
-  /* width: 80%; */
-  /* height: 40px; */
   line-height: 40px;
   justify-content: center;
-  border-radius: 4px;
+} 
+#boardTabMenu01{
+  line-height: 40px;
+  justify-content: center;
+}
+#boardTabMenu02{
+  line-height: 40px;
+  justify-content: center;
+}
+#boardTabMenu03{
+  line-height: 40px;
+  justify-content: center;
+}
+.boardSearchQna{
+  width: 130px;
+  border: none;
+  font-size: 25px;
+  color: #fff;
+}
+.boardSearchFaq{
+  width: 130px;
+  border: none;
+  font-size: 25px;
+  color: #fff;
 }
 
 .boardTableBarTd{
   width: 400px;
-  /* height: 40px;
-  line-height: 40px; */
   text-align: center;
   font-size: 16px;
   color: #fff;
@@ -259,6 +126,7 @@ select:focus {
   cursor: pointer;
   background-color: #474747 ;
   font-family: 'GyeonggiTitleM';
+
 }
 .boardTableBarTd:hover{
 background-color: #00ffa3;
@@ -266,8 +134,25 @@ background-color: #00ffa3;
 
   .boardTableBarTd:focus{
     background: none;
-    border-top: #00ffa3 solid 3px;
+    
+    border-top: #00ffa3 solid 2px;
+    /* box-shadow: 0 0 0 2px gray inset; */
     color: #00ffa3;
+    
+  }
+
+  .boardNum1{
+    text-align: center;
+  }
+  .boardUserId1{
+    text-align: center;
+  }
+  .boardPostTitle1{
+    padding-left: 10px;
+  }
+
+  .boardPostContent1{
+    text-align: center;
   }
 
 
@@ -275,80 +160,82 @@ background-color: #00ffa3;
   /* 소제목 */
   
   .boardTablesubtitle{
-    /* border-collapse: collapse; */
-    /* width: 80%;
-    min-width: 800px;
-    border-spacing: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin: 0 auto;
     width: 80%;
     min-width: 800px;
+    margin: 0 auto;
     height: 30px;
-    padding: 10px 0;
     border-spacing: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-bottom: #00ffa3 solid 2px;
     border-top: #00ffa3 solid 2px;
   }
   
 
   .boardTablesubtitleTr{
-    /* width: 80%;
-    min-width: 800px; */
+    margin: 0 2px;
     font-size: 12px;
-    /* height: 30px; */
-    /* line-height: 40px; */
     justify-content: center;
-    /* border-radius: 4px; */
     color: #fff;
-    /* font-weight: bold; */
     cursor: pointer;
-    /* background-color: #474747 ; */
 
   }
 
-  .boardTablesubtitleTd{
-     width: 300px;
-     text-align: center;
-  }
-
-
+  .boardNum{
+    width: 50px;
+    text-align: center;
+ }
+ .boardPostTitle{
+  width: 750px;
+  text-align: center;
+}
+.boardUserId{
+  width: 200px;
+  text-align: center;
+}
+.boardPostContent{
+  width: 200px;
+  text-align: center;
+}
 
 
 
 /* 글쓰기 */
-.boardpageTextBar{
-  width: 90%;
+
+.boardpageTextBarGrop{
+  width: 80%;
   min-width: 800px;
+  color: #181818;
   display: flex;
   justify-content: right;
+  margin-top: 10px;
+}
+
+.boardpageTextBar{
+    border: 1px solid #00ffa3;
+    background-color: #00ffa3;
+    color: #181818;
+    transition: 0.3s;
+    cursor: pointer;
+    height: 38px;
+    line-height: 38px;
+    margin: 0;
+    width: 104px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 38px;
 }
 .boardpageText{
-  width: 200px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #181818 ;
-  background-color: #00ffa3;
   font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
   text-decoration-line: none;
 }
-
-.boardpageText:hover{
-  color: #fff;
+.boardpageTextBar:hover > a {
+  color: #181818;
 }
 
-
-
-
-
+.boardpageTextBar:hover{
+  background-color: #76ffcd;
+  color: #252525;
+}
 
 
 /* 페이징 */
@@ -357,12 +244,6 @@ background-color: #00ffa3;
 	text-align:center;
 	font-size:0;
  }
-
-/* .boardclicked {
-  background-color:#474747;
-  color:#fff;
-  border:1px solid #474747;
-} */
 
 .boardpageNation {
 	display:inline-block;
@@ -394,4 +275,11 @@ background-color: #00ffa3;
 	background-color:#474747;
 	color:#fff;
 	border:1px solid #474747;
+}
+
+
+
+
+.hidden {
+  display: none;
 }
