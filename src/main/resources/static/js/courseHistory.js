@@ -165,7 +165,14 @@ function displayWishList(contents, userId) {
         const deletedArr = JSON.stringify(deletedData);
         console.log("deletedArr :", deletedArr);
         localStorage.setItem(userId, deletedArr);
-        window.location.reload();
+        // 모든 자식 삭제 (페이지 초기화)
+        let removeNodes = document.querySelector(".WishListBody");
+        while (removeNodes.firstChild) {
+          removeNodes.removeChild(removeNodes.firstChild);
+        }
+        //
+
+        sessionCheckAndgetWishList();
       }
     });
   });
