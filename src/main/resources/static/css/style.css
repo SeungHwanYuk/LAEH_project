@@ -854,6 +854,10 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 400px;
   height: 60px;
   align-items: center;
+  margin: 100px auto;
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .courseHistoryTab > .courseHistoryTabMenu01,
@@ -910,4 +914,44 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.historyTr > td:nth-child(2) {
+  width: 300px;
+}
+
+.historyText {
+  padding-bottom: 10px;
+  color: #fff;
+  border-bottom: 2px solid #252525;
+}
+
+.historyTextFocus {
+  padding-bottom: 10px;
+  color: #00ffa3;
+  /* border-bottom: 2px solid #00ffa3; */
+}
+
+.myCourseWrap01 > p .myCourseWrap02 > p {
+  color: inherit;
+}
+
+/* .historyTextFocus:last-child {
+  border-bottom: none;
+} */
+
+.historyBtnWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.purchaseBtn,
+.deleteAllBtn {
+  width: 200px;
+  height: 40px;
+  background: #000;
+  text-align: center;
+  line-height: 40px;
+  /* margin-right: 10px; */
+  margin: 10px 10px 0px 0px;
 }

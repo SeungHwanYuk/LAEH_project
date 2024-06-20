@@ -16,6 +16,11 @@ document
 
     console.log("tab01 내가듣는강좌 clicked!!");
 
+    document.querySelector(".historyTextP01").classList.add("historyTextFocus");
+    document
+      .querySelector(".historyTextP02")
+      .classList.remove("historyTextFocus");
+
     document.querySelector(".myCourseWrap01").classList.remove("hidden");
     document.querySelector(".myCourseWrap02").classList.add("hidden");
     sessionCheckAndGetAllSubscribeList();
@@ -32,6 +37,11 @@ document
     //
 
     console.log("tab02 위시리스트 clicked!!");
+
+    document.querySelector(".historyTextP02").classList.add("historyTextFocus");
+    document
+      .querySelector(".historyTextP01")
+      .classList.remove("historyTextFocus");
 
     document.querySelector(".myCourseWrap01").classList.add("hidden");
     document.querySelector(".myCourseWrap02").classList.remove("hidden");
@@ -134,7 +144,7 @@ function displayWishList(contents, userId) {
   });
 
   // document.querySelector(".totalPrice").textContent = "총 " + totalPrice + "원";
-  document.querySelector(".totalPrice").textContent = "공짜입니다아ㅏ아아아";
+  // document.querySelector(".totalPrice").textContent = "공짜입니다아ㅏ아아아";
 
   // 전체 삭제 코드
   document.querySelector(".deleteAllBtn").addEventListener("click", () => {
