@@ -70,7 +70,7 @@ function sessionCurrent() {
     })
     .catch((error) => {
       console.log("에러 발생", error);
-      alert("로그인이 필요합니다.");
+      alert("로그인이 필요합니다.");s
       href = "login.html";
     });
 }

@@ -23,7 +23,7 @@ function sessionCurrent() {
     });
 }
 
-sessionCurrent();
+
 
 document.querySelector(".logout").addEventListener("click", () => {
   // 로그아웃 버튼
@@ -41,3 +41,5 @@ document.querySelector(".logout").addEventListener("click", () => {
       });
   }
 });
+
+sessionCurrent();
