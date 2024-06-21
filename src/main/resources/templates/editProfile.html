@@ -11,6 +11,7 @@
     <title>회원정보 수정</title>
   </head>
   <body>
+    <a name="Top"></a>
     <div class="Wrapper">
       <div class="header">
         <div class="navLogo">
@@ -36,7 +37,7 @@
             <p class="navMenu navMenuFocus">마이페이지</p>
           </a>
           <a href="board.html">
-            <p class="navMenu navMenuFocus">게시판</p>
+            <p class="navMenu">게시판</p>
           </a>
           <button class="login">
             <a href="login.html" style="color: #181818"> 로그인 </a>
@@ -59,96 +60,126 @@
       <div class="signupTitle">
         <h2>회원정보 수정</h2>
       </div>
-      <div class="signupBox">
-        <!-- ---------------------------------- -->
-        <input
-          type="text"
-          class="singupGroup"
-          id="newUserId"
-          placeholder="아이디"
-          readonly
-        />
-        <div
-          class="successMessage hidden"
-          style="font-size: 14px; color: #00ffa3"
-        >
-          사용 가능한 아이디입니다.
+      <div class="editWrap">
+        <!-- 서브메뉴 시작 -->
+        <div class="subMenu">
+          <p
+            style="
+              font-size: 18px;
+              font-weight: bold;
+              margin: 0;
+              padding: 14px 0 10px;
+            "
+          >
+            바로가기
+          </p>
+          <hr
+            style="width: 100%; border: 1px solid #fff; margin-bottom: 10px"
+          />
+          <a href="editProfile.html">
+            <p class="subMenuTitle point">회원정보 수정</p>
+          </a>
+          <a href="courseHistory.html">
+            <p class="subMenuTitle">수강이력</p>
+          </a>
+          <a href="dailyChart.html">
+            <p class="subMenuTitle">데일리차트</p>
+          </a>
         </div>
-        <div
-          class="lengthMessage hidden"
-          style="font-size: 14px; color: crimson"
-        >
-          아이디는 4~12글자 내로 입력해주세요.
-        </div>
-        <div
-          class="conditionErrorMessage hidden"
-          style="font-size: 14px; color: crimson"
-        >
-          아이디는 영어 또는 숫자만 가능합니다.
-        </div>
-        <input
-          type="password"
-          class="singupGroup"
-          id="newPassword"
-          placeholder="비밀번호"
-        />
-        <div
-          class="conditionWarningMessage hidden"
-          style="font-size: 14px; color: crimson"
-        >
-          비밀번호는 8글자 이상 영문, 숫자, 특수문자(@$!%*#?&)를 포함하세요.
-        </div>
-        <input
-          type="password"
-          class="singupGroup"
-          id="checkPassword"
-          placeholder="비밀번호 확인"
-        />
-        <div
-          class="mismatchMessage hidden"
-          style="font-size: 14px; color: crimson"
-        >
-          비밀번호를 확인해주세요.
-        </div>
-        <!-- ---------------------------------- -->
+        <!-- 서브메뉴 끝 -->
+        <div class="signupBox">
+          <!-- ---------------------------------- -->
+          <input
+            type="text"
+            class="singupGroup"
+            id="currentUserId"
+            placeholder="아이디"
+            readonly
+          />
 
-        <input
-          type="text"
-          class="singupGroup"
-          id="newUserName"
-          placeholder="이름"
-        />
-        <input
-          type="email"
-          class="singupGroup"
-          id="newUserEmail"
-          placeholder="이메일"
-        />
-        <select
-          type="text"
-          class="singupGroup"
-          id="newUserGender"
-          placeholder="성별"
-          style="color: gray"
-        >
-          <option style="color: gray" value="male">남성</option>
-          <option style="color: gray" value="female">여성</option>
-          <option style="color: gray" value="none">선택안함</option>
-        </select>
-        <input
-          type="text"
-          class="singupGroup"
-          id="newUserNickname"
-          placeholder="닉네임"
-        />
-        <input
-          type="number"
-          class="singupGroup"
-          id="newUserPhoneNum"
-          placeholder="핸드폰 번호"
-        />
-        <div></div>
-        <div class="loginBtn">수정하기</div>
+          <!-- value=`${response.data.userId}` -->
+          <div
+            class="successMessage hidden"
+            style="font-size: 14px; color: #00ffa3"
+          >
+            사용 가능한 아이디입니다.
+          </div>
+          <div
+            class="lengthMessage hidden"
+            style="font-size: 14px; color: crimson"
+          >
+            아이디는 4~12글자 내로 입력해주세요.
+          </div>
+          <div
+            class="conditionErrorMessage hidden"
+            style="font-size: 14px; color: crimson"
+          >
+            아이디는 영어 또는 숫자만 가능합니다.
+          </div>
+          <input
+            type="password"
+            class="singupGroup"
+            id="newPassword"
+            placeholder="비밀번호"
+          />
+          <div
+            class="conditionWarningMessage hidden"
+            style="font-size: 14px; color: crimson"
+          >
+            비밀번호는 8글자 이상 영문, 숫자, 특수문자(@$!%*#?&)를 포함하세요.
+          </div>
+          <input
+            type="password"
+            class="singupGroup"
+            id="checkPassword"
+            placeholder="비밀번호 확인"
+          />
+          <div
+            class="mismatchMessage hidden"
+            style="font-size: 14px; color: crimson"
+          >
+            비밀번호를 확인해주세요.
+          </div>
+          <!-- ---------------------------------- -->
+
+          <input
+            type="text"
+            class="singupGroup"
+            id="newUserName"
+            placeholder="이름"
+          />
+          <input
+            type="email"
+            class="singupGroup"
+            id="newUserEmail"
+            placeholder="이메일"
+          />
+          <select
+            type="text"
+            class="singupGroup"
+            id="newUserGender"
+            placeholder="성별"
+            style="color: gray"
+          >
+            <option style="color: gray" value="male">남성</option>
+            <option style="color: gray" value="female">여성</option>
+            <option style="color: gray" value="none">선택안함</option>
+          </select>
+          <input
+            type="text"
+            class="singupGroup"
+            id="newUserNickname"
+            placeholder="닉네임"
+          />
+          <input
+            type="number"
+            class="singupGroup"
+            id="newUserPhoneNum"
+            placeholder="핸드폰 번호"
+          />
+          <div></div>
+          <div class="loginBtn">수정하기</div>
+        </div>
       </div>
       <!-- <div class="signupLogin">
         <div class="signupLogin signupLoginText">

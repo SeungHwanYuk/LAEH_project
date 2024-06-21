@@ -137,7 +137,7 @@ function displayWishList(contents, userId) {
     imgtd.classList.add("imgtd");
     img.classList.add("image");
     deleteBtn.classList.add("deleteBtn");
-    tr.classList.add("historyTr");
+    tr.classList.add("wishTr");
     // 태그 속성 추가
     img.src = data.contentsImage;
     title.textContent = data.contentsName;
