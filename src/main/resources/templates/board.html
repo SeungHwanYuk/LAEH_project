@@ -63,6 +63,7 @@
 
       <!-- 게시판시작 -->
        <div class="boardWrapper">
+
        <div class="boardTitle">
         <!-- <h1>Forum</h1> -->
 
@@ -74,6 +75,9 @@
 
         <div class="boardCaption">편안한 소통을 해주세요</div>
       </div>
+
+      <div class="boardAndPostGrop">
+
 
       <div class="boardGrop">
 <!-- 
@@ -143,14 +147,20 @@
     </div>
 
 
-<!-- 글쓰기버튼  -->
- <div class="boardpageTextBarGrop" id="boardPagewritePostButton">
+
+
+
+
+
+
+<!-- 글쓰기버튼   -->
+ <!-- <div class="boardpageTextBarGrop" id="boardPagewritePostButton">
     <button id="writePostButton" class="btn btn-primary">글쓰기</button>
-  </div>
+  </div> -->
 
 
-<!-- 글쓰기창  -->
-<div class="boardPostPage" id="boardPagewritePost">
+ <!-- 글쓰기창  -->
+<!-- <div class="boardPostPage" id="boardPagewritePost">
     <div class="boardPageInputTable"> 
   <div class="boardPageInputHeaderGrop">
         <div class="boardPageInputHeader">Title</div>
@@ -166,13 +176,48 @@
   <div class="boardPageInputSubmitGroup">
     <a href="board.html" class="boardPageBack">뒤로가기</a>
     <div class="boardPageInputSubmit">등록</div> 
-    <!-- <script src="/js/boardPost.js"></script> -->
+
   
     </div>
 
+  </div> -->
+
+  <!-- 글쓰기 버튼 -->
+<div id="boardPageText"  class="boardPageTextBarGrop">
+  <button id="writePostButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#boardPagewritePost">글쓰기</button>
+</div>
+
+</div>
+
+
+<!-- 모달 창 -->
+<div class="boardPage fade hidden" id="boardPagewritePost" tabindex="-1" aria-labelledby="boardPagewritePostLabel" aria-hidden="true">
+  <div class="boardPageDialog">
+    <div class="boardPageContent">
+      <div class="boardPageHeader">
+        <h5 class="boardPageTitle" id="boardPagewritePostLabel">글쓰기</h5>
+        <button type="button" class="boardPageBtnClose" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- 글쓰기 폼 -->
+        <div class="boardPageInputTable">
+          <div class="boardPageInputHeaderGrop">
+            <div class="boardPageInputHeader">Title</div>
+            <div><input type="text" class="boardPageInput form-control" placeholder="제목을 입력해주세요" name="title"></div>
+          </div>
+          <div class="boardPageInputHeaderCommentGrop">
+            <div class="boardPageInputHeader">Comment</div>
+            <div><textarea class="boardPageInputTextarea form-control" placeholder="내용을 입력해주세요" name="detail"></textarea></div>
+          </div>
+        </div>
+      </div>
+      <div class="boardPageFooter">
+        <button type="button" id="boardPageSubmitButton" class="boardPageFooterbtn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        <button type="button"  class="boardPageFooterbtn btn-primary">등록</button>
+      </div>
+    </div>
   </div>
-
-
+</div>
 
 
 
@@ -221,5 +266,6 @@
       <!-- 게시판 끝 -->
     </div>
 <script src="/js/board.js"></script>
+    <script src="/js/boardPost.js"></script>
   </body>
 </html>
