@@ -198,9 +198,15 @@ background-color: #00ffa3;
 
 
 
+/* 글내용 */
+.boardBody > tr > td{
+  text-align: center;
+}
+
+
 /* 글쓰기 */
 
-.boardpageTextBarGrop{
+.boardPageTextBarGrop{
   width: 80%;
   min-width: 800px;
   color: #181818;
@@ -209,7 +215,7 @@ background-color: #00ffa3;
   margin-top: 10px;
 }
 
-.boardpageTextBar{
+#writePostButton{
     border: 1px solid #00ffa3;
     background-color: #00ffa3;
     color: #181818;
@@ -223,19 +229,62 @@ background-color: #00ffa3;
     font-size: 16px;
     border-radius: 38px;
 }
-.boardpageText{
+/* #writePostButton{
   font-size: 18px;
   font-weight: bold;
   text-decoration-line: none;
-}
-.boardpageTextBar:hover > a {
+} */
+#writePostButton:hover > a {
   color: #181818;
 }
 
-.boardpageTextBar:hover{
+#writePostButton:hover{
   background-color: #76ffcd;
   color: #252525;
 }
+
+/* 글쓰기창 */
+.boardPageInputTable{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.boardPageInput{
+  width: 500px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+}
+.boardPageInput:focus {
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 42%);
+}
+.boardPageInputTextarea{
+  width: 500px;
+  height: 300px;
+  margin: 10px 0;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  color: black;
+}
+.boardPageInputTextarea:focus {
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 42%);
+}
+
+
+
+
+
+
+
+
 
 
 /* 페이징 */
@@ -276,6 +325,13 @@ background-color: #00ffa3;
 	color:#fff;
 	border:1px solid #474747;
 }
+
+
+
+
+
+
+
 
 
 
