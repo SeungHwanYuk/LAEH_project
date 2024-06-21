@@ -92,4 +92,16 @@ public class ViewController {
     @GetMapping("/LAEH_project/adminPage.html")
     public String adminPage() {return "adminPage";}
 
+    @GetMapping("/LAEH_project/userInfoCheck.html")
+    public String userInfoCheck() {return "userInfoCheck";}
+
+    @GetMapping("/LAEH_project/teacherInfoCheck.html")
+    public String teacherInfoCheck() {return "teacherInfoCheck";}
+
+    @GetMapping("/LAEH_project/writeAdmin.html")
+    public String writeAdmin() {return "writeAdmin";}
+
+    @GetMapping("/LAEH_project/lectureAdmin.html")
+    public String lectureAdmin() {return "lectureAdmin";}
+
 }

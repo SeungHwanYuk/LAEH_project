@@ -374,6 +374,23 @@ select:focus {
   font-weight: bold;
 }
 
+.admin {
+  text-decoration: underline;
+  cursor: pointer;
+  /* height: 32px; */
+  /* padding: 12px; */
+  /* line-height: 38px; */
+  margin: 4px 0 0 20px;
+  color: #fff;
+  transition: 0.3s;
+  display: flex;
+  width: 204px;
+}
+
+.admin:hover {
+  font-weight: bold;
+}
+
 .redBtn {
   /* border: 1px solid #f4361c; */
   color: #181818;

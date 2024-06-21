@@ -40,9 +40,9 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
           <a href="myPage.html">
             <p class="navMenu">마이페이지</p>
           </a>
-          <a href="adminPage.html">
+          <!-- <a href="adminPage.html">
             <p class="navMenuAdmin hidden">관리자페이지</p>
-          </a>
+          </a> -->
           <a href="board.html">
             <p class="navMenu">게시판</p>
           </a>
@@ -61,12 +61,20 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
               width="24px"
             />
           </p>
+          <p class="navMenuAdmin hidden admin">
+            <a href="adminPage.html">관리자님 환영합니다!</a>
+            <img
+              src="https://i.ibb.co/10Y3RwC/disguised-face-1f978.png"
+              width="24px"
+              alt="disguised-face-1f978"
+            />
+          </p>
         </div>
       </div>
 
       <!-- 관리자 메뉴 -->
 
-      <div class="mainCopywrite"></div>
+      <!-- <div class="mainCopywrite"></div>
 
       <div class="review"></div>
 
@@ -76,12 +84,46 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
 
       <div class="teacherDetail"></div>
 
-      <div class="teacherWrap"></div>
+      <div class="teacherWrap"></div> -->
 
       <!-- ---------------------------------- -->
+
+      <div class="loginTitle" style="margin-top: 25px; !important">
+        <h2>관리자페이지</h2>
+      </div>
+
+      <div class="myPageMenu">
+        <div class="myPageTab">
+          <a href="userInfoCheck.html">
+            <img src="/image/user-pen.png" alt="" />
+            <p class="myPageTabTitle">회원관리</p>
+          </a>
+        </div>
+
+        <div class="myPageTab">
+          <a href="teacherInfoCheck.html">
+            <img src="/image/user-pen.png" alt="" />
+            <p class="myPageTabTitle">강사관리</p>
+          </a>
+        </div>
+
+        <div class="myPageTab">
+          <a href="writeAdmin.html">
+            <img src="/image/user-pen.png" alt="" />
+            <p class="myPageTabTitle">게시글관리</p>
+          </a>
+        </div>
+
+        <div class="myPageTab">
+          <a href="lectureAdmin.html">
+            <img src="/image/user-pen.png" alt="" />
+            <p class="myPageTabTitle">강의관리</p>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="footer">
+    <div class="footer" style="margin-top: 0">
       <form>
         <select
           title="teamSite"
@@ -99,6 +141,6 @@ https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
       <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
     </div>
 
-    <script src="/js/admin.js"></script>
+    <script src="/js/adminPage.js"></script>
   </body>
 </html>
