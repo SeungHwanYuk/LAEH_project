@@ -89,4 +89,7 @@ public class ViewController {
     @GetMapping("/LAEH_project/boardPost.html")
     public String boardPost() {return "boardPost";}
 
+    @GetMapping("/LAEH_project/adminPage.html")
+    public String adminPage() {return "adminPage";}
+
 }

@@ -1,7 +1,7 @@
 const url = "http://localhost:8080/contents/all";
 const urlLogout = "http://localhost:8080/user/logout";
 const urlCurrent = "http://localhost:8080/user/current";
-const urlLectureId = "http://localhost:8080/contents/listContents/Y"; // 강의 아이디로 영상 검색
+const urlLectureId = "http://localhost:8080/contents/listContents/lecture/Y"; // 강의 아이디로 영상 검색
 const urlLectureIdsortedClickCount =
   "http://localhost:8080/contents/listContents/popular/Y"; // 조회수별 정렬
 
