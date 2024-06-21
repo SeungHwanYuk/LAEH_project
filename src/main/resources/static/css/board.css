@@ -278,9 +278,49 @@ background-color: #00ffa3;
   box-shadow: 0 3px 6px rgb(0 0 0 / 42%);
 }
 
+/* 닫기/등록 */
+.boardPageFooter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+.boardPageCloseButton{
+  width: 230px;
+  height: 40px;
+  text-decoration-line: none;
+  /* background-color: #00ffa3 ; */
+  border: solid 1px;
+  color: #6b6b6b;
+  outline: none;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+.boardPageCloseButton:hover{
+  background-color: #00ffa3 ;
+  color: #fff;
+  border: none;
+  box-sizing: border-box;
+  
+}
 
-
+.boardPageSubmitButton{
+  width: 230px;
+  height: 40px;
+  cursor : pointer;
+  background-color: #00ffa3 ;
+  color: #252525;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 20px;
+}
+.boardPageSubmitButton:hover{
+color: #fff;
+background-color: #60ffc5 ;
+}
 
 
 
