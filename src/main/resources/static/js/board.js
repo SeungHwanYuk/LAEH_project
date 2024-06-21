@@ -11,8 +11,14 @@ let title = "";
 let text = "";
 let userId = "";
 let board = 1;
+let boardName = "";
+
+let freeBoardTabIndex = document.getElementById("boardTabMenu01");
+let QnABoardTabIndex = document.getElementById("boardTabMenu02");
+let FAQTabIndex = document.getElementById("boardTabMenu03");
 
 console.log("게시판 번호는 : ", board);
+
 document.querySelector(".boardPageInput").addEventListener("change", (e) => {
   console.log(e.target.value);
   title = e.target.value;
@@ -25,13 +31,6 @@ document
   });
 
 document
-  .querySelector(".boardPageInputFilter")
-  .addEventListener("change", (e) => {
-    console.log(e.target.value);
-    board = e.target.value;
-  });
-
-document
   .querySelector(".boardPageSubmitButton")
   .addEventListener("click", () => {
     if (confirm("등록하시겠습니까?")) {
@@ -39,7 +38,7 @@ document
         postTitle: title,
         postContent: text,
         userId: userId,
-        boardNumber: board,
+        boardNumber: board + 1,
       };
       axios
         .post(urlWrite, data, { withCredentials: true })
@@ -89,6 +88,9 @@ function getPostToBoard() {
             .querySelector(".boardPageTextBarGrop")
             .classList.remove("hidden");
           displayPost(boardID1);
+          board = freeBoardTabIndex.tabIndex;
+          boardName = boardID1[0].board.boardTitle;
+          console.log("board클릭시", boardName);
         });
 
       document
@@ -101,6 +103,9 @@ function getPostToBoard() {
             .querySelector(".boardPageTextBarGrop")
             .classList.remove("hidden");
           displayPost(boardID2);
+          board = QnABoardTabIndex.tabIndex;
+          boardName = boardID2[0].board.boardTitle;
+          console.log("board클릭시", boardID2, board, boardName);
         });
 
       document
@@ -113,12 +118,19 @@ function getPostToBoard() {
             .querySelector(".boardPageTextBarGrop")
             .classList.add("hidden");
           displayPost(boardID3);
+          board = FAQTabIndex.tabIndex;
+          boardName = boardID3[0].board.boardTitle;
+          console.log("board클릭시", boardID3, board, boardName);
         });
     })
     .catch((error) => {
       console.log("에러 발생 : ", error);
     });
 }
+
+let boardPageInputFilter = document.querySelector(".boardPageInputFilter");
+boardPageInputFilter.value = boardName;
+console.log("boardPageInputFilter : ", boardPageInputFilter);
 
 const tbody = document.querySelector(".boardBody");
 function displayPost(data) {

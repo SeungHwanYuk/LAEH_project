@@ -141,7 +141,9 @@
               <!-- <td class="boardTablesubtitleTd">조회수</td> -->
           </tr>
         </thead>
-          <tbody class="boardBody"></tbody>
+          <tbody class="boardBody">
+           
+          </tbody>
       </table>
 
     </div>
@@ -194,13 +196,13 @@
 <div class="boardPage fade hidden" id="boardPagewritePost" tabindex="-1" aria-labelledby="boardPagewritePostLabel" aria-hidden="true">
   <div class="boardPageDialog">
     <div class="boardPageContent">
-
+ 
       <div class="modal-body">
         <!-- 글쓰기 폼 -->
         <div class="boardPageInputTable">
           <div class="boardPageInputHeaderGrop">
             <div class="boardPageInputHeader">게시판번호</div>
-            <div><input type="text" class="boardPageInputFilter form-control" placeholder="게시판 번호" name="board"></div>
+            <div><output type="text" class="boardPageInputFilter form-control" placeholder="게시판 번호" name="board"></div>
             <div class="boardPageInputHeader">Title</div>
             <div><input type="text" class="boardPageInput form-control" placeholder="제목을 입력해주세요" name="title"></div>
           </div>
@@ -211,8 +213,8 @@
         </div>
       </div>
       <div class="boardPageFooter">
-        <div type="button" id =boardPageCloseButton class="boardPageCloseButton btn-secondary" data-bs-dismiss="modal">닫기</div>
-        <div type="button" id="boardPageSubmitButton" class="boardPageSubmitButton btn-primary">등록</div>
+        <button type="button" id =boardPageCloseButton class="boardPageCloseButton btn-secondary" data-bs-dismiss="modal">닫기</button>
+        <button type="button" id="boardPageSubmitButton" class="boardPageSubmitButton btn-primary">등록</button>
       </div>
     </div>
   </div>
