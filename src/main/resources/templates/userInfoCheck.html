@@ -3,7 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="
+    https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
+    "></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>회원조회</title>
   </head>
-  <body></body>
+  <body>
+    <div class="Wrapper">
+      <div class="header">
+        <!-- 메인메뉴 추가 필요 -->
+        <div class="navLogo">
+          <!-- <img src="https://i.ibb.co/thFZ0wd/Logo.png" alt="Logo" /> -->
+          <!-- <img src="https://i.ibb.co/ns3JKPp/TBeaver-Logo.png" alt="TBeaver-Logo"> -->
+          <a href="index.html">
+            <img
+              src="https://i.ibb.co/9VyktjQ/image.png"
+              alt="HelloLogo"
+              class="helloLogo"
+            />
+          </a>
+        </div>
+        <div class="navTitle">
+          <a href="yogaClass.html">
+            <p class="navMenu">요가</p>
+          </a>
+          <a href="pilatesClass.html">
+            <p class="navMenu">필라테스</p>
+          </a>
+          <a href="healthClass.html">
+            <p class="navMenu">헬스</p>
+          </a>
+          <a href="myPage.html">
+            <p class="navMenu">마이페이지</p>
+          </a>
+          <!-- <a href="adminPage.html">
+            <p class="navMenuAdmin hidden">관리자페이지</p>
+          </a> -->
+          <a href="board.html">
+            <p class="navMenu">게시판</p>
+          </a>
+          <button class="login">
+            <a href="login.html" style="color: #181818"> 로그인 </a>
+          </button>
+          <button class="logout hidden">
+            <a href="index.html" style="color: #181818"> 로그아웃 </a>
+          </button>
+
+          <p class="join">
+            <a href="join.html">아직 회원이 아니신가요?</a>
+            <img
+              src="https://i.ibb.co/7gRtFWv/image.png"
+              alt="image"
+              width="24px"
+            />
+          </p>
+          <p class="navMenuAdmin hidden admin">
+            <a href="adminPage.html">관리자님 환영합니다!</a>
+            <img
+              src="https://i.ibb.co/10Y3RwC/disguised-face-1f978.png"
+              width="24px"
+              alt="disguised-face-1f978"
+            />
+          </p>
+        </div>
+      </div>
+
+      <div class="signupTitle">
+        <h2>회원관리</h2>
+      </div>
+      <!-- 서브메뉴 시작 -->
+      <div class="subMenu">
+        <p
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            padding: 14px 0 10px;
+          "
+        >
+          바로가기
+        </p>
+        <hr style="width: 100%; border: 1px solid #fff; margin-bottom: 10px" />
+        <a href="userInfoCheck.html">
+          <p class="subMenuTitle point">회원관리</p>
+        </a>
+        <a href="teacherInfoCheck.html">
+          <p class="subMenuTitle">강사관리</p>
+        </a>
+        <a href="writeAdmin.html">
+          <p class="subMenuTitle">게시글관리</p>
+        </a>
+        <a href="lectureAdmin.html">
+          <p class="subMenuTitle">강의관리</p>
+        </a>
+      </div>
+      <!-- 서브메뉴 끝 -->
+
+      <div class="footer" style="margin-top: 0">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+    </div>
+    <script src="/js/adminPage.js"></script>
+    <script src="/js/userInfoCheck.js"></script>
+  </body>
 </html>
