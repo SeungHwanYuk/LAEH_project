@@ -40,7 +40,7 @@ function sessionCurrent() {
           response.data.authority[0].authority == "ROLE_ADMIN"
         ) {
           console.log(response.data.userId + "이시네요... 어이구.....");
-          alert("< 경☆ 관리자 모드 ☆축 >");
+          alert(" (｡•̀ᴗ-)✧☆ 관리자 모드 ON!");
           document.querySelector(".logout").classList.remove("hidden");
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");
