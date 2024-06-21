@@ -90,7 +90,7 @@ function buyOne() {
           console.log("데이터 : ", response.data);
         })
         .catch((error) => {
-          console.log("에러 발생이지만 DB에는 정상적으로 들어감 : ", error);
+          console.log(" urlBuyContents 에러 발생 : ", error);
         });
     })
     .catch((error) => {
@@ -116,7 +116,7 @@ function buyOne() {
 //     });
 // }
 
-// 장바구니 담기
+// 위시리스트 담기
 function sessionChenckAndAddWishList(data) {
   axios
     .get("http://localhost:8080/user/current", { withCredentials: true })

@@ -150,58 +150,56 @@ document.querySelector("#newUserPhoneNum").addEventListener("change", (e) => {
   console.log(e.target.value);
   newUserPhoneNum = e.target.value;
 });
-document
-  .querySelector("signupGroup")
-  // 회원가입
-  .document.querySelector(".loginBtn")
-  .addEventListener("click", () => {
-    const data = {
-      userId: currentUserId,
-      password: newPassword,
-      userEmail: newUserEmail,
-      userName: newUserName,
-      gender: newUserGender,
-      userNickname: newUserNickname,
-      phoneNum: newUserPhoneNum,
-    };
-    console.log(data.userId);
-    const urlUserUpdate = "http://localhost:8080/user/update/" + data.userId;
-    axios
-      .get(urlAll)
-      .then((response) => {
-        console.log("데이터 : ", response);
+document.querySelector("signupGroup");
+// 회원가입
+document.querySelector(".loginBtn").addEventListener("click", () => {
+  const data = {
+    userId: currentUserId,
+    password: newPassword,
+    userEmail: newUserEmail,
+    userName: newUserName,
+    gender: newUserGender,
+    userNickname: newUserNickname,
+    phoneNum: newUserPhoneNum,
+  };
+  console.log(data.userId);
+  const urlUserUpdate = "http://localhost:8080/user/update/" + data.userId;
+  axios
+    .get(urlAll)
+    .then((response) => {
+      console.log("데이터 : ", response);
 
-        for (let i = 0; i < response.data.length; i++) {
-          let test = response.data[i];
+      for (let i = 0; i < response.data.length; i++) {
+        let test = response.data[i];
 
-          if (data.password == checkPassword) {
-            console.log("data : ", data);
-            axios
-              .put(urlUserUpdate, data, { withCredentials: true })
-              .then((response) => {
-                alert(`수정 되었습니다., ${response.data}`);
-                window.location.href = "myPage.html";
-              })
-              .catch((error) => {
-                console.error("urlSignup 에러 발생:", error);
-              });
-            return data;
-          } else {
-            // alert("입력하신 아이디가 이미 존재합니다.");
-            // alert("오류");
-            break;
-          }
+        if (data.password == checkPassword) {
+          console.log("data : ", data);
+          axios
+            .put(urlUserUpdate, data, { withCredentials: true })
+            .then((response) => {
+              alert(`수정 되었습니다., ${response.data}`);
+              window.location.href = "myPage.html";
+            })
+            .catch((error) => {
+              console.error("urlSignup 에러 발생:", error);
+            });
+          return data;
+        } else {
+          // alert("입력하신 아이디가 이미 존재합니다.");
+          // alert("오류");
+          break;
         }
-        if (data.userId == "" && data.password == "" && data.userName == "") {
-          alert("필수입력란을 확인해주세요.");
-        } else if (!isMatch(data.password, checkPassword)) {
-          alert("비밀번호가 일치하지 않습니다.");
-        }
-      })
-      .catch((error) => {
-        console.log("에러 발생 : ", error);
-      });
-  });
+      }
+      if (data.userId == "" && data.password == "" && data.userName == "") {
+        alert("필수입력란을 확인해주세요.");
+      } else if (!isMatch(data.password, checkPassword)) {
+        alert("비밀번호가 일치하지 않습니다.");
+      }
+    })
+    .catch((error) => {
+      console.log("에러 발생 : ", error);
+    });
+});
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드

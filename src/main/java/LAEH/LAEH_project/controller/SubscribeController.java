@@ -2,6 +2,7 @@ package LAEH.LAEH_project.controller;
 
 
 import LAEH.LAEH_project.dto.SubscribeDto;
+import LAEH.LAEH_project.model.Contents;
 import LAEH.LAEH_project.model.Subscribe;
 import LAEH.LAEH_project.repository.SubscribeRepository;
 import LAEH.LAEH_project.service.SubscribeService;
@@ -37,6 +38,13 @@ public class SubscribeController {
     @PreAuthorize("hasAnyRole('ADMIN','USER','TEACHER')")
     public ResponseEntity<List<SubscribeDto>> saveSubscribeList(@RequestBody List<SubscribeDto> subscribeDto){
         return new ResponseEntity<>(subscribeService.saveSubscribeList(subscribeDto),HttpStatus.OK);
+    }
+
+
+    // 유저아이디로 구독한 영상찾기
+    @GetMapping("/{userId}")
+    public ResponseEntity<List<Subscribe>> getListSubscribeByUserId(@PathVariable String userId) {
+        return new ResponseEntity<>(subscribeService.getListSubscribeByUserId(userId),HttpStatus.OK);
     }
 
     // 현재 세션 구독목록

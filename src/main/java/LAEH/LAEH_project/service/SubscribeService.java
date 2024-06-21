@@ -16,8 +16,10 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -82,8 +84,24 @@ public class SubscribeService {
         return subscribeDto;
     }
 
+    // 써니 작업 유저아이디로 구독한 영상찾기
+    public List<Subscribe> getListSubscribeByUserId(String userId) {
+//        Optional<Contents> contentsOptional = contentsRepository.findByLectureId(lectureId);
+//        if (contentsOptional.isPresent()) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            return subscribeRepository.findAll()
+                    .stream()
+                    .filter(subscribe -> subscribe.getUserId().equals(userOptional.get()))
+                    .collect(Collectors.toList());
+        } else {
+            throw new ResourceNotFoundException("Subscribe", "ID", userId);
+        }
+    }
 
-        // 현재 세션 유저 이름으로 구매한 게임 찾기
+
+
+    // 현재 세션 유저 이름으로 구매한 게임 찾기
         public List<Subscribe> getSubscribeListByCurrentUser() {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             if (authentication == null || !authentication.isAuthenticated()) {

@@ -48,6 +48,12 @@ public class UserController {
         return new ResponseEntity<>(userService.getUser(), HttpStatus.OK);
     }
 
+    // 권한명 "ROLE_TEACHER" 로 선생님 전부 찾기
+    @GetMapping("/teacher")
+    private ResponseEntity<List<User>> getAllTeacher() {
+        return new ResponseEntity<>(userService.getAllTeacher(),HttpStatus.OK);
+    }
+
     @GetMapping("allbydto")
     public ResponseEntity<List<UserDto>> getAllUserByDto() {
         return new ResponseEntity<>(userService.getAllUserByDto(), HttpStatus.OK);

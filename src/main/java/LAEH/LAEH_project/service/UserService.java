@@ -3,6 +3,7 @@ package LAEH.LAEH_project.service;
 import LAEH.LAEH_project.dto.UserDto;
 import LAEH.LAEH_project.exception.ResourceNotFoundException;
 import LAEH.LAEH_project.model.Authority;
+import LAEH.LAEH_project.model.Subscribe;
 import LAEH.LAEH_project.model.User;
 import LAEH.LAEH_project.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -18,6 +19,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -33,6 +35,7 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    // 회원가입
     public String saveUser(UserDto userDto) {
         Authority authority =new Authority();
         authority.setAuthorityName("ROLE_USER");
@@ -50,11 +53,24 @@ public class UserService {
     return userRepository.save(users).getUserId();
     }
 
-
-
+    // 모든 유저 찾기
     public List<User> getUser() {
         return userRepository.findAll();
     }
+
+
+
+
+    public List<User> getAllTeacher() {
+        Authority authority =new Authority();
+        authority.setAuthorityName("ROLE_TEACHER");
+        return userRepository.findAll()
+                    .stream()
+                    .filter(user -> user.getAuthority().getAuthorityName().equals(authority.getAuthorityName()))
+                    .collect(Collectors.toList());
+    }
+
+
 
     public List<UserDto> getAllUserByDto() {
         List<User> userList = userRepository.findAll();

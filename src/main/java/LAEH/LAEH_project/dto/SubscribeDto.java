@@ -13,7 +13,7 @@ import org.hibernate.annotations.SecondaryRow;
 @AllArgsConstructor
 public class SubscribeDto {
 
-    private String contentsId;
+    private long contentsId;
     private String userId;
 
     public SubscribeDto toSubscribeDtoFromSubscribe(Subscribe subscribe) {
