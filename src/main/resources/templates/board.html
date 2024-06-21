@@ -194,14 +194,13 @@
 <div class="boardPage fade hidden" id="boardPagewritePost" tabindex="-1" aria-labelledby="boardPagewritePostLabel" aria-hidden="true">
   <div class="boardPageDialog">
     <div class="boardPageContent">
-      <div class="boardPageHeader">
-        <h5 class="boardPageTitle" id="boardPagewritePostLabel">글쓰기</h5>
-        <button type="button" class="boardPageBtnClose" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+ 
       <div class="modal-body">
         <!-- 글쓰기 폼 -->
         <div class="boardPageInputTable">
           <div class="boardPageInputHeaderGrop">
+            <div class="boardPageInputHeader">게시판번호</div>
+            <div><input type="text" class="boardPageInputFilter form-control" placeholder="게시판 번호" name="board"></div>
             <div class="boardPageInputHeader">Title</div>
             <div><input type="text" class="boardPageInput form-control" placeholder="제목을 입력해주세요" name="title"></div>
           </div>
@@ -212,8 +211,8 @@
         </div>
       </div>
       <div class="boardPageFooter">
-        <button type="button" id="boardPageSubmitButton" class="boardPageFooterbtn btn-secondary" data-bs-dismiss="modal">닫기</button>
-        <button type="button"  class="boardPageFooterbtn btn-primary">등록</button>
+        <button type="button" id =boardPageCloseButton class="boardPageCloseButton btn-secondary" data-bs-dismiss="modal">닫기</button>
+        <button type="button" id="boardPageSubmitButton" class="boardPageSubmitButton btn-primary">등록</button>
       </div>
     </div>
   </div>
@@ -266,6 +265,5 @@
       <!-- 게시판 끝 -->
     </div>
 <script src="/js/board.js"></script>
-    <script src="/js/boardPost.js"></script>
   </body>
 </html>

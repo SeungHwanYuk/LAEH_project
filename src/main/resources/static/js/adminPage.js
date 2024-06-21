@@ -9,17 +9,23 @@ function sessionCurrent() {
     .then((response) => {
       console.log("데이터", response);
       if (response.data.userId == "anonymousUser") {
-        alert("로그인이 필요합니다.");
-        window.location.href = "login.html";
-      } else {
-        //   if (response.data.userId != "anonymousUser") {
-        console.log("세션 유지");
-        if (response.status == 200) {
-          console.log(response.data.userId + "님, 환영합니다.");
-          document.querySelector(".logout").classList.remove("hidden");
-          document.querySelector(".login").classList.add("hidden");
-          document.querySelector(".join").classList.add("hidden");
-        }
+        alert("어떠케들어왔어!!!!!!!!!!!나가아아아아ㅏ아아아ㅏ아아앙!");
+        window.location.href = "index.html";
+      } else if (
+        response.status == 200 &&
+        response.data.authority[0].authority != "ROLE_ADMIN"
+      ) {
+        alert("관리자 아니자나!!!나가아아아앙ㄲㄲㄲㄲㄲㄲㄲ!!!!!!!!");
+        window.location.href = "index.html";
+      } else if (
+        response.status == 200 &&
+        response.data.authority[0].authority == "ROLE_ADMIN"
+      ) {
+        console.log(response.data.userId + "사마... 도죠요로시쿠");
+        document.querySelector(".logout").classList.remove("hidden");
+        document.querySelector(".login").classList.add("hidden");
+        document.querySelector(".join").classList.add("hidden");
+        document.querySelector(".navMenuAdmin").classList.remove("hidden");
       }
     })
     .catch((error) => {

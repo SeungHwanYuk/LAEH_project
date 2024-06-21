@@ -27,8 +27,8 @@ function sessionCurrent() {
     });
 }
 
+// 로그아웃 버튼
 document.querySelector(".logout").addEventListener("click", () => {
-  // 로그아웃 버튼
   if (confirm("로그아웃 하시겠습니까?")) {
     axios
       .post(urlLogout, {}, { withCredentials: true })
@@ -36,6 +36,7 @@ document.querySelector(".logout").addEventListener("click", () => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
           alert = "로그아웃 되었습니다.";
+          window.location.href = "index.html";
         }
       })
       .catch((error) => {
