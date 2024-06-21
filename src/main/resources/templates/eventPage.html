@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트페이지</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
+"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../static/css/eventpage.css" />
+    <link rel="stylesheet" href="/css/eventpage.css" />
+  </head>
+  <body>
+    <a name="Top"></a>
+    <!-- 윤별 20240605 작업 -->
+    <div class="Wrapper">
+      <div class="header">
+        <!-- 메인메뉴 추가 필요 -->
+        <div class="navLogo">
+          <!-- <img src="https://i.ibb.co/thFZ0wd/Logo.png" alt="Logo" /> -->
+          <!-- <img src="https://i.ibb.co/ns3JKPp/TBeaver-Logo.png" alt="TBeaver-Logo"> -->
+          <a href="index.html">
+            <img
+              src="https://i.ibb.co/9VyktjQ/image.png"
+              alt="HelloLogo"
+              class="helloLogo"
+            />
+          </a>
+        </div>
+        <div class="navTitle">
+          <!-- <div class="navMenu">
+            <p>요가</p>
+          </navMenu>
+          <div class="navMenu">
+            <p>헬스</p>
+          </navMenu>
+          <div class="navMenu">
+            <p>필라테스</p>
+          </navMenu> -->
+          <!-- <navMenu>
+            <p>마이페이지</p>
+          </navMenu> -->
+          <a href="yogaClass.html">
+            <p class="navMenu">요가</p>
+          </a>
+          <a href="pilatesClass.html">
+            <p class="navMenu">필라테스</p>
+          </a>
+          <a href="healthClass.html">
+            <p class="navMenu">헬스</p>
+          </a>
+          <a href="myPage.html">
+            <p class="navMenu">마이페이지</p>
+          </a>
+          <a href="board.html">
+            <p class="navMenu">게시판</p>
+          </a>
+          <button class="login">
+            <a href="login.html" style="color: #181818"> 로그인 </a>
+          </button>
+          <button class="logout hidden">
+            <a href="index.html" style="color: #181818"> 로그아웃 </a>
+          </button>
+
+          <p class="join">
+            <a href="join.html">아직 회원이 아니신가요?</a>
+            <img
+              src="https://i.ibb.co/7gRtFWv/image.png"
+              alt="image"
+              width="24px"
+            />
+          </p>
+          <p class="navMenuAdmin hidden join">
+            <a href="adminPage.html">관리자님 환영합니다!</a>
+            <img
+              src="https://i.ibb.co/10Y3RwC/disguised-face-1f978.png"
+              width="24px"
+              alt="disguised-face-1f978"
+            />
+          </p>
+        </div>
+      </div>
+
+
+       <!-- 이벤트 시작 -->
+        <div class="eventPagWrapper">
+
+      <div class="eventPageImg">
+       <a><img src="https://i.ibb.co/82CCGHK/v02.png" ></a>
+      </div>
+      <div class="eventPageNextButGrop"> 
+      <div class="eventPageNextBut">
+        다음
+      </div>
+    </div>
+
+    </div>
+
+
+
+
+       <!-- 푸터 시작 -->
+
+       <div class="footerBar" style="display: flex">
+        <p class="bold">
+          3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+          혜택을 누려보세요
+          <img
+            src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+            alt="fire-1f525"
+            width="24px"
+            style="background: none; margin: 0"
+          />
+        </p>
+        <div class="footerBtnArea" style="display: flex; justify-content: end">
+          <div class="footerBtn">지금 구독하기</div>
+          <div class="topBtn">
+            <a href="#Top">
+              <img
+                src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+                alt="Group-46"
+                width="26px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <form>
+          <select
+            title="teamSite"
+            id="s1"
+            name="teamSite"
+            class="teamSite"
+            onchange="window.open(value,'_blank');"
+          >
+            <option value="0">Our Team</option>
+            <option value="https://github.com/SeungHwanYuk">
+              Yuk SeungHwan
+            </option>
+            <option value="https://github.com/star0717">Yoon Byeol</option>
+            <option value="https://github.com/bobo459">Song JinKyung</option>
+          </select>
+        </form>
+        <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+      </div>
+    </div>
+      <script src="/js/index.js"></script>
+    </body>
+  </html>
+  

@@ -1,0 +1,14 @@
+.eventPageImg{
+  display: flex;
+  background: black;
+}
+.eventPageNextButGrop{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+}
+
+.eventPageNextBut{
+  margin: 50px;
+}
