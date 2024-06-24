@@ -3,6 +3,7 @@ const urlSubscribeList = "http://localhost:8080/subscribe/current";
 const urlCurrent = "http://localhost:8080/user/current";
 const urlBuyAll = "http://localhost:8080/subscribe/buy/list";
 const urlBuyContents = "http://localhost:8080/subscribe/buy";
+const urlLogout = "http://localhost:8080/user/logout";
 
 // const urlParams = new URLSearchParams(window.location.search);
 // const id = urlParams.get();
@@ -13,14 +14,14 @@ document.querySelector(".historyTextP01").classList.add("historyTextFocus");
 sessionCheckAndGetAllSubscribeList();
 //
 
-// window.onload 이벤트를 사용하여 페이지 로드 후 실행될 초기화 코드 작성
-window.onload = function () {
-  // 현재 페이지 URL을 확인하거나 다른 조건을 사용하여 필요한 경우만 실행할 수 있습니다.
-  if (window.location.href.includes("classDetail.html")) {
-    // #courseHistoryTabMenu02 요소를 찾아서 클릭 이벤트 발생시키기
-    document.querySelector("#courseHistoryTabMenu02").click();
-  }
-};
+// // window.onload 이벤트를 사용하여 페이지 로드 후 실행될 초기화 코드 작성
+// window.onload = function () {
+//   // 현재 페이지 URL을 확인하거나 다른 조건을 사용하여 필요한 경우만 실행할 수 있습니다.
+//   if (window.location.href.includes("classDetail.html")) {
+//     // #courseHistoryTabMenu02 요소를 찾아서 클릭 이벤트 발생시키기
+//     document.querySelector("#courseHistoryTabMenu02").click();
+//   }
+// };
 
 document
   .querySelector("#courseHistoryTabMenu01")
@@ -48,7 +49,7 @@ document
   .querySelector("#courseHistoryTabMenu02")
   .addEventListener("click", (e) => {
     // 모든 자식 삭제 (페이지 초기화)
-    let removeNodes = document.querySelector(".WishListBody");
+    let removeNodes = document.querySelector(".wishListBody");
     while (removeNodes.firstChild) {
       removeNodes.removeChild(removeNodes.firstChild);
     }
@@ -120,7 +121,7 @@ function sessionCheckAndgetWishList() {
 }
 
 function displayWishList(contents, userId) {
-  const tbody = document.querySelector(".WishListBody");
+  const tbody = document.querySelector(".wishListBody");
   let totalPrice = 0;
 
   contents.forEach((data, index) => {
@@ -181,7 +182,7 @@ function displayWishList(contents, userId) {
         console.log("deletedArr :", deletedArr);
         localStorage.setItem(userId, deletedArr);
         // 모든 자식 삭제 (페이지 초기화)
-        let removeNodes = document.querySelector(".WishListBody");
+        let removeNodes = document.querySelector(".wishListBody");
         while (removeNodes.firstChild) {
           removeNodes.removeChild(removeNodes.firstChild);
         }
@@ -202,7 +203,6 @@ function displaySubscribe(contents) {
     const tr = document.createElement("tr");
     const imgtd = document.createElement("td");
     const title = document.createElement("td");
-
     const text = document.createElement("td");
     const img = document.createElement("img");
     tr.classList.add("historyTr");
@@ -222,6 +222,10 @@ function displaySubscribe(contents) {
     tr.appendChild(title);
     tr.appendChild(text);
     tbody.appendChild(tr);
+    tr.addEventListener("click", (e) => {
+      window.location.href =
+        "lecturePlayer.html?id=" + data.contentsId.contentsId;
+    });
   });
 }
 
@@ -259,3 +263,21 @@ function sessionCheckAndGetAllSubscribeList() {
       console.log(" urlCurrent 에러 발생", error);
     });
 }
+
+// 로그아웃 버튼
+document.querySelector(".logout").addEventListener("click", () => {
+  if (confirm("로그아웃 하시겠습니까?")) {
+    axios
+      .post(urlLogout, {}, { withCredentials: true })
+      .then((response) => {
+        console.log("데이터 : ", response);
+        if (response.status == 200) {
+          alert = "로그아웃 되었습니다.";
+          window.location.href = "index.html";
+        }
+      })
+      .catch((error) => {
+        console.log("에러 발생", error);
+      });
+  }
+});

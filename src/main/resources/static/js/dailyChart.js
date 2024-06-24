@@ -1,5 +1,7 @@
 const urlCurrent = "http://localhost:8080/user/current";
 const urlsaveMemo = "http://localhost:8080/memo/save";
+const urlLogin = "http://localhost:8080/user/login";
+const urlLogout = "http://localhost:8080/user/logout";
 const urlSearchCalorie = "http://localhost:8080/cal/contain/";
 
 let currentUserId;
@@ -47,17 +49,88 @@ document.querySelector(".memoSaveBtn").addEventListener("click", (e) => {
   }
 });
 
-// 음식명으로 칼로리 검색
+// 음식명으로 칼로리 검색 // 엔터키???????????작동안댐 ㅠㅠㅠ
+function enterkey() {
+  if (window.event.keyCode == 13) {
+    // 모든 자식 삭제 (페이지 초기화)
+    let removeNodes = document.querySelector(".calorieBody");
+    while (removeNodes.firstChild) {
+      removeNodes.removeChild(removeNodes.firstChild);
+    }
+    //
+    axios
+      .get(urlSearchCalorie + foodNameText, { withCredentials: true })
+      .then((response) => {
+        document.querySelector(".calorieTable").classList.remove("hidden");
+        console.log("데이터 : ", response);
+        displayCalorieList(response.data);
+      })
+      .catch((error) => {
+        console.log("urlsaveMemo 에러발생", error);
+        alert("정보를 입력해주세요.");
+      });
+  }
+}
+
 document.querySelector(".foodSearchBtn").addEventListener("click", (e) => {
+  // 모든 자식 삭제 (페이지 초기화)
+  let removeNodes = document.querySelector(".calorieBody");
+  while (removeNodes.firstChild) {
+    removeNodes.removeChild(removeNodes.firstChild);
+  }
+  //
   axios
     .get(urlSearchCalorie + foodNameText, { withCredentials: true })
     .then((response) => {
+      document.querySelector(".calorieTable").classList.remove("hidden");
       console.log("데이터 : ", response);
+      displayCalorieList(response.data);
     })
     .catch((error) => {
       console.log("urlsaveMemo 에러발생", error);
+      alert("정보를 입력해주세요.");
     });
 });
+
+function displayCalorieList(foods) {
+  const tbody = document.querySelector(".calorieBody");
+
+  foods.forEach((data, index) => {
+    // 태그 요소 생성
+    const tr = document.createElement("tr");
+    const foodName = document.createElement("td");
+    const cal = document.createElement("td");
+    const carbohydrate = document.createElement("td");
+    const protein = document.createElement("td");
+    const fat = document.createElement("td");
+    const cholesterol = document.createElement("td");
+    const dietaryFiber = document.createElement("td");
+    const sodium = document.createElement("td");
+    // 클래스 이름 생성
+
+    tr.classList.add("calorieTr");
+    // 태그 속성 추가
+    foodName.textContent = data.foodName;
+    cal.textContent = data.cal;
+    carbohydrate.textContent = data.carbohydrate;
+    protein.textContent = data.protein;
+    fat.textContent = data.fat;
+    cholesterol.textContent = data.cholesterol;
+    dietaryFiber.textContent = data.dietaryFiber;
+    sodium.textContent = data.sodium;
+    // appendChild 부모,자식 위치 설정
+
+    tr.appendChild(foodName);
+    tr.appendChild(cal);
+    tr.appendChild(carbohydrate);
+    tr.appendChild(protein);
+    tr.appendChild(fat);
+    tr.appendChild(cholesterol);
+    tr.appendChild(dietaryFiber);
+    tr.appendChild(sodium);
+    tbody.appendChild(tr);
+  });
+}
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
@@ -84,5 +157,23 @@ function sessionCurrent() {
       console.log("에러 발생", error);
     });
 }
+
+// 로그아웃 버튼
+document.querySelector(".logout").addEventListener("click", () => {
+  if (confirm("로그아웃 하시겠습니까?")) {
+    axios
+      .post(urlLogout, {}, { withCredentials: true })
+      .then((response) => {
+        console.log("데이터 : ", response);
+        if (response.status == 200) {
+          alert = "로그아웃 되었습니다.";
+          window.location.href = "login.html";
+        }
+      })
+      .catch((error) => {
+        console.log("에러 발생", error);
+      });
+  }
+});
 
 sessionCurrent();

@@ -101,7 +101,7 @@
     <p class="memoSaveBtn">등록하기</p>
  </div>
 
- 
+
  
 
  <div class="carlorieWrap02 hidden">
@@ -112,8 +112,26 @@
      type="text"
      class="calorieGroup"
      id="newFoodNameText"
-     placeholder="음식명"/>
+     placeholder="음식명"
+     onkeyup="enterkey()"/>
      <p class="foodSearchBtn">검색하기</p>
+
+     <div class="calorieBox">
+      <table class="calorieTable hidden">
+        <thead>
+          <th>음식명</th>
+          <th>1인분 칼로리</th>
+          <th>탄수화물(g)</th>
+          <th>단백질(g)</th>
+          <th>지방(g)</th>
+          <th>콜레스트롤(g)</th>
+          <th>식이섬유(g)</th>
+          <th>나트륨(g)</th>
+          <th></th>
+        </thead>
+        <tbody class="calorieBody"></tbody>
+      </table>
+    </div>
 
   </div>
 

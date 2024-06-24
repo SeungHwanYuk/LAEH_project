@@ -1,6 +1,21 @@
 // 강의 영상창
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+console.log("contents ID : ", id);
 
 const urlCurrent = "http://localhost:8080/user/current";
+const urlVideoList = "http://localhost:8080/video/listVideo/contents/" + id;
+
+let userId;
+let contentsId = id;
+axios
+  .get(urlVideoList, { withCredentials: true })
+  .then((response) => {
+    console.log("데이터 : ", response.data);
+  })
+  .catch((error) => {
+    console.log("에러 발생 : ", error);
+  });
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
@@ -27,4 +42,4 @@ function sessionCurrent() {
     });
 }
 
-sessionCurrent();
+// sessionCurrent();

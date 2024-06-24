@@ -24,4 +24,6 @@ public interface ContentsRepository extends JpaRepository<Contents, Long> {
             "JOIN t.userId u " +
             "WHERE u.userId = :teacherId")
     List<Contents> findContentsByTeacherId(@Param("teacherId") String teacherId);
+
+
 }
