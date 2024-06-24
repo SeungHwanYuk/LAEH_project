@@ -6,6 +6,7 @@ const freeBoardurl = "http://localhost:8080/post/freeBoard/" + id;
 const urlPostReverse = "http://localhost:8080/board/all/reverse";
 const urlWrite = "http://localhost:8080/post/write";
 const urlCurrent = "http://localhost:8080/user/current";
+const urlLogout = "http://localhost:8080/user/logout";
 
 let title = "";
 let text = "";
@@ -165,9 +166,9 @@ function displayPost(data) {
 
     tbody.appendChild(tr);
 
-    tr.addEventListener("click",(e)=>{
-      window.location.href=`boardRead.html?id=${post.postId}`;
-    })
+    tr.addEventListener("click", (e) => {
+      window.location.href = `boardRead.html?id=${post.postId}`;
+    });
   });
 }
 
@@ -212,11 +213,7 @@ function sessionCurrent() {
     .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터", response);
-      if (response.data.userId == "anonymousUser") {
-        alert("로그인이 필요합니다.");
-        window.location.href = "login.html";
-      } else {
-        //   if (response.data.userId != "anonymousUser") {
+      if (response.data.userId != "anonymousUser") {
         console.log("세션 유지");
         if (response.status == 200) {
           console.log(response.data.userId + "님, 환영합니다.");
@@ -227,7 +224,7 @@ function sessionCurrent() {
       }
     })
     .catch((error) => {
-      console.log("에러 발생", error);
+      console.log("urlCurrent 에러 발생", error);
     });
 }
 
@@ -239,8 +236,8 @@ document.querySelector(".logout").addEventListener("click", () => {
       .then((response) => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
-          alert = "로그아웃 되었습니다.";
-          window.location.reload;
+          alert("로그아웃 되었습니다.");
+          window.location.reload();
         }
       })
       .catch((error) => {
@@ -249,7 +246,4 @@ document.querySelector(".logout").addEventListener("click", () => {
   }
 });
 
-
-
-
-
+sessionCurrent();

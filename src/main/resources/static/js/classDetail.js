@@ -6,13 +6,14 @@ const urlCurrent = "http://localhost:8080/user/current";
 const url = "http://localhost:8080/contents/" + id;
 const urlUpdateCount = "http://localhost:8080/contents/count/" + id;
 const urlBuyContents = "http://localhost:8080/subscribe/buy";
+const urlLogout = "http://localhost:8080/user/logout";
 
 let userId;
 let contentsId = id;
 axios
   .get(url)
   .then((response) => {
-    console.log("데이터 : " + response.data);
+    console.log("데이터 : ", response.data);
 
     displayContents(response.data);
     displayLectureImg(response.data.lectureId);
@@ -210,8 +211,8 @@ document.querySelector(".logout").addEventListener("click", () => {
       .then((response) => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
-          alert = "로그아웃 되었습니다.";
-          window.location.reload;
+          alert("로그아웃 되었습니다.");
+          window.location.reload();
         }
       })
       .catch((error) => {
