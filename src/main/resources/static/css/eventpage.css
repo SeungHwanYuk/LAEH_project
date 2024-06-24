@@ -10,5 +10,35 @@
 }
 
 .eventPageNextBut{
-  margin: 50px;
+  width: 250px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ffa3;
+  color: #181818;
+  font-weight: bold;  
+  cursor: pointer;
+  margin: 50px 0 150px;
+}
+.eventPageNextBut:hover{
+  background-color: #76ffcd;
+  color: #252525;
+}
+
+.eventPageNextButMargin{
+  margin: 70px;
+}
+
+
+
+.footerEvent {
+  height: 360px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #181818;
+  /* margin-top: 100px; */
+  flex-direction: column;
+  justify-content: center;
 }

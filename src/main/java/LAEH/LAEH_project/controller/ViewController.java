@@ -104,4 +104,7 @@ public class ViewController {
     @GetMapping("/LAEH_project/lectureAdmin.html")
     public String lectureAdmin() {return "lectureAdmin";}
 
+    @GetMapping("/LAEH_project/eventPage.html")
+    public String eventPage() {return "eventPage";}
+
 }
