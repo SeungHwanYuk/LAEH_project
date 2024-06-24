@@ -1,0 +1,15 @@
+#boardReadPostTitle{
+    font-size: 35px;
+}
+
+.boardReadWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+hr{
+    width: 250px;
+    height: 3px;
+    border: #fff ;
+}

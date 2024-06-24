@@ -206,6 +206,60 @@ document
 //     // 예를 들어, 입력된 데이터를 가져와서 서버에 전송하는 등의 동작을 수행합니다.
 //     // 모달 닫기
 //   });
+// 현재 사용자 ID 가져오는 함수
+function getCurrentUserId() {
+  axios.get(urlCurrent, { withCredentials: true })
+    .then((response) => {
+      const userId = response.data.userId;
+      // 숨은 입력 필드에 사용자 ID 설정
+      document.querySelector(".boardPageInputUserId").value = userId;
+    })
+    .catch((error) => {
+      console.log("사용자 ID 가져오기 에러:", error);
+    });
+}
+
+// 글쓰기 버튼 클릭 시
+document.querySelector("#writePostButton").addEventListener("click", () => {
+  // 현재 사용자 ID 가져오기
+  getCurrentUserId();
+});
+
+// 등록 버튼 클릭 시
+document.querySelector(".boardPageSubmitButton").addEventListener("click", () => {
+  if (confirm("등록하시겠습니까?")) {
+    // 입력된 데이터와 사용자 ID를 포함하여 데이터 전송
+    const title = document.querySelector(".boardPageInput").value;
+    const text = document.querySelector(".boardPageInputTextarea").value;
+    const userId = document.querySelector(".boardPageInputUserId").value;
+
+    const data = {
+      postTitle: title,
+      postContent: text,
+      userId: userId,
+      boardNumber: board + 1, // 필요한 경우 게시판 번호 추가
+    };
+
+    // 서버에 데이터 전송
+    axios.post(urlWrite, data, { withCredentials: true })
+      .then((response) => {
+        console.log("등록이 완료되었습니다.", response);
+        alert("등록완료");
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log("에러발생:", error);
+      });
+  }
+});
+
+
+
+
+
+
+
+
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
