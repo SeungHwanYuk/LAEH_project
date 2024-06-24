@@ -1,9 +1,10 @@
 const urlCurrent = "http://localhost:8080/user/current";
 const urlsaveMemo = "http://localhost:8080/memo/save";
-// const url = "http://localhost:8080";
+const urlSearchCalorie = "http://localhost:8080/cal/contain/";
 
 let currentUserId;
 let memoText = "";
+let foodNameText = "";
 
 document.querySelector("#carlorieTabMenu01").addEventListener("click", (e) => {
   console.log("tab01 일기장 clicked!!");
@@ -23,6 +24,10 @@ document.querySelector("#newMemoText").addEventListener("change", (e) => {
   console.log(e.target.value);
   memoText = e.target.value;
 });
+document.querySelector("#newFoodNameText").addEventListener("change", (e) => {
+  console.log(e.target.value);
+  foodNameText = e.target.value;
+});
 
 // 메모 저장
 document.querySelector(".memoSaveBtn").addEventListener("click", (e) => {
@@ -40,6 +45,18 @@ document.querySelector(".memoSaveBtn").addEventListener("click", (e) => {
         console.log("urlsaveMemo 에러발생", error);
       });
   }
+});
+
+// 음식명으로 칼로리 검색
+document.querySelector(".foodSearchBtn").addEventListener("click", (e) => {
+  axios
+    .get(urlSearchCalorie + foodNameText, { withCredentials: true })
+    .then((response) => {
+      console.log("데이터 : ", response);
+    })
+    .catch((error) => {
+      console.log("urlsaveMemo 에러발생", error);
+    });
 });
 
 function sessionCurrent() {

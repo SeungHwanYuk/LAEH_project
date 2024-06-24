@@ -25,7 +25,7 @@ public class Contents {
     @Column(name = "영상번호")
     private long contentsId;
 
-    @Column(name = "영상소스")
+    @Column(name = "영상썸네일소스")
     private String contentsSrc;
 
     @ManyToOne
@@ -36,7 +36,7 @@ public class Contents {
     private String contentsName;
 
     @DateTimeFormat(pattern = "HH:mm:ss")
-    @Column(name = "영상길이")
+    @Column(name = "총영상길이")
     private Time contentsTime;
 
     @Column(name = "내용")
