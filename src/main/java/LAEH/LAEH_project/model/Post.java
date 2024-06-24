@@ -36,6 +36,8 @@ public class Post {
     @JoinColumn(name = "게시판ID", nullable = false)
     private Board board;
 
+    @Column(name = "댓글",length = 5000)
+    private String postComent;
 
 
     @PrePersist

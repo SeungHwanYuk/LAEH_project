@@ -201,7 +201,7 @@
         <!-- 글쓰기 폼 -->
         <div class="boardPageInputTable">
           <div class="boardPageInputHeaderGrop">
-            <div class="boardPageInputHeader">게시판번호</div>
+            <!-- <div class="boardPageInputHeader">게시판번호</div> -->
             <div><output type="text" class="boardPageInputFilter form-control" placeholder="게시판 번호" name="board"></div>
             <div class="boardPageInputHeader">Title</div>
             <div><input type="text" class="boardPageInput form-control" placeholder="제목을 입력해주세요" name="title"></div>
@@ -213,8 +213,8 @@
         </div>
       </div>
       <div class="boardPageFooter">
-        <button type="button" id =boardPageCloseButton class="boardPageCloseButton btn-secondary" data-bs-dismiss="modal">닫기</button>
-        <button type="button" id="boardPageSubmitButton" class="boardPageSubmitButton btn-primary">등록</button>
+        <div type="button" id =boardPageCloseButton class="boardPageCloseButton btn-secondary" data-bs-dismiss="modal">닫기</div>
+        <div type="button" id="boardPageSubmitButton" class="boardPageSubmitButton btn-primary">등록</div>
       </div>
     </div>
   </div>
@@ -223,18 +223,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-       <!-- 글쓰기 -->
+      <!-- 글쓰기 -->
         <!-- <div class="boardpageTextBarGrop" id="boardPagewritePostButton">
         <div class="boardpageTextBar">
        <a href="boardPost.html" class="boardpageText">글쓰기</a>
@@ -242,30 +231,93 @@
     </div> -->
 
     <!-- 페이징 -->
-       <nav>
-        <div class="boardpageWrap">
-          <div class="boardpageNation">
-             <a class="boardarrow pprev" href="#"><img src="https://i.ibb.co/99C6nHS/Group-59.png"></a></a>
-             <a class="boardarrow prev" href="#"><img src="https://i.ibb.co/2N7DcK4/Vector-38.png"></a></a>
-             <a href="#" class="boardactive">1</a>
-             <a href="#" class="boardactive">2</a>
-             <a href="#" class="boardactive">3</a>
-             <a href="#" class="boardactive">4</a>
-             <a href="#" class="boardactive">5</a>
-             <a href="#" class="boardactive2">···</a>
-             <a class="boardarrow next" href="#"><img src="https://i.ibb.co/T08SyrT/Vector-37-3.png"></a></a>
-             <a class="boardarrow nnext" href="#"><img src="https://i.ibb.co/93hYNXj/Group-58.png" ></a></a>
-          </div>
+    <nav>
+      <div class="boardpageWrap">
+        <div class="boardpageNation">
+           <a class="boardarrow pprev" href="#"><img src="https://i.ibb.co/99C6nHS/Group-59.png"></a></a>
+           <a class="boardarrow prev" href="#"><img src="https://i.ibb.co/2N7DcK4/Vector-38.png"></a></a>
+           <a href="#" class="boardactive">1</a>
+           <a href="#" class="boardactive">2</a>
+           <a href="#" class="boardactive">3</a>
+           <a href="#" class="boardactive">4</a>
+           <a href="#" class="boardactive">5</a>
+           <a href="#" class="boardactive2">···</a>
+           <a class="boardarrow next" href="#"><img src="https://i.ibb.co/T08SyrT/Vector-37-3.png"></a></a>
+           <a class="boardarrow nnext" href="#"><img src="https://i.ibb.co/93hYNXj/Group-58.png" ></a></a>
         </div>
-
-
-
-
-       
-       <div style="height: 300px; width: 100%;"></div>
       </div>
-      <!-- 게시판 끝 -->
+
+
+
+
+     
+     <div style="height: 300px; width: 100%;"></div>
     </div>
+  </div>
+      <!-- 게시판 끝 -->
+
+
+
+
+<!-- 푸터 -->
+<div class="footerBar" style="display: flex">
+  <p class="bold">
+    3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+    혜택을 누려보세요
+    <img
+      src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+      alt="fire-1f525"
+      width="24px"
+      style="background: none; margin: 0"
+    />
+  </p>
+  <div class="footerBtnArea" style="display: flex; justify-content: end">
+      
+    <div class="footerBtn">
+      <a href="eventPage.html">지금 구독하기</a>
+    </div>
+
+    
+    <div class="topBtn">
+      <a href="#Top">
+        <img
+          src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+          alt="Group-46"
+          width="26px"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+<div class="footer" style="margin-top: 0;">
+  <form>
+    <select
+      title="teamSite"
+      id="s1"
+      name="teamSite"
+      class="teamSite"
+      onchange="window.open(value,'_blank');"
+    >
+      <option value="0">Our Team</option>
+      <option value="https://github.com/SeungHwanYuk">
+        Yuk SeungHwan
+      </option>
+      <option value="https://github.com/star0717">Yoon Byeol</option>
+      <option value="https://github.com/bobo459">Song JinKyung</option>
+    </select>
+  </form>
+  <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+</div>
+
+
 <script src="/js/board.js"></script>
-  </body>
+</body>
 </html>
+
+
+
+
+
+
+
+ 

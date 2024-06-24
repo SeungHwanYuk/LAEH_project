@@ -10,7 +10,7 @@ const urlCurrent = "http://localhost:8080/user/current";
 let title = "";
 let text = "";
 let userId = "";
-let board = 1;
+let board = 0;
 let boardName = "";
 
 let freeBoardTabIndex = document.getElementById("boardTabMenu01");
@@ -84,6 +84,7 @@ function getPostToBoard() {
             .classList.remove("hidden");
           document.querySelector(".boardSearchQna").classList.add("hidden");
           document.querySelector(".boardSearchFaq").classList.add("hidden");
+          document.querySelector(".boardpageWrap").classList.remove("hidden");
           document
             .querySelector(".boardPageTextBarGrop")
             .classList.remove("hidden");
@@ -99,6 +100,7 @@ function getPostToBoard() {
           document.querySelector(".boardSearchTitle").classList.add("hidden");
           document.querySelector(".boardSearchQna").classList.remove("hidden");
           document.querySelector(".boardSearchFaq").classList.add("hidden");
+          document.querySelector(".boardpageWrap").classList.remove("hidden");
           document
             .querySelector(".boardPageTextBarGrop")
             .classList.remove("hidden");
@@ -114,6 +116,7 @@ function getPostToBoard() {
           document.querySelector(".boardSearchTitle").classList.add("hidden");
           document.querySelector(".boardSearchQna").classList.add("hidden");
           document.querySelector(".boardSearchFaq").classList.remove("hidden");
+          document.querySelector(".boardpageWrap").classList.add("hidden");
           document
             .querySelector(".boardPageTextBarGrop")
             .classList.add("hidden");
@@ -161,6 +164,10 @@ function displayPost(data) {
     tr.appendChild(postContent);
 
     tbody.appendChild(tr);
+
+    tr.addEventListener("click",(e)=>{
+      window.location.href=`boardRead.html?id=${post.postId}`;
+    })
   });
 }
 
@@ -175,6 +182,7 @@ document.querySelector("#writePostButton").addEventListener("click", () => {
   sessionCurrent();
   document.querySelector(".boardPage").classList.remove("hidden");
   document.querySelector(".boardAndPostGrop").classList.add("hidden");
+  document.querySelector(".boardpageWrap").classList.add("hidden");
 });
 
 document
@@ -184,6 +192,7 @@ document
       // $('#boardPagewritePost').modal('show'); // Bootstrap 모달 보이기
       document.querySelector(".boardPage").classList.add("hidden");
       document.querySelector(".boardAndPostGrop").classList.remove("hidden");
+      document.querySelector(".boardpageWrap").classList.add("hidden");
     }
   });
 
@@ -239,3 +248,8 @@ document.querySelector(".logout").addEventListener("click", () => {
       });
   }
 });
+
+
+
+
+

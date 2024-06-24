@@ -55,7 +55,11 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/post/**"), //진경
                                 new AntPathRequestMatcher("/board/**"), //진경
                                 new AntPathRequestMatcher("/freeBoard/**"), //진경
-                                new AntPathRequestMatcher("/eventPage")
+                                new AntPathRequestMatcher("/eventPage/**"), //진경
+                                new AntPathRequestMatcher("/boardRead/**"), //진경
+                                new AntPathRequestMatcher("/boardEdit/**"), //진경
+                                new AntPathRequestMatcher("/postId/**") ,
+                                new AntPathRequestMatcher("/edit/**")
 
 
 

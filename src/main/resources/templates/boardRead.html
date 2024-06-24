@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글</title>
+    <link rel="stylesheet" href="/src/main/resources/static/css/boardRead.css" />
+    <link rel="stylesheet" href="/css/boardRead.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+
+  </head>
+
+<body>
+  <div class="Wrapper">
+  <div class="header">
+    <div class="navLogo">
+      <a href="index.html">
+        <img
+          src="https://i.ibb.co/9VyktjQ/image.png"
+          alt="HelloLogo"
+          class="helloLogo"
+        />
+      </a>
+    </div>
+    <div class="navTitle">
+      <p class="navMenu">
+        <a href="yogaClass.html">요가</a>
+      </p>
+      <p class="navMenu">
+        <a href="pilatesClass.html">필라테스</a>
+      </p>
+      <p class="navMenu">
+        <a href="healthClass.html">헬스</a>
+      </p>
+      <p class="navMenu">
+        <a href="myPage.html">마이페이지</a>
+      </p>
+      <p class="navMenu">
+        <a href="board.html">게시판</a>
+      </p>
+      
+      <button class="login">
+        <a href="login.html" style="color: #181818"> 로그인 </a>
+      </button>
+      <button class="logout hidden">
+        <a href="login.html" style="color: #181818"> 로그아웃 </a>
+      </button>
+
+      <p class="join">
+        <a href="join.html">아직 회원이 아니신가요?</a>
+        <img
+          src="https://i.ibb.co/7gRtFWv/image.png"
+          alt="image"
+          width="24px"
+        />
+      </p>
+      <p class="navMenuAdmin hidden admin">
+        <a href="adminPage.html">관리자님 환영합니다!</a>
+        <img
+          src="https://i.ibb.co/10Y3RwC/disguised-face-1f978.png"
+          width="24px"
+          alt="disguised-face-1f978"
+        />
+      </p>
+    </div>
+  </div>
+
+
+
+
+  
+
+  <!-- 게시판 내용 -->
+  <div class="boardReadWrap">
+    <div class="boardReadViewWrap">
+        <div class="boardReadView">
+            <div class="boardReadTitle" id="boardReadPostTitle">
+                <!-- 제목이 여기에 들어갈 자리 -->
+            </div>
+            <div class="boardReadInfo">
+                <dl>
+                    <dt>번호</dt>
+                    <dd id="boardReadboardId"></dd>
+                </dl>
+                <dl>
+                    <dt>글쓴이</dt>
+                    <dd id="boardReaduserId"></dd>
+                </dl>
+                <dl>
+                    <dt>작성일</dt>
+                    <dd id="boardReadDate"></dd>
+                </dl>
+            </div>
+            <div class="boardReadCont" id="boardReadContent">
+                <!-- 내용이 여기에 들어갈 자리 -->
+            </div>
+        </div>
+        <div class="boardReadBtnWrap">
+            <a href="board.html" class="boardReadOn">목록</a>
+            <a href="boardEdit.html">수정</a>
+        </div>
+    </div>
+
+    <div class="boardReadComent hidden" id="boardReadComentId">
+      <input type="text" class="boardReadComentText" placeholder="coment를 적어주세요.">
+      <div id="boardReadComentButton" class="boardReadComentBtn">등록</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    <!-- 푸터 -->
+<div class="footerBar" style="display: flex">
+    <p class="bold">
+      3개월 구독시 20% 할인 이벤트 진행중! 지금 구독하고 플러스 회원만의
+      혜택을 누려보세요
+      <img
+        src="https://i.ibb.co/XjrSbLb/fire-1f525.png"
+        alt="fire-1f525"
+        width="24px"
+        style="background: none; margin: 0"
+      />
+    </p>
+    <div class="footerBtnArea" style="display: flex; justify-content: end">
+        
+      <div class="footerBtn">
+        <a href="eventPage.html">지금 구독하기</a>
+      </div>
+  
+      
+      <div class="topBtn">
+        <a href="#Top">
+          <img
+            src="https://i.ibb.co/Xb6dmHC/Group-46.png"
+            alt="Group-46"
+            width="26px"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer" style="margin-top: 0;">
+    <form>
+      <select
+        title="teamSite"
+        id="s1"
+        name="teamSite"
+        class="teamSite"
+        onchange="window.open(value,'_blank');"
+      >
+        <option value="0">Our Team</option>
+        <option value="https://github.com/SeungHwanYuk">
+          Yuk SeungHwan
+        </option>
+        <option value="https://github.com/star0717">Yoon Byeol</option>
+        <option value="https://github.com/bobo459">Song JinKyung</option>
+      </select>
+    </form>
+    <p>ⓒ 2024. Team TBeaver all rights reserved.</p>
+  </div>
+
+
+  <script src="/js/boardRead.js"></script>
+</body>
+</html>

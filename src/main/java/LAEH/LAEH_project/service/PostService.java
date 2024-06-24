@@ -1,6 +1,7 @@
 package LAEH.LAEH_project.service;
 
 import LAEH.LAEH_project.dto.PostDto;
+import LAEH.LAEH_project.exception.ResourceNotFoundException;
 import LAEH.LAEH_project.model.Board;
 import LAEH.LAEH_project.model.Post;
 import LAEH.LAEH_project.model.User;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -50,4 +52,13 @@ public class PostService {
         return postRepository.findAll()
                 .reversed();
     }
+    public Post getPostByPostId(long postId){
+        Optional<Post> postOptional = postRepository.findById(postId);
+        if(postOptional.isPresent()) {
+            return postOptional.get();
+        } else {
+            throw new ResourceNotFoundException("postId가","없떠요",postId);
+        }
+    }
+
 }

@@ -125,18 +125,20 @@
   font-weight: bold;
   cursor: pointer;
   background-color: #474747 ;
+
   font-family: 'GyeonggiTitleM';
+
 
 }
 .boardTableBarTd:hover{
 background-color: #00ffa3;
+
 }
 
   .boardTableBarTd:focus{
     background: none;
-    
     border-top: #00ffa3 solid 2px;
-    /* box-shadow: 0 0 0 2px gray inset; */
+
     color: #00ffa3;
     
   }
@@ -277,6 +279,17 @@ background-color: #00ffa3;
   border-radius: 0;
   box-shadow: 0 3px 6px rgb(0 0 0 / 42%);
 }
+.basic{
+  cursor: pointer;
+}
+
+.basic:hover{
+background-color: #3d3d3d;
+
+}
+
+
+
 
 /* 닫기/등록 */
 .boardPageFooter{
@@ -368,10 +381,6 @@ background-color: #60ffc5 ;
 	color:#fff;
 	border:1px solid #474747;
 }
-
-
-
-
 
 
 

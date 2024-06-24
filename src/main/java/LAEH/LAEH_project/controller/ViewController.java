@@ -107,4 +107,10 @@ public class ViewController {
     @GetMapping("/LAEH_project/eventPage.html")
     public String eventPage() {return "eventPage";}
 
+    @GetMapping("/LAEH_project/boardRead.html")
+    public String boardRead() {return "boardRead";}
+
+    @GetMapping("/LAEH_project/boardEdit.html")
+    public String boardEdit() {return "boardEdit";}
+
 }
