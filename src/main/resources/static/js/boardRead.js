@@ -68,14 +68,14 @@ function sessionCurrent() {
     .catch((error) => {
       console.log("에러 발생", error);
     });
-}
-
-sessionCurrent()
-
-
-dovument
-.querySelector(".boardReadComentBtn")
-.addEventListener("click", () => {
+    
+    sessionCurrent()
+    
+  }
+    
+    document
+    .querySelector(".boardReadComentBtn").addEventListener("click", () => {
+      console.log("클릭된다고");
   if (confirm("등록하시겠습니까?")) {
     const data = {
       postComent: title
@@ -90,5 +90,5 @@ dovument
     .catch((error) => {
       console.log("에러발생: ", error);
     });
-}
+  }
 })
