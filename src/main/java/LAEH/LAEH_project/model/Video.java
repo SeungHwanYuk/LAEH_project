@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Time;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -18,12 +19,13 @@ import java.sql.Time;
 public class Video {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "동영상번호")
-    private long videoNumber;
+    private long videoId;
 
-    @JoinColumn
-    @OneToMany
-    private Contents contents;
+    @ManyToOne
+    @JoinColumn (name = "영상아이디")
+    private Contents contentsId;
 
     @Column(name = "동영상소스")
     private String videoSrc;
@@ -36,4 +38,7 @@ public class Video {
 
     @Column(name = "동영상설명")
     private String videoDesc;
+
+    @Column(name = "동영상등록일")
+    private LocalDate videoUploadDate;
 }
