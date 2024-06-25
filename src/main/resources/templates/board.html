@@ -130,22 +130,25 @@
       <span> ▷ 총 3개의 게시물이 있습니다. </span>
       </div> -->
       
+
+
+
       <br>
-      <table class="boardTablesubtitle">
-        <thead>
-          <tr class="boardTablesubtitleTr">
-              <td class="boardTablesubtitleTd boardNum">번호</td>
-              <td class="boardTablesubtitleTd boardPostTitle">제목</td>
-              <td class="boardTablesubtitleTd boardUserId">작성자</td>
-              <td class="boardTablesubtitleTd boardPostContent">일시</td>
-              <!-- <td class="boardTablesubtitleTd">조회수</td> -->
-          </tr>
-        </thead>
+
+<table class="boardTablesubtitle">
+  <thead>
+    <tr class="boardTablesubtitleTr">
+      <td class="boardTablesubtitleTd boardNum">번호</td>
+      <td class="boardTablesubtitleTd boardPostTitle">제목</td>
+      <td class="boardTablesubtitleTd boardUserId">작성자</td>
+      <td class="boardTablesubtitleTd boardPostContent">일시</td>
+      <!-- <td class="boardTablesubtitleTd">조회수</td> -->
+    </tr>
+  </thead>
           <tbody class="boardBody">
            
           </tbody>
       </table>
-
     </div>
 
 
@@ -206,6 +209,8 @@
             <div><output type="text" class="boardPageInputFilter form-control" placeholder="게시판 번호" name="board"></div>
             <div class="boardPageInputHeader">Title</div>
             <div><input type="text" class="boardPageInput form-control" placeholder="제목을 입력해주세요" name="title"></div>
+            <!-- boardPageInputUserId 클래스 없어서 추가 0625 승환 -->
+            <div><input type="text" class="boardPageInputUserId form-control hidden" placeholder="제목을 입력해주세요" name="userId"></div>
           </div>
           <div class="boardPageInputHeaderCommentGrop">
             <div class="boardPageInputHeader">Comment</div>
@@ -237,6 +242,8 @@
         <div class="boardpageNation">
            <a class="boardarrow pprev" href="#"><img src="https://i.ibb.co/99C6nHS/Group-59.png"></a></a>
            <a class="boardarrow prev" href="#"><img src="https://i.ibb.co/2N7DcK4/Vector-38.png"></a></a>
+           <div class="number-button-wrapper"><span class="number-button">1</span></div>
+  
            <a href="#" class="boardactive">1</a>
            <a href="#" class="boardactive">2</a>
            <a href="#" class="boardactive">3</a>

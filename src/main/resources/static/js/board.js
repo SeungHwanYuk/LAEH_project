@@ -31,28 +31,29 @@ document
     text = e.target.value;
   });
 
-document
-  .querySelector(".boardPageSubmitButton")
-  .addEventListener("click", () => {
-    if (confirm("등록하시겠습니까?")) {
-      const data = {
-        postTitle: title,
-        postContent: text,
-        userId: userId,
-        boardNumber: board + 1,
-      };
-      axios
-        .post(urlWrite, data, { withCredentials: true })
-        .then((response) => {
-          console.log("등록이 완료되었습니다.", response);
-          alert("등록완료");
-          window.location.reload();
-        })
-        .catch((error) => {
-          console.log("에러발생: ", error);
-        });
-    }
-  });
+// 중복이라 주석처리 0625 승환
+// document
+//   .querySelector(".boardPageSubmitButton")
+//   .addEventListener("click", () => {
+//     if (confirm("등록하시겠습니까?")) {
+//       const data = {
+//         postTitle: title,
+//         postContent: text,
+//         userId: userId,
+//         boardNumber: board + 1,
+//       };
+//       axios
+//         .post(urlWrite, data, { withCredentials: true })
+//         .then((response) => {
+//           console.log("등록이 완료되었습니다.", response);
+//           alert("등록완료");
+//           window.location.reload();
+//         })
+//         .catch((error) => {
+//           console.log("에러발생: ", error);
+//         });
+//     }
+//   });
 
 function getPostToBoard() {
   axios
@@ -208,7 +209,8 @@ document
 //   });
 // 현재 사용자 ID 가져오는 함수
 function getCurrentUserId() {
-  axios.get(urlCurrent, { withCredentials: true })
+  axios
+    .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       const userId = response.data.userId;
       // 숨은 입력 필드에 사용자 ID 설정
@@ -226,40 +228,85 @@ document.querySelector("#writePostButton").addEventListener("click", () => {
 });
 
 // 등록 버튼 클릭 시
-document.querySelector(".boardPageSubmitButton").addEventListener("click", () => {
-  if (confirm("등록하시겠습니까?")) {
-    // 입력된 데이터와 사용자 ID를 포함하여 데이터 전송
-    const title = document.querySelector(".boardPageInput").value;
-    const text = document.querySelector(".boardPageInputTextarea").value;
-    const userId = document.querySelector(".boardPageInputUserId").value;
+document
+  .querySelector(".boardPageSubmitButton")
+  .addEventListener("click", () => {
+    if (confirm("등록하시겠습니까?")) {
+      // 입력된 데이터와 사용자 ID를 포함하여 데이터 전송
+      const title = document.querySelector(".boardPageInput").value;
+      const text = document.querySelector(".boardPageInputTextarea").value;
+      const userId = document.querySelector(".boardPageInputUserId").value;
 
-    const data = {
-      postTitle: title,
-      postContent: text,
-      userId: userId,
-      boardNumber: board + 1, // 필요한 경우 게시판 번호 추가
-    };
+      const data = {
+        postTitle: title,
+        postContent: text,
+        userId: userId,
+        boardNumber: board + 1, // 필요한 경우 게시판 번호 추가
+      };
 
-    // 서버에 데이터 전송
-    axios.post(urlWrite, data, { withCredentials: true })
-      .then((response) => {
-        console.log("등록이 완료되었습니다.", response);
-        alert("등록완료");
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log("에러발생:", error);
-      });
+      // 서버에 데이터 전송
+      axios
+        .post(urlWrite, data, { withCredentials: true })
+        .then((response) => {
+          console.log("등록이 완료되었습니다.", response);
+          alert("등록완료");
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.log("에러발생:", error);
+        });
+    }
+  });
+
+// ---------------------------------------------------------------------
+// 페이지네이션 0625 승환
+const countNumberPage = 6; // 한 페이지 당 최대 6개의 요소를 보여줄 것
+
+const getTotalPageCount = () => {
+  return Math.ceil(data.length / countNumberPage);
+};
+
+// 페이지 번호 버튼 wrapper에 필요한 페이지 번호 버튼을 추가한다
+const numberButtonWrapper = document.querySelector(".number-button-wrapper");
+
+const setPageButtons = () => {
+  numberButtonWrapper.innerHTML = ""; // 페이지 번호 wrapper 내부를 비워줌
+
+  for (let i = 1; i <= getTotalPageCount(); i++) {
+    numberButtonWrapper.innerHTML += `<span class="boardactive"> ${i} </span>`;
   }
+};
+
+// 인수로 이동할 페이지 번호를 넘겨주면 n번째 글부터 n+5번째 글까지 보여주도록 한다.
+// 즉, 3번 페이지일 경우 13번째 글부터 18번째 글까지 보여주면 된다.
+// 함수를 호출하면서 인수로 넣어준 pageNumber를 currentPage 변수에 담는다.
+// 그리고 ul 요소를 가져와서 li 요소를 만든 다음 append 한다.
+let currentPage = 1;
+
+const setPageOf = (pageNumber) => {
+  // 기존의 게시물 삭제
+  const basic = document.querySelectorAll(".basic");
+  basic.forEach((e) => e.remove());
+
+  for (
+    let i = countNumberPage * (pageNumber - 1) + 1;
+    i <= countNumberPage * (pageNumber - 1) + 6 && i <= data.length;
+    i++
+  ) {
+    displayPost();
+  }
+};
+
+// querySelectorAll로 모든 페이지 번호 버튼들을 가져와 click 이벤트 리스너를 달아주었다.
+// 클릭 이벤트 발생 시 number로 형변환한 다음,
+// 해당 페이지를 셋팅하기 위해 setPageOf 함수를 호출한다
+const pageNumberButtons = document.querySelectorAll(".boardactive");
+
+pageNumberButtons.forEach((numberButton) => {
+  numberButton.addEventListener("click", (e) => {
+    setPageOf(+e.target.innerHTML);
+  });
 });
-
-
-
-
-
-
-
-
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
