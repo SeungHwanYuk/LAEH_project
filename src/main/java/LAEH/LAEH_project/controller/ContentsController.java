@@ -46,9 +46,6 @@ public class ContentsController {
 
 
 
-
-
-
     // 조회수 높은순 정렬
     @GetMapping("/listContents/popular/{lectureId}")
     public ResponseEntity<List<Contents>> getListContentsSortedClick(@PathVariable String lectureId) {

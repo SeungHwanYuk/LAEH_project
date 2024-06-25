@@ -914,13 +914,13 @@ input[type="number"]::-webkit-inner-spin-button {
   padding-bottom: 10px;
 }
 
-.WishListTable {
+.wishListTable {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.WishListBody {
+.wishListBody {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1048,7 +1048,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-bottom: 6px;
 }
 
-.SubscribeBtn {
+.SubscribeBtn, .lecturePlayerBtn {
   width: 160px;
   height: 38px;
   background-color: #00ffa3;
@@ -1059,7 +1059,7 @@ input[type="number"]::-webkit-inner-spin-button {
   transition: 0.3s;
   margin: 0 0 0 10px;
 }
-.SubscribeBtn:hover {
+.SubscribeBtn:hover, .lecturePlayerBtn:hover {
   background-color: #76ffcd;
 }
 

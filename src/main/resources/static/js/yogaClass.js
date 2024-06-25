@@ -15,6 +15,37 @@ axios
     console.log("에러 발생: ", error);
   });
 
+document.querySelector("#sortContents").addEventListener("change", (e) => {
+  // 모든 자식 삭제 (페이지 초기화)
+  let removeNodes = document.querySelector(".lecture");
+  while (removeNodes.firstChild) {
+    removeNodes.removeChild(removeNodes.firstChild);
+  }
+  //
+  console.log(e.target.value);
+  if (e.target.value == "popular") {
+    axios
+      .get(urlLectureIdsortedClickCount) // 조회수 높은 순
+      .then((response) => {
+        console.log("응답 Response: ", response);
+        displayContents(response.data);
+      })
+      .catch((error) => {
+        console.log("에러 발생: ", error);
+      });
+  } else if (e.target.value == "date") {
+    axios
+      .get(urlLectureId) // 최신날짜순
+      .then((response) => {
+        console.log("응답 Response: ", response);
+        displayContents(response.data);
+      })
+      .catch((error) => {
+        console.log("에러 발생: ", error);
+      });
+  }
+});
+
 function displayContents(contentsData) {
   console.log(contentsData.length);
   if (contentsData.length > 0) {

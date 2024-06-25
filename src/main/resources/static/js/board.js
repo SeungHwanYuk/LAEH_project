@@ -267,13 +267,13 @@ const getTotalPageCount = () => {
 };
 
 // 페이지 번호 버튼 wrapper에 필요한 페이지 번호 버튼을 추가한다
-const numberButtonWrapper = document.querySelector(".number-button-wrapper");
+const numberButtonWrapper = document.querySelector(".numberButtonWrapper");
 
 const setPageButtons = () => {
   numberButtonWrapper.innerHTML = ""; // 페이지 번호 wrapper 내부를 비워줌
 
   for (let i = 1; i <= getTotalPageCount(); i++) {
-    numberButtonWrapper.innerHTML += `<span class="boardactive"> ${i} </span>`;
+    numberButtonWrapper.innerHTML += `<a class="boardactive"> ${i} </a>`;
   }
 };
 

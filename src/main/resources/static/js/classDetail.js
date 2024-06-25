@@ -3,6 +3,7 @@ const id = urlParams.get("id");
 console.log("Class ID : ", id);
 
 const urlCurrent = "http://localhost:8080/user/current";
+const urlSubscribeCurrent = "http://localhost:8080/subscribe/current";
 const url = "http://localhost:8080/contents/" + id;
 const urlUpdateCount = "http://localhost:8080/contents/count/" + id;
 const urlBuyContents = "http://localhost:8080/subscribe/buy";
@@ -89,6 +90,7 @@ function buyOne() {
         .post(urlBuyContents, data2, { withCredentials: true })
         .then((response) => {
           console.log("데이터 : ", response.data);
+          window.location.reload();
         })
         .catch((error) => {
           console.log(" urlBuyContents 에러 발생 : ", error);
@@ -182,12 +184,32 @@ function displayLectureImg(data) {
   }
 }
 
+function sessionSubscribeCurrent() {
+  axios
+    .get(urlSubscribeCurrent, { withCredentials: true })
+    .then((response) => {
+      console.log(" sessionSubscribeCurrent 데이터1 : ", response);
+      for (let i = 0; i < response.data.length; i++) {
+        if (response.data[i].contentsId.contentsId == id) {
+          document.querySelector(".SubscribeBtn").classList.add("hidden");
+          document
+            .querySelector(".lecturePlayerBtn")
+            .classList.remove("hidden");
+          break;
+        }
+      }
+    })
+    .catch((error) => {
+      console.log("urlSubscribeCurrent 에러발생 : ", error);
+    });
+}
+
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
     .get(urlCurrent, { withCredentials: true })
     .then((response) => {
-      console.log("데이터", response);
+      console.log(" sessionCurrent 데이터", response);
       if (response.data.userId != "anonymousUser") {
         console.log("세션 유지");
         if (response.status == 200) {
@@ -222,3 +244,4 @@ document.querySelector(".logout").addEventListener("click", () => {
 });
 
 sessionCurrent();
+sessionSubscribeCurrent();
