@@ -49,24 +49,25 @@ function displayAllTeacherList(data) {
     tbody.appendChild(tr);
 
     tr.addEventListener("click", (e) => {
-      let removeNodes = document.querySelector(".contentsByTeacherBody");
-      while (removeNodes.firstChild) {
-        removeNodes.removeChild(removeNodes.firstChild);
-      }
-      document
-        .querySelector(".contentsByTeacherTable")
-        .classList.remove("hidden");
-      let teacher = data.userId.userId;
-      console.log("teacher : ", teacher);
-      axios
-        .get(urlContentsByTeacher + teacher, { withCredentials: true })
-        .then((response) => {
-          console.log("urlContentsByTeacher 데이터 : ", response.data);
-          displayContents(response.data);
-        })
-        .catch((error) => {
-          console.log("urlContentsByTeacher 에러 발생 : ", error);
-        });
+      window.location.href = "contentsByTeacherBody";
+      // let removeNodes = document.querySelector(".contentsByTeacherBody");
+      // while (removeNodes.firstChild) {
+      //   removeNodes.removeChild(removeNodes.firstChild);
+      // }
+      // document
+      //   .querySelector(".contentsByTeacherTable")
+      //   .classList.remove("hidden");
+      // let teacher = data.userId.userId;
+      // console.log("teacher : ", teacher);
+      // axios
+      //   .get(urlContentsByTeacher + teacher, { withCredentials: true })
+      //   .then((response) => {
+      //     console.log("urlContentsByTeacher 데이터 : ", response.data);
+      //     displayContents(response.data);
+      //   })
+      //   .catch((error) => {
+      //     console.log("urlContentsByTeacher 에러 발생 : ", error);
+      //   });
     });
   });
 }

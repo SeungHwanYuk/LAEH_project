@@ -113,4 +113,7 @@ public class ViewController {
     @GetMapping("/LAEH_project/boardEdit.html")
     public String boardEdit() {return "boardEdit";}
 
+    @GetMapping("/LAEH_project/contentsByTeacherBody.html")
+    public String contentsByTeacherBody() {return "contentsByTeacherBody";}
+
 }
