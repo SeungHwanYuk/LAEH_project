@@ -11,7 +11,7 @@ let currentUserId = "";
 let newPassword = "";
 let newUserEmail = "";
 let newUserName = "";
-let newUserGender = "";
+let newUserGender = "male";
 let newUserNickname = "";
 let newUserPhoneNum = "";
 
@@ -150,7 +150,7 @@ document.querySelector("#newUserPhoneNum").addEventListener("change", (e) => {
   console.log(e.target.value);
   newUserPhoneNum = e.target.value;
 });
-document.querySelector("signupGroup");
+
 // 회원가입
 document.querySelector(".loginBtn").addEventListener("click", () => {
   const data = {
@@ -201,6 +201,9 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
     });
 });
 
+// 읽기전용 유저아이디 승환 0625
+let readonlyUserId = document.getElementById("currentUserId");
+
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
@@ -211,7 +214,10 @@ function sessionCurrent() {
         console.log("세션 유지");
         if (response.status == 200) {
           console.log(response.data.userId + "님, 환영합니다.");
+          console.log("readonlyUserId 데이터 :", readonlyUserId);
           currentUserId = response.data.userId;
+          readonlyUserId.placeholder = currentUserId;
+
           document.querySelector(".logout").classList.remove("hidden");
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");

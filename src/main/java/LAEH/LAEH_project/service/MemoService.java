@@ -71,14 +71,14 @@ public class MemoService {
 
     // 아이디별 메모 찾기
     public List<Memo> getMemoByUserId(String userId) {
-//        Optional<User> optionalUser = userRepository.findByUserId(userId);
-//        if(optionalUser.isPresent()) {
+        Optional<User> optionalUser = userRepository.findByUserId(userId);
+        if(optionalUser.isPresent()) {
             return memoRepository.findAll()
                     .stream()
-                    .filter(memo -> memo.getUserId().equals(userId))
+                    .filter(memo -> memo.getUserId().equals(optionalUser.get()))
                     .collect(Collectors.toList());
-//        } else {
-//            throw new ResourceNotFoundException("Contents", "ID", userId);
-//        }
+        } else {
+            throw new ResourceNotFoundException("userId", "ID", userId);
+        }
     }
 }

@@ -36,7 +36,7 @@ function displayAllUserList(data) {
     gender.textContent = data.gender;
     userNickname.textContent = data.userNickname;
     phoneNum.textContent = data.phoneNum;
-    createdAt.textContent = data.createdAt;
+    createdAt.textContent = data.createdAt.substring(0, 16);
     // appendChild 부모,자식 위치 설정
 
     tr.appendChild(authority);

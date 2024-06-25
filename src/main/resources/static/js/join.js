@@ -11,7 +11,7 @@ let newUserId = "";
 let newPassword = "";
 let newUserEmail = "";
 let newUserName = "";
-let newUserGender = "";
+let newUserGender = "male";
 let newUserNickname = "";
 let newUserPhoneNum = "";
 
@@ -155,20 +155,20 @@ document.querySelector("#newUserPhoneNum").addEventListener("change", (e) => {
 
 // 회원가입
 
-document
-  .querySelector(".loginBtn")
-  .addEventListener("click", () => {
-    const data = {
-      userId: newUserId,
-      password: newPassword,
-      userEmail: newUserEmail,
-      userName: newUserName,
-      gender: newUserGender,
-      userNickname: newUserNickname,
-      phoneNum: newUserPhoneNum,
-    };
+document.querySelector(".loginBtn").addEventListener("click", () => {
+  const data = {
+    userId: newUserId,
+    password: newPassword,
+    userEmail: newUserEmail,
+    userName: newUserName,
+    gender: newUserGender,
+    userNickname: newUserNickname,
+    phoneNum: newUserPhoneNum,
+  };
 
-    axios.get(urlAll).then((response) => {
+  axios
+    .get(urlAll)
+    .then((response) => {
       console.log("데이터 : ", response);
 
       // response.data.forEach((e) => {
@@ -214,17 +214,17 @@ document
           break;
         }
       }
-    });
 
-    if (data.userId == "" && data.password == "" && data.userName == "") {
-      alert("필수입력란을 확인해주세요.");
-    } else if (!isMatch(data.password, checkPassword)) {
-      alert("비밀번호가 일치하지 않습니다.");
-    }
-  })
-  .catch((error) => {
-    console.log("에러 발생 : ", error);
-  });
+      if (data.userId == "" && data.password == "" && data.userName == "") {
+        alert("필수입력란을 확인해주세요.");
+      } else if (!isMatch(data.password, checkPassword)) {
+        alert("비밀번호가 일치하지 않습니다.");
+      }
+    })
+    .catch((error) => {
+      console.log("에러 발생 : ", error);
+    });
+});
 // });
 
 function sessionCurrent() {

@@ -14,11 +14,24 @@ function sessionCurrent() {
       } else {
         //   if (response.data.userId != "anonymousUser") {
         console.log("세션 유지");
-        if (response.status == 200) {
+        if (
+          response.status == 200 &&
+          response.data.authority[0].authority != "ROLE_ADMIN"
+        ) {
           console.log(response.data.userId + "님, 환영합니다.");
           document.querySelector(".logout").classList.remove("hidden");
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");
+          document.querySelector(".navMenuAdmin").classList.add("hidden");
+        } else if (
+          response.status == 200 &&
+          response.data.authority[0].authority == "ROLE_ADMIN"
+        ) {
+          console.log(response.data.userId + "`(｡•̀ᴗ-)✧☆ 관리자 모드 ON!");
+          document.querySelector(".logout").classList.remove("hidden");
+          document.querySelector(".login").classList.add("hidden");
+          document.querySelector(".join").classList.add("hidden");
+          document.querySelector(".navMenuAdmin").classList.remove("hidden");
         }
       }
     })

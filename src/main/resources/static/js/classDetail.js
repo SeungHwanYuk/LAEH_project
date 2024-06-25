@@ -53,7 +53,11 @@ function displayContents(data) {
   // content.appendChild(lectureInfoImg);
 
   document.querySelector(".addWishListBtn").addEventListener("click", () => {
-    sessionChenckAndAddWishList(data);
+    sessionCheckAndAddWishList(data);
+  });
+
+  document.querySelector(".lecturePlayerBtn").addEventListener("click", (e) => {
+    window.location.href = "lecturePlayer.html?id=" + id;
   });
 
   document.querySelector(".SubscribeBtn").addEventListener("click", () => {
@@ -120,7 +124,7 @@ function buyOne() {
 // }
 
 // 위시리스트 담기
-function sessionChenckAndAddWishList(data) {
+function sessionCheckAndAddWishList(data) {
   axios
     .get("http://localhost:8080/user/current", { withCredentials: true })
     .then((response) => {

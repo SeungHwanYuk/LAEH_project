@@ -173,11 +173,6 @@ function displayPost(data) {
   });
 }
 
-// 페이지 로드 시 실행
-window.addEventListener("load", () => {
-  getPostToBoard();
-});
-
 // 글쓰기 버튼 클릭 시 모달 보이기
 
 document.querySelector("#writePostButton").addEventListener("click", () => {
@@ -258,55 +253,81 @@ document
     }
   });
 
+// 페이지 로드 시 실행
+window.addEventListener("load", () => {
+  getPostToBoard();
+});
+
 // ---------------------------------------------------------------------
 // 페이지네이션 0625 승환
-const countNumberPage = 6; // 한 페이지 당 최대 6개의 요소를 보여줄 것
 
-const getTotalPageCount = () => {
-  return Math.ceil(data.length / countNumberPage);
-};
+// const COUNT_PER_PAGE = 6; // 한 페이지 당 최대 6개의 요소를 보여줄 것
 
-// 페이지 번호 버튼 wrapper에 필요한 페이지 번호 버튼을 추가한다
-const numberButtonWrapper = document.querySelector(".numberButtonWrapper");
+// const getTotalPageCount = () => {
+//   return Math.ceil(data.length / COUNT_PER_PAGE);
+// };
 
-const setPageButtons = () => {
-  numberButtonWrapper.innerHTML = ""; // 페이지 번호 wrapper 내부를 비워줌
+// // 페이지 번호 버튼 wrapper에 필요한 페이지 번호 버튼을 추가한다
+// const numberButtonWrapper = document.querySelector(".numberButtonWrapper");
 
-  for (let i = 1; i <= getTotalPageCount(); i++) {
-    numberButtonWrapper.innerHTML += `<a class="boardactive"> ${i} </a>`;
-  }
-};
+// const setPageButtons = () => {
+//   numberButtonWrapper.innerHTML = ""; // 페이지 번호 wrapper 내부를 비워줌
 
-// 인수로 이동할 페이지 번호를 넘겨주면 n번째 글부터 n+5번째 글까지 보여주도록 한다.
-// 즉, 3번 페이지일 경우 13번째 글부터 18번째 글까지 보여주면 된다.
-// 함수를 호출하면서 인수로 넣어준 pageNumber를 currentPage 변수에 담는다.
-// 그리고 ul 요소를 가져와서 li 요소를 만든 다음 append 한다.
-let currentPage = 1;
+//   for (let i = 1; i <= getTotalPageCount(); i++) {
+//     numberButtonWrapper.innerHTML += `<span class="number-button"> ${i} </span>`;
+//   }
+// };
 
-const setPageOf = (pageNumber) => {
-  // 기존의 게시물 삭제
-  const basic = document.querySelectorAll(".basic");
-  basic.forEach((e) => e.remove());
+// // 인수로 이동할 페이지 번호를 넘겨주면 n번째 글부터 n+5번째 글까지 보여주도록 한다.
+// // 즉, 3번 페이지일 경우 13번째 글부터 18번째 글까지 보여주면 된다.
+// // 함수를 호출하면서 인수로 넣어준 pageNumber를 currentPage 변수에 담는다.
+// // 그리고 ul 요소를 가져와서 li 요소를 만든 다음 append 한다.
 
-  for (
-    let i = countNumberPage * (pageNumber - 1) + 1;
-    i <= countNumberPage * (pageNumber - 1) + 6 && i <= data.length;
-    i++
-  ) {
-    displayPost();
-  }
-};
+// const ul = document.querySelector("ul");
+// let currentPage = 1;
 
-// querySelectorAll로 모든 페이지 번호 버튼들을 가져와 click 이벤트 리스너를 달아주었다.
-// 클릭 이벤트 발생 시 number로 형변환한 다음,
-// 해당 페이지를 셋팅하기 위해 setPageOf 함수를 호출한다
-const pageNumberButtons = document.querySelectorAll(".boardactive");
+// const setPageOf = (pageNumber) => {
+//   ul.innerHTML = "";
 
-pageNumberButtons.forEach((numberButton) => {
-  numberButton.addEventListener("click", (e) => {
-    setPageOf(+e.target.innerHTML);
-  });
-});
+//   for (
+//     let i = COUNT_PER_PAGE * (pageNumber - 1) + 1;
+//     i <= COUNT_PER_PAGE * (pageNumber - 1) + 6 && i <= data.length;
+//     i++
+//   ) {
+//     const li = document.createElement("li");
+
+//     // 컨테이너
+//     const postContainer = document.createElement("div");
+//     postContainer.className = "post-container";
+
+//     // 글 번호
+//     const postNumber = document.createElement("p");
+//     postNumber.className = "post-number";
+
+//     // 글 제목
+//     const postTitle = document.createElement("p");
+//     postTitle.className = "post-title";
+
+//     postNumber.textContent = data[i - 1].postNumber;
+//     postTitle.textContent = data[i - 1].title; // 페이지 번호는 1부터 시작하지만 배열 인덱스는 0부터 시작하므로 -1 해 준다.
+
+//     postContainer.append(postNumber, postTitle); // 컨테이너 구성
+//     li.append(postContainer); // li 구성
+//     ul.append(li); // ul에 li 자식 요소로 넣어주기
+//   }
+// };
+
+// // querySelectorAll로 모든 페이지 번호 버튼들을 가져와 click 이벤트 리스너를 달아주었다.
+// // 클릭 이벤트 발생 시 number로 형변환한 다음,
+// // 해당 페이지를 셋팅하기 위해 setPageOf 함수를 호출한다
+// const pageNumberButtons = document.querySelectorAll(".number-button");
+// pageNumberButtons.forEach((numberButton) => {
+//   numberButton.addEventListener("click", (e) => {
+//     setPageOf(+e.target.innerHTML);
+//   });
+// });
+
+// 페이지 네이션 끝 --------------------------------------------------------------
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드

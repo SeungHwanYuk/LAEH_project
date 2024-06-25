@@ -1,8 +1,10 @@
 const urlCurrent = "http://localhost:8080/user/current";
 const urlsaveMemo = "http://localhost:8080/memo/save";
+const urldeleteMemo = "http://localhost:8080/memo/delete/"; // {memoId}
+const urlListMemoByUserId = "http://localhost:8080/memo/user/"; // {userId}
 const urlLogin = "http://localhost:8080/user/login";
 const urlLogout = "http://localhost:8080/user/logout";
-const urlSearchCalorie = "http://localhost:8080/cal/contain/";
+const urlSearchCalorie = "http://localhost:8080/cal/contain/"; // {foodName}
 
 let currentUserId;
 let memoText = "";
@@ -42,6 +44,7 @@ document.querySelector(".memoSaveBtn").addEventListener("click", (e) => {
       .post(urlsaveMemo, data, { withCredentials: true })
       .then((response) => {
         console.log("데이터 : ", response);
+        window.location.reload();
       })
       .catch((error) => {
         console.log("urlsaveMemo 에러발생", error);
@@ -94,7 +97,6 @@ document.querySelector(".foodSearchBtn").addEventListener("click", (e) => {
 
 function displayCalorieList(foods) {
   const tbody = document.querySelector(".calorieBody");
-
   foods.forEach((data, index) => {
     // 태그 요소 생성
     const tr = document.createElement("tr");
@@ -132,6 +134,50 @@ function displayCalorieList(foods) {
   });
 }
 
+// 아이디별 메모 가져오기
+function getListMemoByUserId(userId) {
+  axios
+    .get(urlListMemoByUserId + userId, { withCredentials: true })
+    .then((response) => {
+      console.log(" urlListMemoByUserId 데이터 : ", response.data);
+      displayMemoList(response.data);
+    })
+    .catch((error) => {
+      console.log(" urlListMemoByUserId 에러발생 : ", error);
+    });
+}
+
+function displayMemoList(memos) {
+  // 모든 자식 삭제 (페이지 초기화)
+  let removeNodes = document.querySelector(".memoBody");
+  while (removeNodes.firstChild) {
+    removeNodes.removeChild(removeNodes.firstChild);
+  }
+  //
+  const tbody = document.querySelector(".memoBody");
+  memos.forEach((data, index) => {
+    // 태그 요소 생성
+    const tr = document.createElement("tr");
+    const memoNum = document.createElement("td");
+    const memoText = document.createElement("td");
+    const memoDateTime = document.createElement("td");
+
+    // 클래스 이름 생성
+
+    tr.classList.add("memoTr");
+    // 태그 속성 추가
+    memoNum.textContent = index + 1;
+    memoText.textContent = data.memoText;
+    memoDateTime.textContent = data.memoDateTime.substring(0, 10);
+
+    // appendChild 부모,자식 위치 설정
+    tr.appendChild(memoNum);
+    tr.appendChild(memoText);
+    tr.appendChild(memoDateTime);
+    tbody.appendChild(tr);
+  });
+}
+
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
@@ -150,6 +196,7 @@ function sessionCurrent() {
           document.querySelector(".logout").classList.remove("hidden");
           document.querySelector(".login").classList.add("hidden");
           document.querySelector(".join").classList.add("hidden");
+          getListMemoByUserId(currentUserId);
         }
       }
     })

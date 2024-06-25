@@ -10,6 +10,7 @@ import LAEH.LAEH_project.repository.PostRepository;
 import LAEH.LAEH_project.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -58,6 +59,18 @@ public class PostService {
             return postOptional.get();
         } else {
             throw new ResourceNotFoundException("postId가","없떠요",postId);
+        }
+    }
+    
+    
+    // 게시판 글 삭제
+    public String deletePostByPostId(long postId) {
+        Optional<Post> postOptional = postRepository.findById(postId);
+        if(postOptional.isPresent()) {
+            postRepository.deleteById(postId);
+            return "Deleted";
+        } else {
+            throw new ResourceNotFoundException("PostId", "ID", postId);
         }
     }
 
