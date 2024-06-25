@@ -15,6 +15,7 @@ axios
     console.log("에러 발생: ", error);
   });
 
+// select 태그 사용시 change 이벤트 할당 성공 0625
 document.querySelector("#sortContents").addEventListener("change", (e) => {
   // 모든 자식 삭제 (페이지 초기화)
   let removeNodes = document.querySelector(".lecture");

@@ -11,17 +11,23 @@ const urlLogout = "http://localhost:8080/user/logout";
 
 // 첫 페이지 진입시 실행코드
 document.querySelector(".historyTextP01").classList.add("historyTextFocus");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const action = urlParams.get("action");
+  // action 값에 따라 특정 작업 수행
+  if (action === "clickCourseHistoryTab") {
+    // #courseHistoryTabMenu02 요소 클릭
+    const courseHistoryTabMenu02 = document.querySelector(
+      "#courseHistoryTabMenu02"
+    );
+    if (courseHistoryTabMenu02) {
+      courseHistoryTabMenu02.click();
+    }
+  }
+});
 sessionCheckAndGetAllSubscribeList();
 //
-
-// // window.onload 이벤트를 사용하여 페이지 로드 후 실행될 초기화 코드 작성
-// window.onload = function () {
-//   // 현재 페이지 URL을 확인하거나 다른 조건을 사용하여 필요한 경우만 실행할 수 있습니다.
-//   if (window.location.href.includes("classDetail.html")) {
-//     // #courseHistoryTabMenu02 요소를 찾아서 클릭 이벤트 발생시키기
-//     document.querySelector("#courseHistoryTabMenu02").click();
-//   }
-// };
 
 document
   .querySelector("#courseHistoryTabMenu01")

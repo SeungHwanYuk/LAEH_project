@@ -67,13 +67,15 @@ function displayContents(data) {
   });
 }
 
-// 위시리스트로 가야하는데...................................0620
+// 위시리스트로 가야하는데...................................승환 0620
+// 성공 0625
 document.querySelector(".myWishListBtn").addEventListener("click", (e) => {
-  window.location.href = "courseHistory.html";
+  window.location.href = "courseHistory.html?action=clickCourseHistoryTab";
 });
 
 // 한개만 구매
 // 0619 리스트로 저장 시 수정필요
+// 0620 리스트 저장 코드 따로만들어서 해결
 function buyOne() {
   axios
     .get(urlCurrent, { withCredentials: true })

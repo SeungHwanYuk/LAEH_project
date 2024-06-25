@@ -54,7 +54,7 @@ function displayAllUserList(data) {
         .get(urlSubscribe + data.userId, { withCredentials: true })
         .then((response) => {
           if (response.data == "") {
-            alert("구독한 목록이 없습니다.");
+            console.log("구독한 목록이 없습니다.");
           }
           console.log(" urlSubscribe 데이터 : ", response.data);
         })
