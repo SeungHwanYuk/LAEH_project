@@ -897,6 +897,10 @@ input[type="number"]::-webkit-inner-spin-button {
   display: none;
 }
 
+.grayscale {
+  filter: grayscale(100%);
+}
+
 .carlorieTab {
   display: flex;
   justify-content: center;

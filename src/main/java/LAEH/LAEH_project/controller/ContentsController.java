@@ -45,6 +45,12 @@ public class ContentsController {
     }
 
 
+    // 영상 번호순 정렬
+    @GetMapping("/listContents/contentsNum/{lectureId}")
+    public ResponseEntity<List<Contents>> getListContentsSortedById(@PathVariable String lectureId) {
+        return new ResponseEntity<>(contentsService.getListContentsSortedById(lectureId), HttpStatus.OK);
+    }
+
 
     // 조회수 높은순 정렬
     @GetMapping("/listContents/popular/{lectureId}")

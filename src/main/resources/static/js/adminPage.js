@@ -51,4 +51,4 @@ document.querySelector(".logout").addEventListener("click", () => {
   }
 });
 
-sessionCurrent();
+// sessionCurrent();

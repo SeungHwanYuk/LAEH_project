@@ -96,15 +96,28 @@ public class ContentsService {
 
 
 
+    // 승환 조회수 높은 순으로 불러오기
     public List<Contents> getListContentsSortedClick(String lectureId) {
-//        Optional<Contents> contentsOptional = contentsRepository.findByLectureId(lectureId);
-//        if (contentsOptional.isPresent()) {
         Optional<Lecture> lectureOptional = lectureRepository.findById(lectureId);
         if (lectureOptional.isPresent()) {
             return contentsRepository.findAll()
                     .stream()
                     .filter(contents -> contents.getLectureId().equals(lectureOptional.get()))
                     .sorted(Comparator.comparing(Contents::getContentsClickedCount).reversed())
+                    .collect(Collectors.toList());
+        } else {
+            throw new ResourceNotFoundException("Contents", "ID", lectureId);
+        }
+    }
+
+    // 승환 영상번호 순으로 불러오기
+    public List<Contents> getListContentsSortedById(String lectureId) {
+        Optional<Lecture> lectureOptional = lectureRepository.findById(lectureId);
+        if (lectureOptional.isPresent()) {
+            return contentsRepository.findAll()
+                    .stream()
+                    .filter(contents -> contents.getLectureId().equals(lectureOptional.get()))
+                    .sorted(Comparator.comparing(Contents::getContentsId))
                     .collect(Collectors.toList());
         } else {
             throw new ResourceNotFoundException("Contents", "ID", lectureId);
