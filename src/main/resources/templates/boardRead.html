@@ -75,11 +75,22 @@
   <!-- 게시판 내용 -->
   <div class="boardReadWrap">
     <div class="boardReadViewWrap">
+
+      <table class="boardTableBar">
+        <thead>
+            <tr class="boardTableBarTr">
+              <td tabindex="0" id="boardTabMenu01" class="boardTableBarTd">자유게시판</td>
+              <td tabindex="1" id="boardTabMenu02" class="boardTableBarTd">Q&A</td>
+              <td tabindex="2" id="boardTabMenu03" class="boardTableBarTd">FAQ</td>
+            </tr>
+        </thead>
+      </table>
+
         <div class="boardReadView">
             <div class="boardReadTitle" id="boardReadPostTitle">
                 <!-- 제목이 여기에 들어갈 자리 -->
             </div>
-            <hr  />
+            <hr  class="boardReadInfoLine" />
             <div class="boardReadInfo">
                 <dl>
                     <dt>번호</dt>
@@ -94,13 +105,17 @@
                     <dd id="boardReadDate"></dd>
                 </dl>
             </div>
+            <hr class="boardReadContLine" />
             <div class="boardReadCont" id="boardReadContent">
                 <!-- 내용이 여기에 들어갈 자리 -->
             </div>
         </div>
         <div class="boardReadBtnWrap">
             <a href="board.html" class="boardReadOn">목록</a>
-            <a href="boardEdit.html">수정</a>
+           
+            <a  class="boardReadedit hidden">수정</a>
+             <!-- href="boardEdit.html" -->
+              
         </div>
     </div>
 

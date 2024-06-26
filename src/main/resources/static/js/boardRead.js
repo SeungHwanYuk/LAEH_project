@@ -11,6 +11,7 @@ const urlWrite = "http://localhost:8080/post/write";
 
 let postId;
 let contentsId = id;
+let postUserId = "";
 
 axios
 .get(urlpostID)
@@ -26,7 +27,9 @@ postId.textContent = response.data.postId;
 
 // 글쓴이
 let userId = document.getElementById('boardReaduserId');
-userId.textContent = response.data.userId;
+userId.textContent = response.data.userId.userId;
+postUserId = response.data.userId.userId;
+console.log(postUserId, "글쓴이 아이디");
 
 // 날짜
 let postDate = document.getElementById('boardReadDate');
@@ -40,6 +43,17 @@ postContent.textContent = response.data.postContent;
 .catch((error)=>{
   console.log("에러 발생 : ", error);
 })
+
+
+
+
+//수정
+
+document.querySelector(".boardReadedit").addEventListener("click", () => {
+      window.location.href = "boardEdit.html?id=" + id;
+});
+
+
 
 
 
@@ -64,16 +78,39 @@ function sessionCurrent() {
         document.querySelector(".navMenuAdmin").classList.remove("hidden");
         document.querySelector(".boardReadComent").classList.remove("hidden");
       }
+
+
+      console.log(response.data.userId, postUserId);
+      if(response.data.userId === postUserId) {
+        document.querySelector(".boardReadedit").classList.remove("hidden");
+      }
+      console.log(response.data.userId == postUserId, "같냐??");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     })
     .catch((error) => {
       console.log("에러 발생", error);
     });
     
-    sessionCurrent()
     
   }
-    
-    document
+  
+  document
     .querySelector(".boardReadComentBtn").addEventListener("click", () => {
       console.log("클릭된다고");
   if (confirm("등록하시겠습니까?")) {
@@ -92,3 +129,5 @@ function sessionCurrent() {
     });
   }
 })
+
+sessionCurrent()

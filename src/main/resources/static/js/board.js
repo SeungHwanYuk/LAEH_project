@@ -31,6 +31,18 @@ document
     text = e.target.value;
   });
 
+
+
+
+
+// // 자유게시판이 눌려 있어야 해
+// window.addEventListener("load",()=>{
+//   document.querySelector("#boardTabMenu01").click()
+// })
+
+
+
+
 // 중복이라 주석처리 0625 승환
 // document
 //   .querySelector(".boardPageSubmitButton")
@@ -176,11 +188,14 @@ function displayPost(data) {
 // 글쓰기 버튼 클릭 시 모달 보이기
 
 document.querySelector("#writePostButton").addEventListener("click", () => {
-  sessionCurrent();
+  writeSessionCurrent();
   document.querySelector(".boardPage").classList.remove("hidden");
   document.querySelector(".boardAndPostGrop").classList.add("hidden");
   document.querySelector(".boardpageWrap").classList.add("hidden");
 });
+
+
+
 
 document
   .querySelector("#boardPageCloseButton")
@@ -202,6 +217,9 @@ document
 //     // 예를 들어, 입력된 데이터를 가져와서 서버에 전송하는 등의 동작을 수행합니다.
 //     // 모달 닫기
 //   });
+
+
+
 // 현재 사용자 ID 가져오는 함수
 function getCurrentUserId() {
   axios
@@ -216,7 +234,11 @@ function getCurrentUserId() {
     });
 }
 
-// 글쓰기 버튼 클릭 시
+
+
+
+
+// 글쓰는 등록 버튼 클릭 시 아이디 자동 저장용
 document.querySelector("#writePostButton").addEventListener("click", () => {
   // 현재 사용자 ID 가져오기
   getCurrentUserId();
@@ -329,6 +351,43 @@ window.addEventListener("load", () => {
 
 // 페이지 네이션 끝 --------------------------------------------------------------
 
+
+
+
+
+function writeSessionCurrent() {
+  // 로그인 유지 확인 코드
+  axios
+    .get(urlCurrent, { withCredentials: true })
+    .then((response) => {
+      console.log("데이터", response);
+      if(response.data.userId == "anonymousUser") {
+        alert("로그인 해주세요.");
+        window.location.href = "login.html";
+      }
+      if (response.data.userId != "anonymousUser") {
+        console.log("세션 유지");
+        if (response.status == 200) {
+          console.log(response.data.userId + "님, 환영합니다.");
+          document.querySelector(".logout").classList.remove("hidden");
+          document.querySelector(".login").classList.add("hidden");
+          document.querySelector(".join").classList.add("hidden");
+        }
+      }
+      
+    })
+    .catch((error) => {
+      console.log("urlCurrent 에러 발생", error);
+    });
+}
+
+
+
+
+
+
+
+
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
@@ -369,3 +428,8 @@ document.querySelector(".logout").addEventListener("click", () => {
 });
 
 sessionCurrent();
+
+
+
+
+

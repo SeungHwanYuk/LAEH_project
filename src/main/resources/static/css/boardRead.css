@@ -1,15 +1,129 @@
 #boardReadPostTitle{
     font-size: 35px;
+    align-items: center;
+    margin-top: 30px;
+    max-width: 765px;
+    min-width: 300px;
 }
 
-.boardReadWrap{
+.boardReadInfo{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* width: 80%; */
+    min-width: 300px;
+    max-width: 980px;
+}
+
+.boardReadInfo > dl{
+    width: auto;
+    height: auto;
+    /* margin: 0 50px; */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-hr{
-    width: 250px;
-    height: 3px;
-    border: #fff ;
+
+.boardReadInfo > dl > dt{
+    margin-right: 25px;
+    margin-left: 0;
+    width: auto;
 }
+
+.boardReadInfo > dl > dd{
+    margin: 0;
+    width: auto;
+}
+
+.boardReadInfoLine{
+    width: 100%;
+    min-width: 300px;
+    max-width: 765px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    height: 2px;
+    background-color: #00ffa3;
+    border: none;
+}
+
+.boardReadCont{
+    margin-top: 30px;
+    width: 100%;
+    max-width: 765px;
+}
+
+.boardReadContLine{
+    width: 100%;
+    min-width: 300px;
+    max-width: 765px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: dotted 0.2px #3f3f3f;
+}
+
+.boardReadBtnWrap{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 765px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+
+
+/* 목록/수정 */
+.boardReadBtnWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .boardReadOn{
+    width: 230px;
+    height: 40px;
+    text-decoration-line: none;
+    /* background-color: #00ffa3 ; */
+    border: solid 1px;
+    color: #6b6b6b;
+    outline: none;
+    /* margin: 0 20px; */
+
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .boardReadOn:hover{
+    background-color: #00ffa3 ;
+    color: #fff;
+    border: none;
+    box-sizing: border-box;
+    
+  }
+  
+  .boardReadedit{
+    width: 230px;
+    height: 40px;
+    cursor : pointer;
+    background-color: #00ffa3 ;
+    color: #252525;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    /* margin: 0 20px; */
+  }
+  .boardReadedit:hover{
+  color: #fff;
+  background-color: #60ffc5 ;
+  }
+
+  /* .hidden {
+    display: none;
+  }
+
+   */
