@@ -68,7 +68,7 @@ function displayContents(data) {
 }
 
 // 위시리스트로 가야하는데...................................승환 0620
-// 성공 0625
+// 성공 0625 [courseHistory.js/16]
 document.querySelector(".myWishListBtn").addEventListener("click", (e) => {
   window.location.href = "courseHistory.html?action=clickCourseHistoryTab";
 });

@@ -12,6 +12,7 @@ const urlLogout = "http://localhost:8080/user/logout";
 // 첫 페이지 진입시 실행코드
 document.querySelector(".historyTextP01").classList.add("historyTextFocus");
 
+// 주소에 'action'을 담아올 시 click 이벤트 바로 적용 [classDetail.js/73]
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const action = urlParams.get("action");
@@ -86,7 +87,11 @@ function sessionCheckAndgetWishList() {
         const userId = response.data.userId;
         const authority = response.data.authority[0].authority;
         let cartItems = JSON.parse(localStorage.getItem(userId));
-        if (cartItems) {
+        if (!cartItems || cartItems.length == 0) {
+          document.querySelector(".wishListTh").classList.remove("hidden");
+          document.querySelector(".purchaseBtn").classList.add("hidden");
+          document.querySelector(".deleteAllBtn").classList.add("hidden");
+        } else if (cartItems) {
           displayWishList(cartItems, userId);
           console.log("카트아이템", cartItems);
           const data = cartItems.map((contents) => {
@@ -129,7 +134,6 @@ function sessionCheckAndgetWishList() {
 function displayWishList(contents, userId) {
   const tbody = document.querySelector(".wishListBody");
   let totalPrice = 0;
-
   contents.forEach((data, index) => {
     // 태그 요소 생성
     const tr = document.createElement("tr");
@@ -161,8 +165,6 @@ function displayWishList(contents, userId) {
     tr.appendChild(price);
     tr.appendChild(deltd);
     tbody.appendChild(tr);
-
-    totalPrice = totalPrice + data.price;
   });
 
   // document.querySelector(".totalPrice").textContent = "총 " + totalPrice + "원";
@@ -257,7 +259,10 @@ function sessionCheckAndGetAllSubscribeList() {
         axios
           .get(urlSubscribeList, { withCredentials: true })
           .then((response) => {
-            console.log(response);
+            console.log("urlSubscribeList 데이터 : ", response);
+            if (response.data.length == 0) {
+              document.querySelector(".subscribeTh").classList.remove("hidden");
+            }
             displaySubscribe(response.data);
           })
           .catch((error) => {
