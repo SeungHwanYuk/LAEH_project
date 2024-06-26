@@ -40,6 +40,15 @@ axios
     let postContent = document.getElementById("boardReadContent");
     postContent.textContent = response.data.postContent;
 
+
+    // 댓글
+    let postComent = document.getElementById("boardReadComment");
+    postComent.textContent = response.data.postComent;
+
+
+
+
+
     postUserId = getCookie("userId");
     console.log("userId", postUserId, response.data.userId.userId);
     if (response.data.userId.userId === postUserId) {
@@ -66,6 +75,10 @@ document.querySelector(".boardReadComentBtn").addEventListener("click", (e) => {
   console.log("클릭된다고");
   saveComment();
 });
+
+
+
+
 
 // 관리자의 댓글
 function sessionCurrent() {
@@ -97,6 +110,36 @@ function sessionCurrent() {
       console.log("에러 발생", error);
     });
 }
+
+
+
+axios.get(urlComment)
+    .then((response) => {
+        console.log("댓글 데이터 : ", response);
+        let comments = response.data; // 서버에서 받아온 댓글 데이터
+
+        // 댓글을 표시할 요소 선택
+        let commentContainer = document.getElementById("boardReadComment");
+
+        // 댓글 데이터를 HTML에 추가
+        comments.forEach(comment => {
+            let commentElement = document.createElement("div");
+            commentElement.classList.add("comment"); // 필요에 따라 CSS 클래스 추가
+            commentElement.textContent = comment.content; // 댓글 내용을 텍스트로 설정
+
+            commentContainer.appendChild(commentElement); // 댓글을 컨테이너에 추가
+        });
+    })
+    .catch((error) => {
+        console.error("댓글 데이터를 불러오는 중 에러 발생 : ", error);
+    });
+
+
+
+
+
+    
+
 
 function saveComment() {
   const data = {
