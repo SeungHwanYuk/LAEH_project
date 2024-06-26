@@ -38,6 +38,12 @@ postDate.textContent = response.data.postDate.substring(0, 10);
 // 내용
 let postContent = document.getElementById('boardReadContent');
 postContent.textContent = response.data.postContent;
+
+postUserId = getCookie("userId");
+console.log("userId", postUserId, response.data.userId.userId);
+if(response.data.userId.userId === postUserId) {
+  document.querySelector(".boardReadedit").classList.remove("hidden");
+}
 })
 
 .catch((error)=>{
@@ -47,8 +53,7 @@ postContent.textContent = response.data.postContent;
 
 
 
-//수정
-
+//수정 버튼
 document.querySelector(".boardReadedit").addEventListener("click", () => {
       window.location.href = "boardEdit.html?id=" + id;
 });
@@ -80,7 +85,8 @@ function sessionCurrent() {
       }
 
 
-      console.log(response.data.userId, postUserId);
+      postUserId = getCookie("postId");
+      console.log("postUserId", postUserId);
       if(response.data.userId === postUserId) {
         document.querySelector(".boardReadedit").classList.remove("hidden");
       }
@@ -130,4 +136,4 @@ function sessionCurrent() {
   }
 })
 
-sessionCurrent()
+//sessionCurrent()

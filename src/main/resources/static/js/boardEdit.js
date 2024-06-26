@@ -11,6 +11,11 @@ axios
 .get(urlEditId)
 .then((response)=>{
   console.log("데이터 : ", response.data);
+  let title = document.querySelector("#boardEditTitleInput");
+  let text = document.querySelector("#boardEditContentInput");
+
+  title.textContent = response.data.postTitle;
+  text.textContent = response.data.postContent;
 
 
 })

@@ -13,6 +13,7 @@ let text = "";
 let userId = "";
 let board = 0;
 let boardName = "";
+let sessionUserId = "";
 
 let freeBoardTabIndex = document.getElementById("boardTabMenu01");
 let QnABoardTabIndex = document.getElementById("boardTabMenu02");
@@ -180,6 +181,8 @@ function displayPost(data) {
     tbody.appendChild(tr);
 
     tr.addEventListener("click", (e) => {
+      console.log(sessionUserId);
+      setCookie("userId", sessionUserId, 1);
       window.location.href = `boardRead.html?id=${post.postId}`;
     });
   });
@@ -396,6 +399,7 @@ function sessionCurrent() {
       console.log("데이터", response);
       if (response.data.userId != "anonymousUser") {
         console.log("세션 유지");
+        sessionUserId = response.data.userId;
         if (response.status == 200) {
           console.log(response.data.userId + "님, 환영합니다.");
           document.querySelector(".logout").classList.remove("hidden");
