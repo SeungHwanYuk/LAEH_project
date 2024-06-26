@@ -13,6 +13,7 @@ public class PostDto {
     private String postContent;
     private String userId;
     private long boardNumber;
+    private  String postComent;
 
     public PostDto toPostDtoFromPost(Post post) {
         PostDto postDto = new PostDto();
@@ -20,6 +21,7 @@ public class PostDto {
         postDto.setPostContent(getPostContent());
         postDto.setUserId(getUserId());
         postDto.setBoardNumber(getBoardNumber());
+        postDto.setPostComent(getPostComent());
         return postDto;
     }
 }

@@ -1,8 +1,10 @@
 package LAEH.LAEH_project.controller;
 
 import LAEH.LAEH_project.dto.PostDto;
+import LAEH.LAEH_project.dto.UserDto;
 import LAEH.LAEH_project.model.Post;
 import LAEH.LAEH_project.model.Subscribe;
+import LAEH.LAEH_project.model.User;
 import LAEH.LAEH_project.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,7 +37,13 @@ public class PostController {
     public ResponseEntity<String> deletePostByPostId(@PathVariable long postId) {
         return new ResponseEntity<>(postService.deletePostByPostId(postId),HttpStatus.OK);
     }
-    
+
+    @PutMapping("/postComment/{postId}")
+    public ResponseEntity<Post> commentPostById(@PathVariable long postId,
+                                               @RequestBody PostDto postDto) {
+        return new ResponseEntity<>(postService.savePostComment(postId, postDto),HttpStatus.OK);
+    }
+
 
 
 

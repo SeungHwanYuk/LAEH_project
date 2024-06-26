@@ -42,8 +42,19 @@ public class PostService {
         post.setUserId(user);
         post.setPostTitle(postDto.getPostTitle());
         post.setPostContent(postDto.getPostContent());
+        post.setPostComent(postDto.getPostComent());
         Post savePost = postRepository.save(post);
         return postDto.toPostDtoFromPost(savePost);
+    }
+    public Post savePostComment(long postId, PostDto postDto){
+        Optional<Post> optionalPost = postRepository.findById(postId);
+        if (optionalPost.isPresent()) {
+            optionalPost.get().setPostComent(postDto.getPostComent());
+            postRepository.save(optionalPost.get());
+            return optionalPost.get();
+        } else {
+            throw new ResourceNotFoundException("Post", "ID", postId);
+        }
     }
 
     public List<Post> getAllPost (){
@@ -73,5 +84,6 @@ public class PostService {
             throw new ResourceNotFoundException("PostId", "ID", postId);
         }
     }
+
 
 }
