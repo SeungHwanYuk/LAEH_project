@@ -8,20 +8,37 @@
     <script src="
     https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js
     "></script>
+
+    <link rel="stylesheet" href="/css/lecturePlayer.css" />
+
+
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/videojs-youtube@latest/dist/Youtube.min.js"></script>
     <title>강의 영상창</title>
+
+
   </head>
   <body>
-    <h1>강의 영상창</h1>
+    <div class="videoTextBack">
+    <h1 class="videoText">강의 영상창</h1>
 
-    <button class="logout hidden">
+<div class="logoutAndbackPageGroup">
+    <div class="logout hidden">
+      <a style="color: #cccccc;"> 로그아웃 </a>
+    </div>
+    <div class="backPage">
+      <a style="color: #252525" class="backPageLingk" href="courseHistory.html"> 강의목록 </a>
+    </div>
+  </div>
+    <!-- <button class="logout hidden">
       <a style="color: #181818"> 로그아웃 </a>
     </button>
     <button class="backPage">
       <a style="color: #181818" href="courseHistory.html"> 강의목록 </a>
-    </button>
+    </button> -->
+  </div>
 
+  <div class="mainVideoWrapGroup">
     <div class="mainVideoWrap">
       <video
         id="video-container"
@@ -31,14 +48,14 @@
         width="810"
         height="540"
       ></video>
-    </div>
+
     <br />
     <br />
 
     <div class="subVideoWrap">
       <div class="subVideoBody"></div>
     </div>
-
+  </div>
     <!-- // 비동기 동영상 불러오기 -->
     <!-- <video
       id="my-video"
