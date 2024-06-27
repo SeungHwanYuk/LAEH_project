@@ -54,7 +54,4 @@ public class BoardController {
         return new ResponseEntity<>(boardService.getPostByFreeBoard(boardId),HttpStatus.OK);
     }
 
-
-
-
 }

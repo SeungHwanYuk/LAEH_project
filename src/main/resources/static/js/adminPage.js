@@ -42,7 +42,7 @@ document.querySelector(".logout").addEventListener("click", () => {
         console.log("데이터 : ", response);
         if (response.status == 200) {
           alert = "로그아웃 되었습니다.";
-          window.location.reload;
+          window.location.href = "index.html";
         }
       })
       .catch((error) => {
@@ -51,4 +51,4 @@ document.querySelector(".logout").addEventListener("click", () => {
   }
 });
 
-// sessionCurrent();
+sessionCurrent();

@@ -211,21 +211,26 @@ function displaySubscribe(contents) {
     const tr = document.createElement("tr");
     const imgtd = document.createElement("td");
     const title = document.createElement("td");
+    const deltd = document.createElement("td");
     const text = document.createElement("td");
     const img = document.createElement("img");
-    tr.classList.add("historyTr");
+    const deleteBtn = document.createElement("button");
 
     // 클래스 이름 생성
+    tr.classList.add("historyTr");
     imgtd.classList.add("imgtd");
     img.classList.add("image");
+    deleteBtn.classList.add("deleteBtn");
 
     // 태그 속성 추가
     img.src = data.contentsId.contentsImage;
     title.textContent = data.contentsId.contentsName;
     text.textContent = data.contentsId.lectureDesc;
+    deleteBtn.textContent = "구독취소";
 
     // appendChild 부모,자식 위치 설정
     imgtd.appendChild(img);
+    deltd.appendChild(deleteBtn);
     tr.appendChild(imgtd);
     tr.appendChild(title);
     tr.appendChild(text);
