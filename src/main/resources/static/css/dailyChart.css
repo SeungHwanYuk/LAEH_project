@@ -85,14 +85,14 @@
 .memothead > tr{
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin: 10px;
+  /* justify-content: space-around; */
+  margin: 10px 0;
 }
 
 .memothead > tr > th{
   margin: 0;
   text-align: center;
-  width: 200px;
+  /* width: 200px; */
 }
 
 .memoData{
@@ -103,15 +103,19 @@
     max-width: 700px;
     margin-top: 50px;
 }
+.calorieTr{
+  border-bottom: 1px solid #444;
+}
 
 .memoTr{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  border-bottom: 1px solid #444;
 }
 
 .memoTr > td{
-  width: 200px;
+  /* width: 250px; */
   margin: 0;
   text-align: center;
 }
@@ -160,33 +164,87 @@
   }
 
 
+
+
+
+.calorieTable{
+  margin: 40px 0;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  padding: 4px;
+}
+
+.calorieTable > thead > tr{
+  border-bottom: 2px solid #ffffff;
+}
+
+.calorieTable > thead > tr > th{
+  padding: 10px;
+     /* border-bottom: 1px solid #444444; */
+}
+
+.memoTr > td:first-child{
+  width: 85px;
+}
+.memoTr > td:nth-child(even){
+  width: 500px;
+}
+
+.memoBox01{
+  width: 85px;
+}
+.memoBox02{
+  width: 500px;
+}
+.memoBox03{
+  width: 100px;
+}
+
+
+
   .carloriesearch{
+    width: 150px;
     display: flex;
+    height: 40px;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    border: #ffff solid 1px;
-    margin-right: 4px;
-    height: 40px;
   }
   .carlorieGroup{
-    display: flex;
+display: flex;
     /* justify-content: center; */
-    width: 100%;
-    width: calc(100% - 700px);
-    max-width: 1000px;
+    /* width: 100%; */
+    /* width: calc(100% - 700px); */
+    max-width: 800px;
     min-width: 500px;
 
   }
 
   .calorieGroup{
-    background-color: #ffff;
+    display: flex;
+    /* justify-content: center; */
     width: 100%;
+    /* width: calc(100% - 700px); */
+    max-width: 850px;
+    min-width: 500px;
     outline: none;
+    background-color: #fff;
     border: none;
+    margin-left: 4px;
     margin-right: 4px;
+    padding: 10px;
 }
-  
+  .calorieBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ffff; */
+    width: 100%;
+    min-width: 300px;
+    max-width: 800px;
+    /* margin: 0; */
+    padding: 0;
+  }
 
   .foodSearchBtn{
     width: 150px;
@@ -194,4 +252,21 @@
     background-color: #00ffa3;
     justify-content: center;
     align-items: center;
+    color: #252525;
   }
+
+
+
+  /* 행색을 넣기 */
+  .calorieTable {
+    width: 100%;
+    /* border-top: 1px solid #444444; */
+    /* border-bottom: 1px solid #444444; */
+    border-collapse: collapse;
+  }
+  .calorieBody > th, td {
+        /* border-bottom: 1px solid #444444; */
+    padding: 10px;
+    text-align: center;
+  }
+
