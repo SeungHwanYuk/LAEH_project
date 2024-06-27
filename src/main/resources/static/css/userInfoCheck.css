@@ -1,0 +1,72 @@
+*{
+    background-color: #252525;
+  }
+
+
+  
+  
+
+ .userInfoBox{
+    width: 85%;
+    max-width: 1700px;
+    min-width: 1000px;
+ }
+  
+  .userInfoTr > td{
+    margin: 0;
+    text-align: center;
+  }
+  
+  
+  .userInfoTable{
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 4px;
+  }
+  
+  .userInfoTable > thead > tr{
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .userInfoTable > thead > tr > th{
+    padding: 10px;
+       
+  }
+
+
+  .userInfoBox{
+    width: 100%;
+    min-width: 700px;
+    max-width: 1000px;
+    margin-top: 50px;
+
+  }
+
+  .userInfoTr{
+    border-bottom: 1px solid #444;
+  }
+  
+
+  
+  
+  
+    /* 행색을 넣기 */
+    .userInfoTable {
+      width: 100%;
+      /* border-top: 1px solid #444444; */
+      /* border-bottom: 1px solid #444444; */
+      border-collapse: collapse;
+    }
+    .userInfoBody > th, td {
+          /* border-bottom: 1px solid #444444; */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .hidden {
+        display: none;
+      }
+  
+  
