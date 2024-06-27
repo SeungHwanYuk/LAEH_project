@@ -1,0 +1,197 @@
+*{
+  background-color: #252525;
+}
+
+.carlorieTab {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 60px;
+  align-items: center;
+  margin: 50px auto;
+  margin-top: 50px;
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.carlorieTab > .carlorieTabMenu01,
+.carlorieTab > .carlorieTabMenu02 {
+  border-bottom: 2px solid #fff;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#carlorieTabMenu01:focus,
+#carlorieTabMenu02:focus  {
+  padding-bottom: 10px;
+  color: #00ffa3;
+}
+
+
+/* 
+
+.carloriehistoryText {
+  padding-bottom: 10px;
+  color: #fff;
+  border-bottom: 2px solid #252525;
+}
+
+
+.carlorieWrap01 > p .carlorieWrap02 > p {
+  color: inherit;
+}
+
+
+
+ */
+
+
+
+
+
+
+
+
+.memoTable{
+  border-collapse: collapse;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-top: 40px;
+}
+
+.memothead{
+  border-bottom: #ffff solid 2px;
+    width: calc(100% - 800px);
+    min-width: 700px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.memoBody{
+  width: calc(100% - 800px);
+  min-width: 700px;
+  margin: 0px auto;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.memothead > tr{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.memothead > tr > th{
+  margin: 0;
+  text-align: center;
+  width: 200px;
+}
+
+.memoData{
+  display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 300px;
+    max-width: 700px;
+    margin-top: 50px;
+}
+
+.memoTr{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.memoTr > td{
+  width: 200px;
+  margin: 0;
+  text-align: center;
+}
+
+.memoGroup{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 300px;
+  max-width: 700px;
+  height: 100px;
+  padding-left: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  padding-top: 10px;
+  color: black;
+}
+.memoSaveBtnGroup{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  min-width: 300px;
+  max-width: 740px;
+  margin-top: 10px;
+   margin-bottom: 100px;
+}
+.memoSaveBtn{
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ffa3;
+  height: 40px;
+  margin: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.memoSaveBtn:hover{
+  color: #fff;
+  background-color: #60ffc5 ;
+  }
+
+
+  .carloriesearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    border: #ffff solid 1px;
+    margin-right: 4px;
+    height: 40px;
+  }
+  .carlorieGroup{
+    display: flex;
+    /* justify-content: center; */
+    width: 100%;
+    width: calc(100% - 700px);
+    max-width: 1000px;
+    min-width: 500px;
+
+  }
+
+  .calorieGroup{
+    background-color: #ffff;
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-right: 4px;
+}
+  
+
+  .foodSearchBtn{
+    width: 150px;
+    display: flex;
+    background-color: #00ffa3;
+    justify-content: center;
+    align-items: center;
+  }

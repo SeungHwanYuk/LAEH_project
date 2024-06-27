@@ -9,6 +9,9 @@ const urlLogout = "http://localhost:8080/user/logout";
 const urlWrite = "http://localhost:8080/post/write";
 const urlComment = "http://localhost:8080/post/postComment/" + id;
 
+
+
+
 let postId;
 let contentsId = id;
 let postUserId = "";
@@ -157,3 +160,21 @@ function saveComment() {
 }
 
 //sessionCurrent()
+
+
+
+// 자동줄바꿈
+
+const tx = document.getElementsByTagName("textarea");
+
+for (let i = 0; i < tx.length; i++) {
+  tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+  tx[i].addEventListener("input", OnInput, false);
+}
+
+// 높이를 자동으로 맞춰 확장하게끔.
+
+function OnInput( ) {
+  this.style.height = "auto";
+  this.style.height = (this.scrollHeight) + "px";
+}
