@@ -15,6 +15,10 @@ document.querySelector("#carlorieTabMenu01").addEventListener("click", (e) => {
 
   document.querySelector(".carlorieWrap01").classList.remove("hidden");
   document.querySelector(".carlorieWrap02").classList.add("hidden");
+  document.querySelector(".historyTextP01").classList.add("historyTextFocus");
+  document
+    .querySelector(".historyTextP02")
+    .classList.remove("historyTextFocus");
 });
 
 document.querySelector("#carlorieTabMenu02").addEventListener("click", (e) => {
@@ -22,6 +26,10 @@ document.querySelector("#carlorieTabMenu02").addEventListener("click", (e) => {
 
   document.querySelector(".carlorieWrap01").classList.add("hidden");
   document.querySelector(".carlorieWrap02").classList.remove("hidden");
+  document.querySelector(".historyTextP02").classList.add("historyTextFocus");
+  document
+    .querySelector(".historyTextP01")
+    .classList.remove("historyTextFocus");
 });
 
 document.querySelector("#newMemoText").addEventListener("change", (e) => {

@@ -82,7 +82,7 @@ function sessionCurrent() {
         response.status == 200 &&
         response.data.authority[0].authority == "ROLE_ADMIN"
       ) {
-        console.log(response.data.userId + "사마... 도죠요로시쿠");
+        console.log(response.data.userId + " 관리자님 어서오세요!");
         document.querySelector(".logout").classList.remove("hidden");
         document.querySelector(".login").classList.add("hidden");
         document.querySelector(".join").classList.add("hidden");

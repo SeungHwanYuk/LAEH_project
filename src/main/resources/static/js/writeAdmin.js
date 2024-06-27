@@ -30,6 +30,7 @@ function displayAllPostList(data) {
 
     tr.classList.add("postListTr");
     deleteBtn.classList.add("deleteBtn");
+
     // 태그 속성 추가
     postId.textContent = data.postId;
     postTitle.textContent = data.postTitle;

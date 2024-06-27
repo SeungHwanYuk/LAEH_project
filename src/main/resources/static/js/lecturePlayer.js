@@ -5,6 +5,7 @@ console.log("contents ID : ", id);
 
 const urlCurrent = "http://localhost:8080/user/current";
 const urlVideoList = "http://localhost:8080/video/listVideo/contents/" + id;
+const urlLogout = "http://localhost:8080/user/logout";
 
 let userId;
 let contentsId = id;

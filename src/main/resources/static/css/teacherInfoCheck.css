@@ -1,0 +1,83 @@
+*{
+    background-color: #252525;
+  }
+
+
+  .contentsByTeacherTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+  
+
+ .contentsByTeacherBox{
+    width: 80%;
+    max-width: 1500px;
+    min-width: 1000px;
+ }
+  
+  .contentsTr > td{
+    margin: 0;
+    text-align: center;
+  }
+  
+  
+  .teacherInfoTable{
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 4px;
+  }
+  
+  .teacherInfoTable > thead > tr{
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .teacherInfoTable > thead > tr > th{
+    padding: 10px;
+       
+  }
+
+
+  .teacherInfoBox{
+    width: 100%;
+    min-width: 700px;
+    max-width: 1000px;
+    margin-top: 50px;
+
+  }
+
+  .teacherInfoTr{
+    border-bottom: 1px solid #444;
+  }
+  .contentsTr{
+    border-bottom: 1px solid #444;
+  }
+
+  
+  
+  
+    /* 행색을 넣기 */
+    .teacherInfoTable {
+      width: 100%;
+      /* border-top: 1px solid #444444; */
+      /* border-bottom: 1px solid #444444; */
+      border-collapse: collapse;
+    }
+    .calorieBody > th, td {
+          /* border-bottom: 1px solid #444444; */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .hidden {
+        display: none;
+      }
+  
+  

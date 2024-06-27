@@ -15,13 +15,13 @@ function sessionCurrent() {
         response.status == 200 &&
         response.data.authority[0].authority != "ROLE_ADMIN"
       ) {
-        alert("관리자 아니자나!!!나가아아아앙ㄲㄲㄲㄲㄲㄲㄲ!!!!!!!!");
+        alert("관리자가 아니시네요?? 나가아아아앙ㄲㄲㄲㄲㄲㄲㄲ!!!!!!!!");
         window.location.href = "index.html";
       } else if (
         response.status == 200 &&
         response.data.authority[0].authority == "ROLE_ADMIN"
       ) {
-        console.log(response.data.userId + "사마... 도죠요로시쿠");
+        console.log(response.data.userId + " 관리자입니다!");
         document.querySelector(".logout").classList.remove("hidden");
         document.querySelector(".login").classList.add("hidden");
         document.querySelector(".join").classList.add("hidden");
@@ -51,4 +51,4 @@ document.querySelector(".logout").addEventListener("click", () => {
   }
 });
 
-sessionCurrent();
+// sessionCurrent();

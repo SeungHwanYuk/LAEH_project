@@ -28,7 +28,7 @@ function displayAllTeacherList(data) {
 
     // 클래스 이름 생성
     imgtd.classList.add("imgtd");
-    img.classList.add("image");
+
     tr.classList.add("teacherInfoTr");
     // 태그 속성 추가
     img.src = data.teacherPicture;
@@ -49,25 +49,27 @@ function displayAllTeacherList(data) {
     tbody.appendChild(tr);
 
     tr.addEventListener("click", (e) => {
-      window.location.href = "contentsByTeacherBody";
-      // let removeNodes = document.querySelector(".contentsByTeacherBody");
-      // while (removeNodes.firstChild) {
-      //   removeNodes.removeChild(removeNodes.firstChild);
-      // }
-      // document
-      //   .querySelector(".contentsByTeacherTable")
-      //   .classList.remove("hidden");
-      // let teacher = data.userId.userId;
-      // console.log("teacher : ", teacher);
-      // axios
-      //   .get(urlContentsByTeacher + teacher, { withCredentials: true })
-      //   .then((response) => {
-      //     console.log("urlContentsByTeacher 데이터 : ", response.data);
-      //     displayContents(response.data);
-      //   })
-      //   .catch((error) => {
-      //     console.log("urlContentsByTeacher 에러 발생 : ", error);
-      //   });
+      document
+        .querySelector(".contentsByTeacherTitle")
+        .classList.remove("hidden");
+      let removeNodes = document.querySelector(".contentsByTeacherBody");
+      while (removeNodes.firstChild) {
+        removeNodes.removeChild(removeNodes.firstChild);
+      }
+      document
+        .querySelector(".contentsByTeacherTable")
+        .classList.remove("hidden");
+      let teacher = data.userId.userId;
+      console.log("teacher : ", teacher);
+      axios
+        .get(urlContentsByTeacher + teacher, { withCredentials: true })
+        .then((response) => {
+          console.log("urlContentsByTeacher 데이터 : ", response.data);
+          displayContents(response.data);
+        })
+        .catch((error) => {
+          console.log("urlContentsByTeacher 에러 발생 : ", error);
+        });
     });
   });
 }
@@ -87,11 +89,11 @@ function displayContents(contents) {
     const contentsTime = document.createElement("td");
     const contentsClickedCount = document.createElement("td");
     const contentsUploadDate = document.createElement("td");
-    tr.classList.add("contentsTr");
 
     // 클래스 이름 생성
     imgtd.classList.add("imgtd");
     img.classList.add("image");
+    tr.classList.add("contentsTr");
 
     // 태그 속성 추가
     img.src = data.contentsImage;
