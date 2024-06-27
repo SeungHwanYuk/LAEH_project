@@ -73,6 +73,14 @@
     margin-bottom: 100px;
 }
 
+.boardTableBarTr {
+    font-size: 25px;
+    font-weight: bold;
+}
+.boardReadViewWrap {
+    margin-top: 20px;
+}
+
 
 
 /* 목록/수정 */

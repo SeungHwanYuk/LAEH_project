@@ -32,17 +32,10 @@ document
     text = e.target.value;
   });
 
-
-
-
-
 // // 자유게시판이 눌려 있어야 해
 // window.addEventListener("load",()=>{
 //   document.querySelector("#boardTabMenu01").click()
 // })
-
-
-
 
 // 중복이라 주석처리 0625 승환
 // document
@@ -183,7 +176,7 @@ function displayPost(data) {
     tr.addEventListener("click", (e) => {
       console.log(sessionUserId);
       setCookie("userId", sessionUserId, 1);
-      window.location.href = `boardRead.html?id=${post.postId}`;
+      window.location.href = `boardRead.html?id=${post.postId}&board=${post.board.boardNumber}`;
     });
   });
 }
@@ -196,9 +189,6 @@ document.querySelector("#writePostButton").addEventListener("click", () => {
   document.querySelector(".boardAndPostGrop").classList.add("hidden");
   document.querySelector(".boardpageWrap").classList.add("hidden");
 });
-
-
-
 
 document
   .querySelector("#boardPageCloseButton")
@@ -221,8 +211,6 @@ document
 //     // 모달 닫기
 //   });
 
-
-
 // 현재 사용자 ID 가져오는 함수
 function getCurrentUserId() {
   axios
@@ -236,10 +224,6 @@ function getCurrentUserId() {
       console.log("사용자 ID 가져오기 에러:", error);
     });
 }
-
-
-
-
 
 // 글쓰는 등록 버튼 클릭 시 아이디 자동 저장용
 document.querySelector("#writePostButton").addEventListener("click", () => {
@@ -354,17 +338,13 @@ window.addEventListener("load", () => {
 
 // 페이지 네이션 끝 --------------------------------------------------------------
 
-
-
-
-
 function writeSessionCurrent() {
   // 로그인 유지 확인 코드
   axios
     .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터", response);
-      if(response.data.userId == "anonymousUser") {
+      if (response.data.userId == "anonymousUser") {
         alert("로그인 해주세요.");
         window.location.href = "login.html";
       }
@@ -377,19 +357,11 @@ function writeSessionCurrent() {
           document.querySelector(".join").classList.add("hidden");
         }
       }
-      
     })
     .catch((error) => {
       console.log("urlCurrent 에러 발생", error);
     });
 }
-
-
-
-
-
-
-
 
 function sessionCurrent() {
   // 로그인 유지 확인 코드
@@ -432,8 +404,3 @@ document.querySelector(".logout").addEventListener("click", () => {
 });
 
 sessionCurrent();
-
-
-
-
-

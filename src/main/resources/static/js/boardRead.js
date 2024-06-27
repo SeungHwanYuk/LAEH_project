@@ -1,6 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
+const boardNumber = urlParams.get("board");
 const id = urlParams.get("id");
-console.log("Class ID : ", id);
+console.log("Class ID, boardNumber : ", id, boardNumber);
 
 const urlpostID = "http://localhost:8080/post/postId/" + id;
 const urlLogin = "http://localhost:8080/user/login";
@@ -13,6 +14,22 @@ let postId;
 let contentsId = id;
 let postUserId = "";
 let comment = "";
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (boardNumber == 2) {
+    document.getElementById("boardTabMenu01").classList.add("hidden");
+    document.getElementById("boardTabMenu02").classList.remove("hidden");
+    document.getElementById("boardTabMenu03").classList.add("hidden");
+  } else if (boardNumber == 1) {
+    document.getElementById("boardTabMenu01").classList.remove("hidden");
+    document.getElementById("boardTabMenu02").classList.add("hidden");
+    document.getElementById("boardTabMenu03").classList.add("hidden");
+  } else if (boardNumber == 3) {
+    document.getElementById("boardTabMenu01").classList.add("hidden");
+    document.getElementById("boardTabMenu02").classList.add("hidden");
+    document.getElementById("boardTabMenu03").classList.remove("hidden");
+  }
+});
 
 axios
   .get(urlpostID)
@@ -87,7 +104,9 @@ function sessionCurrent() {
         document.querySelector(".login").classList.add("hidden");
         document.querySelector(".join").classList.add("hidden");
         document.querySelector(".navMenuAdmin").classList.remove("hidden");
-        document.querySelector(".boardReadComent").classList.remove("hidden");
+        if (boardNumber == 2) {
+          document.querySelector(".boardReadComent").classList.remove("hidden");
+        }
       }
       // 쿠키 체크
       postUserId = getCookie("postId");

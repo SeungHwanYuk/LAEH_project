@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/src/main/resources/static/css/boardRead.css" />
     <link rel="stylesheet" href="../css/boardRead.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="/css/boardRead.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/src/main/resources/static/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
 
@@ -45,7 +47,7 @@
         <a href="login.html" style="color: #181818"> 로그인 </a>
       </button>
       <button class="logout hidden">
-        <a href="login.html" style="color: #181818"> 로그아웃 </a>
+        <a style="color: #181818"> 로그아웃 </a>
       </button>
 
       <p class="join">
@@ -80,8 +82,8 @@
         <thead>
             <tr class="boardTableBarTr">
               <td tabindex="0" id="boardTabMenu01" class="boardTableBarTd">자유게시판</td>
-              <td tabindex="1" id="boardTabMenu02" class="boardTableBarTd">Q&A</td>
-              <td tabindex="2" id="boardTabMenu03" class="boardTableBarTd">FAQ</td>
+              <td tabindex="1" id="boardTabMenu02" class="boardTableBarTd hidden">Q&A</td>
+              <td tabindex="2" id="boardTabMenu03" class="boardTableBarTd hidden">FAQ</td>
             </tr>
         </thead>
       </table>
