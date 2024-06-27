@@ -57,12 +57,13 @@
 
 .memoTable{
   border-collapse: collapse;
-  margin: 0;
-  width: 100%;
+  /* margin: 0; */
+  width: 80%;
   display: flex;
   flex-direction: column;
   height: auto;
   margin-top: 40px;
+
 }
 
 .memothead{
