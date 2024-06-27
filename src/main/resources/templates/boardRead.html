@@ -109,15 +109,23 @@
             <div class="boardReadCont" id="boardReadContent">
                 <!-- 내용이 여기에 들어갈 자리 -->
             </div>
+
+            <div class="commentBody">
+              <a id="commentText"></a>
+
+            </div>
+
         </div>
 
     </div>
 
-    <div class="boardReadComent" id="boardReadComentId">
+    <div class="boardReadComent hidden" id="boardReadComentId">
       <!-- <input type="text" class="boardReadComentText" placeholder="coment를 적어주세요."> -->
-      <textarea class="bodardReadComentText" placeholder="Teacher Memo" [(ngModel)]="memo" ></textarea>
+      <input class="boardReadComentText" placeholder="Teacher Memo" [(ngModel)]="memo">
       <div id="boardReadComentButton" class="boardReadComentBtn">등록</div>
     </div>
+
+   
 
 
 </div>

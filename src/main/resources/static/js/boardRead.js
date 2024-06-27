@@ -9,9 +9,6 @@ const urlLogout = "http://localhost:8080/user/logout";
 const urlWrite = "http://localhost:8080/post/write";
 const urlComment = "http://localhost:8080/post/postComment/" + id;
 
-
-
-
 let postId;
 let contentsId = id;
 let postUserId = "";
@@ -43,14 +40,10 @@ axios
     let postContent = document.getElementById("boardReadContent");
     postContent.textContent = response.data.postContent;
 
-
     // 댓글
-    let postComent = document.getElementById("boardReadComment");
+    let postComent = document.getElementById("commentText");
     postComent.textContent = response.data.postComent;
-
-
-
-
+    console.log("postComent : ", response.data.postComent);
 
     postUserId = getCookie("userId");
     console.log("userId", postUserId, response.data.userId.userId);
@@ -79,11 +72,6 @@ document.querySelector(".boardReadComentBtn").addEventListener("click", (e) => {
   saveComment();
 });
 
-
-
-
-
-// 관리자의 댓글
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
@@ -101,7 +89,7 @@ function sessionCurrent() {
         document.querySelector(".navMenuAdmin").classList.remove("hidden");
         document.querySelector(".boardReadComent").classList.remove("hidden");
       }
-
+      // 쿠키 체크
       postUserId = getCookie("postId");
       console.log("postUserId", postUserId);
       if (response.data.userId === postUserId) {
@@ -114,35 +102,45 @@ function sessionCurrent() {
     });
 }
 
+document.querySelector(".logout").addEventListener("click", () => {
+  // 로그아웃 버튼
+  if (confirm("로그아웃 하시겠습니까?")) {
+    axios
+      .post(urlLogout, {}, { withCredentials: true })
+      .then((response) => {
+        console.log("데이터 : ", response);
+        if (response.status == 200) {
+          alert("로그아웃 되었습니다.");
+          window.location.reload();
+        }
+      })
+      .catch((error) => {
+        console.log("에러 발생", error);
+      });
+  }
+});
 
+// axios
+//   .get(urlpostID)
+//   .then((response) => {
+//     console.log("댓글 데이터 : ", response);
+//     let comments = response.data; // 서버에서 받아온 댓글 데이터
 
-axios.get(urlComment)
-    .then((response) => {
-        console.log("댓글 데이터 : ", response);
-        let comments = response.data; // 서버에서 받아온 댓글 데이터
+//     // 댓글을 표시할 요소 선택
+//     let commentContainer = document.getElementById("boardReadComent");
 
-        // 댓글을 표시할 요소 선택
-        let commentContainer = document.getElementById("boardReadComment");
+//     // 댓글 데이터를 HTML에 추가
+//     comments.forEach((comment) => {
+//       let commentElement = document.createElement("div");
+//       commentElement.classList.add("comment"); // 필요에 따라 CSS 클래스 추가
+//       commentElement.textContent = comment.content; // 댓글 내용을 텍스트로 설정
 
-        // 댓글 데이터를 HTML에 추가
-        comments.forEach(comment => {
-            let commentElement = document.createElement("div");
-            commentElement.classList.add("comment"); // 필요에 따라 CSS 클래스 추가
-            commentElement.textContent = comment.content; // 댓글 내용을 텍스트로 설정
-
-            commentContainer.appendChild(commentElement); // 댓글을 컨테이너에 추가
-        });
-    })
-    .catch((error) => {
-        console.error("댓글 데이터를 불러오는 중 에러 발생 : ", error);
-    });
-
-
-
-
-
-    
-
+//       commentContainer.appendChild(commentElement); // 댓글을 컨테이너에 추가
+//     });
+//   })
+//   .catch((error) => {
+//     console.log(" urlComment 댓글 에러발생 : ", error);
+//   });
 
 function saveComment() {
   const data = {
@@ -152,29 +150,30 @@ function saveComment() {
     .put(urlComment, data, { withCredentials: true })
     .then((response) => {
       console.log(" urlComment 데이터 : ", response);
-    
+      window.location.reload();
     })
     .catch((error) => {
       console.log("urlComment 에러 발생 : ", error);
     });
 }
 
-//sessionCurrent()
-
-
+sessionCurrent();
 
 // 자동줄바꿈
 
 const tx = document.getElementsByTagName("textarea");
 
 for (let i = 0; i < tx.length; i++) {
-  tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+  tx[i].setAttribute(
+    "style",
+    "height:" + tx[i].scrollHeight + "px;overflow-y:hidden;"
+  );
   tx[i].addEventListener("input", OnInput, false);
 }
 
 // 높이를 자동으로 맞춰 확장하게끔.
 
-function OnInput( ) {
+function OnInput() {
   this.style.height = "auto";
-  this.style.height = (this.scrollHeight) + "px";
+  this.style.height = this.scrollHeight + "px";
 }
