@@ -94,10 +94,11 @@
     width: 230px;
     height: 40px;
     text-decoration-line: none;
-    /* background-color: #00ffa3 ; */
-    border: solid 1px;
-    color: #6b6b6b;
+    background-color: #00ffa3 ;
+    border: none;
+    color: #252525;
     outline: none;
+    font-weight: bold;
     /* margin: 0 20px; */
 
     box-sizing: border-box;
@@ -106,8 +107,8 @@
     justify-content: center;
   }
   .boardReadOn:hover{
-    background-color: #00ffa3 ;
-    color: #fff;
+    background-color: #76ffcd;
+    color: #252525;
     border: none;
     box-sizing: border-box;
     
@@ -174,3 +175,42 @@
     color: #fff;
     background-color: #60ffc5 ;
     }
+
+
+
+
+
+
+/* 댓글 */
+
+.boardReadComentBoard{
+    height: 30px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 770px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    background-color: #444;
+
+
+}
+.boardReadComentText01{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    min-width: 300px;
+    max-width: 770px;
+    display: flex;
+    margin: 0 auto;
+    color: #444;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+}
+
+#commentText{
+    margin: 0 10px;
+}
