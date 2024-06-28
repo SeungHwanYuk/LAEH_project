@@ -24,10 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("boardTabMenu01").classList.remove("hidden");
     document.getElementById("boardTabMenu02").classList.add("hidden");
     document.getElementById("boardTabMenu03").classList.add("hidden");
+    document.querySelector(".commentBody").classList.add("hidden");
   } else if (boardNumber == 3) {
     document.getElementById("boardTabMenu01").classList.add("hidden");
     document.getElementById("boardTabMenu02").classList.add("hidden");
     document.getElementById("boardTabMenu03").classList.remove("hidden");
+    document.querySelector(".commentBody").classList.add("hidden");
   }
 });
 
@@ -95,14 +97,19 @@ function sessionCurrent() {
     .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터", response);
+
+      if (response.data.userId != "anonymousUser") {
+        console.log(response.data.userId + "님, 환영합니다.");
+        document.querySelector(".logout").classList.remove("hidden");
+        document.querySelector(".login").classList.add("hidden");
+        document.querySelector(".join").classList.add("hidden");
+      }
       if (
         response.status == 200 &&
         response.data.authority[0].authority == "ROLE_ADMIN"
       ) {
         console.log(response.data.userId + " 관리자님 어서오세요!");
-        document.querySelector(".logout").classList.remove("hidden");
-        document.querySelector(".login").classList.add("hidden");
-        document.querySelector(".join").classList.add("hidden");
+
         document.querySelector(".navMenuAdmin").classList.remove("hidden");
         if (boardNumber == 2) {
           document.querySelector(".boardReadComent").classList.remove("hidden");
