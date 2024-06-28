@@ -1,0 +1,101 @@
+/* 글쓰기창 */
+.boardEditWrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#boardEditTitleInput{
+  width: 500px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  color: black;
+  padding-top: 10px;
+}
+#boardEditTitleInput:focus {
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 42%);
+}
+#boardEditContentInput{
+  width: 500px;
+  height: 300px;
+  margin: 10px 0;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  color: black;
+}
+#boardEditContentInput:focus {
+  outline: none;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 42%);
+}
+.basic{
+  cursor: pointer;
+}
+
+.basic:hover{
+background-color: #3d3d3d;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* 목록/수정 */
+.boardEditBtnWrap{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardEditOn{
+  width: 230px;
+  height: 40px;
+  text-decoration-line: none;
+  /* background-color: #00ffa3 ; */
+  border: solid 1px;
+  color: #6b6b6b;
+  outline: none;
+  /* margin: 0 20px; */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boardEditOn:hover{
+  background-color: #00ffa3 ;
+  color: #fff;
+  border: none;
+  box-sizing: border-box;
+  
+}
+
+.boardEditClose{
+  width: 230px;
+  height: 40px;
+  cursor : pointer;
+  background-color: #00ffa3 ;
+  color: #252525;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-left: 40px;
+}
+.boardEditClose:hover{
+color: #fff;
+background-color: #60ffc5 ;
+}
+
