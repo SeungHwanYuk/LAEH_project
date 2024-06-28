@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
+const boardNumber = urlParams.get("action");
 
 const url = "http://localhost:8080/board/all";
 const freeBoardurl = "http://localhost:8080/post/freeBoard/" + id;
@@ -31,6 +32,21 @@ document
     console.log(e.target.value);
     text = e.target.value;
   });
+
+// // 페이지 로드시 자동 클릭 명령
+// document.addEventListener("DOMContentLoaded", () => {
+//   if (boardNumber == 1) {
+//     document.querySelector("#boardTabMenu01").click();
+//   } else {
+//     if (boardNumber == 2) {
+//       document.querySelector("#boardTabMenu02").click();
+//     } else {
+//       if (boardNumber == 3) {
+//         document.querySelector("#boardTabMenu03").click();
+//       }
+//     }
+//   }
+// });
 
 // // 자유게시판이 눌려 있어야 해
 // window.addEventListener("load",()=>{
@@ -188,6 +204,7 @@ document.querySelector("#writePostButton").addEventListener("click", () => {
   document.querySelector(".boardPage").classList.remove("hidden");
   document.querySelector(".boardAndPostGrop").classList.add("hidden");
   document.querySelector(".boardpageWrap").classList.add("hidden");
+  document.querySelector("#writePostButton").classList.add("hidden");
 });
 
 document
@@ -198,6 +215,7 @@ document
       document.querySelector(".boardPage").classList.add("hidden");
       document.querySelector(".boardAndPostGrop").classList.remove("hidden");
       document.querySelector(".boardpageWrap").classList.add("hidden");
+      document.querySelector("#writePostButton").classList.remove("hidden");
     }
   });
 

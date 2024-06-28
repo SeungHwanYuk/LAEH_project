@@ -298,25 +298,21 @@ document.querySelector(".logout").addEventListener("click", () => {
   }
 });
 
-
-
-
-
-
-
-
 // 자동줄바꿈
 
 const tx = document.getElementsByTagName("textarea");
 
 for (let i = 0; i < tx.length; i++) {
-  tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+  tx[i].setAttribute(
+    "style",
+    "height:" + tx[i].scrollHeight + "px;overflow-y:hidden;"
+  );
   tx[i].addEventListener("input", OnInput, false);
 }
 
 // 높이를 자동으로 맞춰 확장하게끔.
 
-function OnInput( ) {
+function OnInput() {
   this.style.height = "auto";
-  this.style.height = (this.scrollHeight) + "px";
+  this.style.height = this.scrollHeight + "px";
 }

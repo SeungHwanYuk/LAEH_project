@@ -74,6 +74,12 @@ axios
     console.log("에러 발생 : ", error);
   });
 
+// 목록버튼 클릭시 해당 게시판 이동
+document.querySelector(".boardReadOn").addEventListener("click", (e) => {
+  console.log("boardNumber : ", boardNumber);
+  window.location.href = `board.html?action=${boardNumber}`;
+});
+
 // 게시글 수정 버튼
 document.querySelector(".boardReadedit").addEventListener("click", () => {
   window.location.href = "boardEdit.html?id=" + id;
