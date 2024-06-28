@@ -7,8 +7,8 @@ const urlCurrent = "http://localhost:8080/user/current";
 const urlVideoList = "http://localhost:8080/video/listVideo/contents/" + id;
 const urlLogout = "http://localhost:8080/user/logout";
 
-// 
-const urlContentsAll= "http://localhost:8080/contents/all";
+//
+const urlContentsAll = "http://localhost:8080/contents/all";
 
 let userId;
 let contentsId = id;
@@ -42,46 +42,53 @@ function displayVideo(arrayNewYoutubeUrl) {
   });
   const subVideoBody = document.querySelector(".subVideoBody");
   arrayNewYoutubeUrl.forEach((data, index) => {
-    // 
+    //
     const check = document.createElement("span");
     const lecImg = document.createElement("img");
-    const lecWrap = document.createElement("div");
+
     const subVideo = document.createElement("div");
     const videoText = document.createElement("p");
-    const videoImg = document.createElement("img");
-    // 
+
+    //
     check.classList.add("videoUnCheck");
+    check.classList.add("hidden");
     videoText.classList.add("videoText");
-    videoImg.classList.add("videoImg");
+    lecImg.classList.add("videoImg");
     subVideo.classList.add("subVideo");
-    // 
-    
+    //
+
     check.textContent = `√`;
-    videoText.textContent =  ": " + data.videoDesc;
-    videoImg.src = "";
-    videoImg.textContent = "썸네일 : ";
-    // 
-    lecWrap.appendChild(lecImg);
-    subVideo.appendChild(lecWrap);
+    videoText.textContent = ": " + data.videoDesc;
+    lecImg.src = "/image/Group_60.png";
+
+    //
     subVideo.appendChild(check);
+    subVideo.appendChild(lecImg);
+
     subVideo.appendChild(videoText);
-    subVideo.appendChild(videoImg);
+
     subVideoBody.appendChild(subVideo);
+    subVideoBody.firstChild
+      .querySelector(".videoUnCheck")
+      .classList.remove("hidden");
+    subVideoBody.firstChild.querySelector(".videoImg").classList.add("hidden");
 
     // 만약 왼쪽의 url과 오른쪽 정보의 url이 일치하면 체크표시
     axios
-    .get(urlContentsAll)
-    .then((response) =>{
-      console.log(" urlContents 전체 데이터 : ", response.data);
-      lecImg.src = response.data.contentsImage;
-      // if()
-    })
-    .catch((error) =>{
-      console.log("오류 발생: ", error);
-    })
+      .get(urlContentsAll)
+      .then((response) => {
+        console.log(" urlContents 전체 데이터 : ", response.data);
+        // lecImg.src = response.data.contentsImage;
+        // if()
+      })
+      .catch((error) => {
+        console.log("오류 발생: ", error);
+      });
 
     // 클릭시 해당 인덱스의 영상 링크(src)를 플레이어로 수정/전송후 출력
     subVideo.addEventListener("click", (e) => {
+      subVideo.querySelector(".videoUnCheck").classList.remove("hidden");
+      subVideo.querySelector(".videoImg").classList.add("hidden");
       console.log("subVideo 클릭 인덱스 : ", data.videoSrc);
       youtubeVideoLink = data.videoSrc;
       videojs("video-container", player);
