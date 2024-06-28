@@ -1,3 +1,14 @@
+/* 제목 */
+.boardEditTitleWrap{
+  border: none;
+  font-size: 25px;
+  color: #fff;
+  margin: 20px 0;
+}
+
+
+
+
 /* 글쓰기창 */
 .boardEditWrap{
   display: flex;
@@ -8,6 +19,7 @@
 #boardEditTitleInput{
   width: 500px;
   height: 40px;
+  margin: 10px 0;
   margin-bottom: 20px;
   padding-left: 20px;
   outline: none;
