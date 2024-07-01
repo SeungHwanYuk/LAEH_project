@@ -128,13 +128,10 @@ function buyOne() {
 // 위시리스트 담기
 function sessionCheckAndAddWishList(data) {
   // 하트 위시리스트 토글
+  console.log("위시리스트 클릭시 ", data, data.contentsId);
 
-  const addButton = document.querySelector(".addWishListBtn");
-  const heartIcon = addButton.querySelector("i.fa-heart");
-
-  // 페이지 로드 시 로컬 스토리지에서 토글 상태를 가져와 적용합니다.
   document.addEventListener("DOMContentLoaded", function () {
-    const isAdded = localStorage.getItem("wishlistAdded") === "true";
+    const isAdded = localStorage.getItem(contentsId) === data.contentsId;
 
     // 토글 상태에 따라 버튼과 하트 아이콘을 설정합니다.
     if (isAdded) {
@@ -145,6 +142,17 @@ function sessionCheckAndAddWishList(data) {
       heartIcon.classList.remove("fas");
     }
   });
+  const addButton = document.querySelector(".addWishListBtn");
+  const heartIcon = addButton.querySelector("i.fa-heart");
+
+  // 페이지 로드 시 로컬 스토리지에서 토글 상태를 가져와 적용합니다.
+  // 토글된 상태를 가져옵니다.
+  const isAdded = addButton.classList.toggle("added");
+
+  // 토글된 상태를 로컬 스토리지에 저장합니다.
+
+  // 토글된 상태에 따라 하트 아이콘의 색상을 변경합니다.
+  heartIcon.classList.toggle("fas");
 
   //////////////////////////////////////////////////
   axios
@@ -164,14 +172,6 @@ function sessionCheckAndAddWishList(data) {
         cartItems.push(data);
         localStorage.setItem(userId, JSON.stringify(cartItems));
         alert("위시리스트에 추가되었습니다.");
-        // 토글된 상태를 가져옵니다.
-        const isAdded = addButton.classList.toggle("added");
-
-        // 토글된 상태를 로컬 스토리지에 저장합니다.
-        localStorage.setItem("wishlistAdded", isAdded);
-
-        // 토글된 상태에 따라 하트 아이콘의 색상을 변경합니다.
-        heartIcon.classList.toggle("fas");
       }
     })
     .catch((error) => {

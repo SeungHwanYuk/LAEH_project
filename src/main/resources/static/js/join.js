@@ -1,5 +1,6 @@
-const urlSignup = "http://localhost:8080/user/signup";
-const urlAll = "http://localhost:8080/user/all";
+const urlSignup = "/user/signup";
+const urlAll = "/user/allbydto";
+const urlCurrent = "/user/current";
 
 // const genders = {
 //   MEN: "남자",
@@ -169,7 +170,7 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
   axios
     .get(urlAll)
     .then((response) => {
-      console.log("데이터 : ", response);
+      console.log("데이터 : ", response.data);
 
       // response.data.forEach((e) => {
       // console.log(data.userId);
@@ -205,7 +206,7 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
               window.location.href = "signupSuccess.html";
             })
             .catch((error) => {
-              console.error("에러 발생:", error);
+              console.error("에러 발생:", error.response.data);
             });
           return data;
         } else {
@@ -230,7 +231,7 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
 function sessionCurrent() {
   // 로그인 유지 확인 코드
   axios
-    .get("http://localhost:8080/user/current", { withCredentials: true })
+    .get(urlCurrent, { withCredentials: true })
     .then((response) => {
       console.log("데이터", response);
       if (response.status == 200) {

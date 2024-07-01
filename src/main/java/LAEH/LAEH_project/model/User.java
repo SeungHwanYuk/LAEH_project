@@ -69,6 +69,10 @@ public class User implements UserDetails { // UserDetails 상속 (세큐리티)
         return userId;
     }
 
+    public String getUserName2() {
+        return userName;
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();

@@ -1,10 +1,10 @@
-const urlCurrent = "http://localhost:8080/user/current";
-const urlSignup = "http://localhost:8080/user/signup";
+const urlCurrent = "/user/current";
+const urlSignup = "/user/signup";
 
-const urlLogin = "http://localhost:8080/user/login";
-const urlLogout = "http://localhost:8080/user/logout";
+const urlLogin = "/user/login";
+const urlLogout = "/user/logout";
 
-const urlAll = "http://localhost:8080/user/all";
+const urlAll = "/user/allbydto";
 
 // 회원정보 수정 승환 0620
 let currentUserId = "";
@@ -163,7 +163,7 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
     phoneNum: newUserPhoneNum,
   };
   console.log(data.userId);
-  const urlUserUpdate = "http://localhost:8080/user/update/" + data.userId;
+  const urlUserUpdate = "/user/update/" + data.userId;
   axios
     .get(urlAll)
     .then((response) => {
@@ -181,7 +181,7 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
               window.location.href = "myPage.html";
             })
             .catch((error) => {
-              console.error("urlSignup 에러 발생:", error);
+              console.error("urlSignup 에러 발생:", error.response.data);
             });
           return data;
         } else {

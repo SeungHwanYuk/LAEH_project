@@ -1,14 +1,17 @@
 package LAEH.LAEH_project.controller;
 
 
+import LAEH.LAEH_project.dto.BaseResponse;
 import LAEH.LAEH_project.dto.SessionDto;
 import LAEH.LAEH_project.dto.UserDto;
+import LAEH.LAEH_project.enumstatus.ResultCode;
 import LAEH.LAEH_project.model.User;
 import LAEH.LAEH_project.service.UserDetailService;
 import LAEH.LAEH_project.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,14 +42,13 @@ public class UserController {
     }
 
     @PostMapping("signup")
-    public ResponseEntity<String> saveUser(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.saveUser(userDto), HttpStatus.OK);
+    public ResponseEntity<BaseResponse<String>> saveUser(@Valid @RequestBody UserDto userDto) {
+        return new ResponseEntity<>(
+                new BaseResponse<>(ResultCode.SUCCESS.name(),
+                        userService.saveUser(userDto),
+                        ResultCode.SUCCESS.getMsg()),HttpStatus.OK);
     }
 
-    @GetMapping("all")
-    public ResponseEntity<List<User>> getAllUser() {
-        return new ResponseEntity<>(userService.getUser(), HttpStatus.OK);
-    }
 
     // 권한명 "ROLE_TEACHER" 로 선생님 전부 찾기
     @GetMapping("/teacher")
@@ -54,6 +56,14 @@ public class UserController {
         return new ResponseEntity<>(userService.getAllTeacher(),HttpStatus.OK);
     }
 
+    // 유저의 모든 정보 표시 ( 암호화된 비밀번호 포함 )
+    @GetMapping("all")
+    public ResponseEntity<List<User>> getAllUser() {
+        return new ResponseEntity<>(userService.getUser(), HttpStatus.OK);
+    }
+
+
+    // Dto로 유저 정보 표시. 비밀번호는 null ( 이외의 보안이 필요한 정보도 숨김 가능 )
     @GetMapping("allbydto")
     public ResponseEntity<List<UserDto>> getAllUserByDto() {
         return new ResponseEntity<>(userService.getAllUserByDto(), HttpStatus.OK);
@@ -98,8 +108,12 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<User> updateUserById(@PathVariable String id,
+    public ResponseEntity<BaseResponse<User>> updateUserById(@Valid @PathVariable String id,
                                                @RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.updateUserById(id , userDto),HttpStatus.OK);
+        return new ResponseEntity<>(
+                new BaseResponse<>(
+                        ResultCode.SUCCESS.name(),
+                        userService.updateUserById(id , userDto),
+                        ResultCode.SUCCESS.getMsg()),HttpStatus.OK);
     }
 }
