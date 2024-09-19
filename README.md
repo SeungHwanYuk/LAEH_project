@@ -1,4 +1,4 @@
-# Hello PT
+### Hello PT
 
 > 바쁜 사회인들을 위한 온라인 헬스 클래스 웹페이지
 
@@ -13,6 +13,25 @@
 >종목에 따른 선생님이 개인 PT를 온라인으로 피드백 할 수 있도록 에듀테크 과정에 맞게 설계함
 
 <br>
+
+개발기간
+
+<br>
+
+2024-06-03 ~ 2024-06-28 
+
+<br>
+
+팀원 구성
+<br>
+
+육승환 ysh54244902@gmail.com github.com/SeungHwanYuk
+<br>
+
+송진경 rudwlsthd123@naver.com github.com/bobo459
+<br>
+
+윤 별 
 
 ## 기술 스택
 
@@ -44,7 +63,6 @@ DB
 <br>
 
 ## 프로젝트 구조
-<br>
 
 ### 백엔드
 
@@ -240,14 +258,60 @@ main
  ┃ ┃ ┗ yogaClass.html
 
  ```
-<br>
 
-## 폴더 구조
+#### 폴더 구조
 
 <br>
 
 - css, html, js 폴더를 따로 관리하여 가독성을 늘림
 - templates의 정적 페이지를 백엔드의 ViewController가 보여주는 방식으로 설계함
+
+<br>
+
+## ERD
+![project_TBeaver](https://github.com/user-attachments/assets/635e4dc2-18af-4d14-8e3c-c4be584339b6)
+
+<br>
+
+## 역할분담
+
+<br>
+
+#### 육승환
+
+<br>
+
+- 기초 서버구조 설계
+- RestAPI 설계 및 테스트
+- 데이터 정제 및 정규화
+- java, javascript, html, css 구현 및 테스트
+
+<br>
+
+#### 송진경
+
+<br>
+
+- 프로젝트 와이어프레임 제작
+- 게시판 설계
+- 이미지 제작
+- javascript, html, css 구현 및 테스트
+
+<br>
+
+#### 윤 별
+
+<br>
+
+- 전체 퍼블리싱 담당 및 일부 이미지 제작
+- 외부 데이터 수집 및 자료조사
+- 유효성 검사 테스트
+- javascript, html, css 구현 및 테스트
+
+<br>
+
+
+
 
 <br>
 
