@@ -68,8 +68,10 @@ DB
 
 ### 백엔드
 
-```
+<details>
+  <summary>펼치기</summary>
 
+```
 main
  ┣ java
  ┃ ┗ LAEH
@@ -159,10 +161,14 @@ main
 
 ```
 
+</details>
+
 ### 프론트 엔드
 
-```
+<details>
+  <summary>펼치기</summary>
 
+```
 main
  ┗ resources
  ┃ ┣ static
@@ -260,6 +266,10 @@ main
  ┃ ┃ ┗ yogaClass.html
 
  ```
+
+</details>
+
+
 
 #### 폴더 구조
 
