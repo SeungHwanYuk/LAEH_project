@@ -31,7 +31,8 @@
 송진경 rudwlsthd123@naver.com github.com/bobo459
 <br>
 
-윤 별 
+윤 별 ydb0717@gmail.com github.com/star0717
+<br>
 
 ## 기술 스택
 
@@ -58,7 +59,8 @@ DB
  
 <br>
 
-- 개발환경 : Windows, macOS
+개발환경
+- Windows, macOS
 
 <br>
 
@@ -261,8 +263,6 @@ main
 
 #### 폴더 구조
 
-<br>
-
 - css, html, js 폴더를 따로 관리하여 가독성을 늘림
 - templates의 정적 페이지를 백엔드의 ViewController가 보여주는 방식으로 설계함
 
@@ -281,11 +281,21 @@ main
 
 <br>
 
-- 기초 서버구조 설계
-- RestAPI 설계 및 테스트
-- 데이터 정제 및 정규화
-- java, javascript, html, css 구현 및 테스트
+*기초 서버구조 설계 <br>
+RestAPI 설계 및 테스트 <br>
+데이터 정제 및 정규화 <br>
+java, javascript, html, css 구현 및 테스트* 
 
+<br>
+
+기능구현
+- 로그인, 로그아웃, 회원가입
+- 회원정보 수정, 수강이력, 데일리차트 (칼로리 검색)
+- 구독하기, 위시리스트 추가 및 삭제
+- 동영상 플레이어
+- 게시글 수정, 삭제
+- 관리자 권한
+  
 <br>
 
 #### 송진경
