@@ -39,12 +39,16 @@
 <br>
 
 백엔드
-- java
+- Java
+- SpringBoot(v3.3.0)
+- Spring Security(v3.3.0) , Lombok
+- JPA
 
 <br>
 
 프론트엔드 
-- html, css , javascript
+- html, css , JavaScript
+- video.js (v8.10.0), axios (v1.7.2)
 
 <br>
 
