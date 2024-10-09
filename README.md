@@ -1,5 +1,11 @@
 ### Hello PT
 
+<br>
+
+https://seunghwanyuk.github.io/LAEH_project/src/main/resources/templates/
+
+<br>
+
 > 바쁜 사회인들을 위한 온라인 헬스 클래스 웹페이지
 
 <br>
@@ -346,8 +352,13 @@ java, javascript, html, css 구현 및 테스트*
 ## HelloPT 실행법
 
 <br>
-https://seunghwanyuk.github.io/LAEH_project/src/main/resources/templates/
 
-> DB를 만든 후 dump파일을 restore하면 모든 데이터 정상 출력됨
+1. DB를 만든 후 dump파일을 restore 해주세요
 
 <br>
+
+> - MariaDB를 설치 후 `laeh_project`로 새로운 이름의 DB 생성
+
+<br>
+
+
