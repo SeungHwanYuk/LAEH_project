@@ -346,8 +346,8 @@ java, javascript, html, css 구현 및 테스트*
 ## HelloPT 실행법
 
 <br>
+https://seunghwanyuk.github.io/LAEH_project/src/main/resources/templates/
 
-> 작성중 !!
->
+> DB를 만든 후 dump파일을 restore하면 모든 데이터 정상 출력됨
 
 <br>
