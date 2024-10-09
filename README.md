@@ -353,12 +353,15 @@ java, javascript, html, css 구현 및 테스트*
 
 <br>
 
-1. DB를 만든 후 dump파일을 restore 해주세요
+1. DB를 만든 후 dump파일을 restore 해주세요.
 
 <br>
 
 > - MariaDB를 설치 후 `laeh_project`로 새로운 이름의 DB 생성
+> - dump 폴더의 `최신날짜.spl` 선택 후 restore
 
 <br>
+
+2. 
 
 
