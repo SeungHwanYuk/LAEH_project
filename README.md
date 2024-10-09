@@ -1,13 +1,17 @@
 ### Hello PT
 
-<br>
-
-
-https://seunghwanyuk.github.io/LAEH_project/src/main/resources/templates/
 
 <br>
 
 > 바쁜 사회인들을 위한 온라인 헬스 클래스 웹페이지
+
+<br>
+
+# 배포
+
+<br>
+
+**https://seunghwanyuk.github.io/LAEH_project/src/main/resources/templates/**
 
 <br>
 
