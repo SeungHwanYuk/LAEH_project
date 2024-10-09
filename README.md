@@ -354,7 +354,7 @@ java, javascript, html, css 구현 및 테스트*
 <br>
 
 1. Java(백엔드 서버)를 실행시켜 테이블을 생성 해주세요. 
-> Main의 `PocatRushApplication` 실행
+> Main의 `PocatRushApplication` 실행 (서버 실행)
 
 <br>
 
@@ -362,5 +362,8 @@ java, javascript, html, css 구현 및 테스트*
 > - MariaDB를 설치 후 `laeh_project`로 새로운 이름의 DB 생성
 > - dump 폴더의 `최신날짜.spl` 선택 후 restore
 
+<br>
+
+3. VScode의 GoLive(extensions)를 이용하거나, 
 
 
