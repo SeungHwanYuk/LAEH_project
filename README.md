@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=header" />
+
 ### Hello PT
 
 
@@ -372,3 +374,4 @@ java, javascript, html, css 구현 및 테스트*
 3. VScode의 GoLive(extensions)를 이용하거나, 
 
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
