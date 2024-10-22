@@ -371,7 +371,8 @@ java, javascript, html, css 구현 및 테스트*
 
 <br>
 
-3. VScode의 GoLive(extensions)를 이용하거나, 
+3. VScode의 GoLive(extensions)를 이용해서 localhost로 접속
 
+<br>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
