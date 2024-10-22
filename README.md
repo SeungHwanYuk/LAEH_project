@@ -13,7 +13,7 @@
 
 <br>
 
-> 프리뷰 페이지
+- 프리뷰 페이지
 
 
 **https://seunghwanyuk.github.io/LAEH_project/src/main/resources/templates/**
